@@ -6,7 +6,7 @@ use warnings;
 
 use Error::Pure qw(err);
 use Readonly;
-use Wikidata::Datatype::Value::String;
+use Wikidata::Datatype::Value::Monolingual;
 
 Readonly::Array our @EXPORT_OK => qw(obj2struct struct2obj);
 
@@ -24,7 +24,7 @@ sub obj2struct {
 			'language' => $obj->language,
 			'text' => $obj->value,
 		},
-		'type' => 'monolingual',
+		'type' => 'monolingualtext',
 	};
 
 	return $struct_hr;
@@ -33,8 +33,8 @@ sub obj2struct {
 sub struct2obj {
 	my $struct_hr = shift;
 
-	if ($struct_hr->{'type'} ne 'monolingual') {
-		err "Structure isn't for 'monolingual' datatype.";
+	if ($struct_hr->{'type'} ne 'monolingualtext') {
+		err "Structure isn't for 'monolingualtext' datatype.";
 	}
 
 	my $obj = Wikidata::Datatype::Value::Monolingual->new(
