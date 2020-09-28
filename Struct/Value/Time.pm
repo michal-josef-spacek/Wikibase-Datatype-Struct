@@ -41,9 +41,13 @@ sub struct2obj {
 		err "Structure isn't for 'time' datatype.";
 	}
 
-	# TODO precision
 	my $obj = Wikidata::Datatype::Value::Time->new(
-		'value' => $struct_hr->{'value'},
+		'after' => $struct_hr->{'value'}->{'after'},
+		'before' => $struct_hr->{'value'}->{'before'},
+		'calendarmodel' => $struct_hr->{'value'}->{'calendarmodel'},
+		'precision' => $struct_hr->{'value'}->{'precision'},
+		'timezone' => $struct_hr->{'value'}->{'timezone'},
+		'value' => $struct_hr->{'value'}->{'time'},
 	);
 
 	return $obj;
