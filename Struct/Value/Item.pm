@@ -34,9 +34,10 @@ sub struct2obj {
 	my $struct_hr = shift;
 
 	if (! $struct_hr->{'value'}->{'entity-type'}
-		|| $struct_hr->{'value'}->{'entity-type'} ne 'item') {
+		|| $struct_hr->{'value'}->{'entity-type'} ne 'item'
+		|| $struct_hr->{'type'} ne 'wikibase-entityid') {
 
-		err "Structure isn't for item datatype.";
+		err "Structure isn't for 'item' datatype.";
 	}
 
 	my $obj = Wikidata::Datatype::Value::Item->new(
