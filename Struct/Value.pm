@@ -26,7 +26,7 @@ sub obj2struct {
 	my $struct_hr;
 	if ($obj->type eq 'item') {
 		$struct_hr = Wikidata::Datatype::Struct::Value::Item::obj2struct($obj);
-	} elsif ($obj->type eq 'monolingual') {
+	} elsif ($obj->type eq 'monolingualtext') {
 		$struct_hr = Wikidata::Datatype::Struct::Value::Monolingual::obj2struct($obj);
 	} elsif ($obj->type eq 'string') {
 		$struct_hr = Wikidata::Datatype::Struct::Value::String::obj2struct($obj);
