@@ -12,9 +12,9 @@ my $obj = Wikidata::Datatype::Value::Monolingual->new(
 	'language' => 'cs',
 	'value' => decode_utf8('Příklad.'),
 );
-my $ret = Wikidata::Datatype::Struct::Value::Monolingual::obj2struct($obj);
+my $ret_hr = Wikidata::Datatype::Struct::Value::Monolingual::obj2struct($obj);
 is_deeply(
-	$ret,
+	$ret_hr,
 	{
 		'value' => {
 			'language' => 'cs',

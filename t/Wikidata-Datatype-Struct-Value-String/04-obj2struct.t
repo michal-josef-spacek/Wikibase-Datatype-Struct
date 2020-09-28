@@ -10,9 +10,9 @@ use Wikidata::Datatype::Struct::Value::String;
 my $obj = Wikidata::Datatype::Value::String->new(
 	'value' => 'Text',
 );
-my $ret = Wikidata::Datatype::Struct::Value::String::obj2struct($obj);
+my $ret_hr = Wikidata::Datatype::Struct::Value::String::obj2struct($obj);
 is_deeply(
-	$ret,
+	$ret_hr,
 	{
 		'value' => 'Text',
 		'type' => 'string',
