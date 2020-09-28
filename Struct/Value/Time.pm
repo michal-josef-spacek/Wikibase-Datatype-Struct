@@ -22,11 +22,11 @@ sub obj2struct {
 	my $struct_hr = {
 		'value' => {
 			'after' => $obj->after,
-			'time' => $obj->value,
 			'before' => $obj->before,
-			'timezone' => $obj->timezone,
-			'precision' => $obj->precision,
 			'calendarmodel' => 'http://www.wikidata.org/entity/Q1985727',
+			'precision' => $obj->precision,
+			'time' => $obj->value,
+			'timezone' => $obj->timezone,
 		},
 		'type' => 'time',
 	};
