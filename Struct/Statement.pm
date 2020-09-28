@@ -32,10 +32,10 @@ sub obj2struct {
 }
 
 sub struct2obj {
-	my $struct_hr = shift;
+	my ($struct_hr, $entity) = @_;
 
 	my $obj = Wikidata::Datatype::Statement->new(
-		'entity' => 'TODO',
+		'entity' => $entity,
 		'snak' => Wikidata::Datatype::Struct::Snak::struct2obj($struct_hr->{'mainsnak'}),
 		'rank' => $struct_hr->{'rank'},
 		# TODO
