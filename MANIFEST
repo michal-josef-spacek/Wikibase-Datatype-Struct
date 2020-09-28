@@ -41,8 +41,12 @@ t/Wikidata-Datatype-Struct-Value-String/03-struct2obj.t
 t/Wikidata-Datatype-Struct-Value-String/04-obj2struct.t
 t/Wikidata-Datatype-Struct-Value-Time/01-use.t
 t/Wikidata-Datatype-Struct-Value-Time/02-version.t
+t/Wikidata-Datatype-Struct-Value-Time/03-struct2obj.t
+t/Wikidata-Datatype-Struct-Value-Time/04-obj2struct.t
 t/Wikidata-Datatype-Struct-Value/01-use.t
 t/Wikidata-Datatype-Struct-Value/02-version.t
+t/Wikidata-Datatype-Struct-Value/03-struct2obj.t
+t/Wikidata-Datatype-Struct-Value/04-obj2struct.t
 t/Wikidata-Datatype-Struct/01-use.t
 t/Wikidata-Datatype-Struct/02-version.t
 xt/Wikidata-Datatype-Struct-Snak/01-pod_coverage.t
