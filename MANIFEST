@@ -33,6 +33,8 @@ t/Wikidata-Datatype-Struct-Value-Item/03-struct2obj.t
 t/Wikidata-Datatype-Struct-Value-Item/04-obj2struct.t
 t/Wikidata-Datatype-Struct-Value-Monolingual/01-use.t
 t/Wikidata-Datatype-Struct-Value-Monolingual/02-version.t
+t/Wikidata-Datatype-Struct-Value-Monolingual/03-struct2obj.t
+t/Wikidata-Datatype-Struct-Value-Monolingual/04-obj2struct.t
 t/Wikidata-Datatype-Struct-Value-String/01-use.t
 t/Wikidata-Datatype-Struct-Value-String/02-version.t
 t/Wikidata-Datatype-Struct-Value-String/03-struct2obj.t
