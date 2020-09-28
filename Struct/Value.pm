@@ -42,7 +42,6 @@ sub obj2struct {
 sub struct2obj {
 	my $struct_hr = shift;
 
-
 	my $obj;
 	if ($struct_hr->{'type'} eq 'wikibase-entityid') {
 		$obj = Wikidata::Datatype::Struct::Value::Item::struct2obj($struct_hr);
