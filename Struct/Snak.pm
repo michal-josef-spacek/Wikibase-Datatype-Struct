@@ -35,7 +35,7 @@ sub struct2obj {
 
 	my $obj = Wikidata::Datatype::Snak->new(
 		'datavalue' => Wikidata::Datatype::Struct::Value::struct2obj($struct_hr->{'datavalue'}),
-		'datatype' => $struct_hr->{'datavalue'},
+		'datatype' => $struct_hr->{'datatype'},
 		'property' => $struct_hr->{'property'},
 		'snaktype' => $struct_hr->{'snaktype'},
 	);
