@@ -26,6 +26,8 @@ Struct/Value/String.pm
 Struct/Value/Time.pm
 t/Wikidata-Datatype-Struct-Sitelink/01-use.t
 t/Wikidata-Datatype-Struct-Sitelink/02-version.t
+t/Wikidata-Datatype-Struct-Sitelink/03-struct2obj.t
+t/Wikidata-Datatype-Struct-Sitelink/04-obj2struct.t
 t/Wikidata-Datatype-Struct-Snak/01-use.t
 t/Wikidata-Datatype-Struct-Snak/02-version.t
 t/Wikidata-Datatype-Struct-Statement/01-use.t
