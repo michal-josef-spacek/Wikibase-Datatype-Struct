@@ -6,6 +6,7 @@ use warnings;
 
 use Error::Pure qw(err);
 use Readonly;
+use Wikidata::Datatype::Statement;
 use Wikidata::Datatype::Struct::Snak;
 
 Readonly::Array our @EXPORT_OK => qw(obj2struct struct2obj);
