@@ -16,6 +16,7 @@ MANIFEST			This list of files
 META.yml
 README
 Struct.pm
+Struct/Sitelink.pm
 Struct/Snak.pm
 Struct/Statement.pm
 Struct/Value.pm
@@ -23,6 +24,8 @@ Struct/Value/Item.pm
 Struct/Value/Monolingual.pm
 Struct/Value/String.pm
 Struct/Value/Time.pm
+t/Wikidata-Datatype-Struct-Sitelink/01-use.t
+t/Wikidata-Datatype-Struct-Sitelink/02-version.t
 t/Wikidata-Datatype-Struct-Snak/01-use.t
 t/Wikidata-Datatype-Struct-Snak/02-version.t
 t/Wikidata-Datatype-Struct-Statement/01-use.t
@@ -49,6 +52,8 @@ t/Wikidata-Datatype-Struct-Value/03-struct2obj.t
 t/Wikidata-Datatype-Struct-Value/04-obj2struct.t
 t/Wikidata-Datatype-Struct/01-use.t
 t/Wikidata-Datatype-Struct/02-version.t
+xt/Wikidata-Datatype-Struct-Sitelink/01-pod_coverage.t
+xt/Wikidata-Datatype-Struct-Sitelink/02-pod.t
 xt/Wikidata-Datatype-Struct-Snak/01-pod_coverage.t
 xt/Wikidata-Datatype-Struct-Snak/02-pod.t
 xt/Wikidata-Datatype-Struct-Statement/01-pod_coverage.t
