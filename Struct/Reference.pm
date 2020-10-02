@@ -5,6 +5,7 @@ use strict;
 use warnings;
 
 use Error::Pure qw(err);
+use List::MoreUtils qw(none);
 use Readonly;
 use Wikidata::Datatype::Reference;
 use Wikidata::Datatype::Struct::Snak;
@@ -60,7 +61,7 @@ sub _obj_array_ref2struct {
 			$snaks_hr->{'snaks'}->{$snak_o->property} = [];
 		}
 		if (! @{$snaks_hr->{'snaks-order'}}
-			|| one { $_ eq $snak_o->property } @{$snaks_hr->{'snaks-order'}}) {
+			|| none { $_ eq $snak_o->property } @{$snaks_hr->{'snaks-order'}}) {
 
 			push @{$snaks_hr->{'snaks-order'}}, $snak_o->property;
 		}
