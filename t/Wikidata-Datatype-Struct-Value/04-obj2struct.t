@@ -1,7 +1,9 @@
 use strict;
 use warnings;
 
-use Test::More 'tests' => 5;
+use English;
+use Error::Pure::Utils qw(clean);
+use Test::More 'tests' => 6;
 use Test::NoWarnings;
 use Unicode::UTF8 qw(decode_utf8);
 use Wikidata::Datatype::Value::Item;
@@ -79,3 +81,11 @@ is_deeply(
 	},
 	'Time: Output of obj2struct() subroutine.',
 );
+
+# Test.
+eval {
+	Wikidata::Datatype::Struct::Value::obj2struct('bad');
+};
+is($EVAL_ERROR, "Object isn't 'Wikidata::Datatype::Value'.\n",
+	"Object isn't 'Wikidata::Datatype::Value'.");
+clean();

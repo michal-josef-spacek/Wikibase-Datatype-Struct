@@ -1,7 +1,9 @@
 use strict;
 use warnings;
 
-use Test::More 'tests' => 3;
+use English;
+use Error::Pure::Utils qw(clean);
+use Test::More 'tests' => 4;
 use Test::NoWarnings;
 use Unicode::UTF8 qw(decode_utf8);
 use Wikidata::Datatype::Reference;
@@ -114,3 +116,11 @@ is_deeply(
 	},
 	'Output of obj2struct() subroutine. Multiple values.',
 );
+
+# Test.
+eval {
+	Wikidata::Datatype::Struct::Reference::obj2struct('bad');
+};
+is($EVAL_ERROR, "Object isn't 'Wikidata::Datatype::Reference'.\n",
+	"Object isn't 'Wikidata::Datatype::Reference'.");
+clean();
