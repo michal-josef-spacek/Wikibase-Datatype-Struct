@@ -1,7 +1,5 @@
 TODO
 ====
-1. Testy pro Snak
-2. Testy pro Statement
 3. Pridat property snak do Statement.
 4. Pridat references do Statement.
 5. Dokumentace
@@ -9,3 +7,8 @@ TODO
 
 Applied
 =======
+1. Testy pro Snak
+OK [20201004] skim
+
+2. Testy pro Statement
+OK [20201004] skim
