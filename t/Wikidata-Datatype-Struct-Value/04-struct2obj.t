@@ -1,7 +1,9 @@
 use strict;
 use warnings;
 
-use Test::More 'tests' => 19;
+use English;
+use Error::Pure::Utils qw(clean);
+use Test::More 'tests' => 20;
 use Test::NoWarnings;
 use Unicode::UTF8 qw(decode_utf8);
 use Wikidata::Datatype::Struct::Value;
@@ -66,3 +68,14 @@ is($ret->precision, 11, 'Time: Method precision().');
 is($ret->timezone, 0, 'Time: Method timezone().');
 is($ret->type, 'time', 'Time: Method type().');
 is($ret->value, '+2020-09-01T00:00:00Z', 'Time: Method value().');
+
+# Test.
+$struct_hr = {
+	'value' => {},
+	'type' => 'bad',
+};
+eval {
+	Wikidata::Datatype::Struct::Value::struct2obj($struct_hr);
+};
+is($EVAL_ERROR, "Type 'bad' is unsupported.\n", "Type 'bad' is unsupported.");
+clean();
