@@ -1,3 +1,3 @@
 CONCEPT
 =======
-Parse and serialize Wikidata (Wikibase) objects.
+Conversions between Wikidata (Wikibase) structure and objects or vice versa.
