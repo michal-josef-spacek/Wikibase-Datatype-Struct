@@ -28,7 +28,7 @@ $struct_hr = {
 	},
 	'type' => 'monolingualtext',
 };
-$ret = Wikidata::Datatype::Struct::Value::Monolingual::struct2obj($struct_hr);
+$ret = Wikidata::Datatype::Struct::Value::struct2obj($struct_hr);
 isa_ok($ret, 'Wikidata::Datatype::Value::Monolingual');
 is($ret->value, decode_utf8('Příklad.'), 'Monolingual: Method value().');
 is($ret->language, 'cs', 'Monolingual: Method language().');
@@ -39,7 +39,7 @@ $struct_hr = {
 	'value' => 'Text',
 	'type' => 'string',
 };
-$ret = Wikidata::Datatype::Struct::Value::String::struct2obj($struct_hr);
+$ret = Wikidata::Datatype::Struct::Value::struct2obj($struct_hr);
 isa_ok($ret, 'Wikidata::Datatype::Value::String');
 is($ret->value, 'Text', 'String: Method value().');
 is($ret->type, 'string', 'String: Method type().');
@@ -56,7 +56,7 @@ $struct_hr = {
 	},
 	'type' => 'time',
 };
-$ret = Wikidata::Datatype::Struct::Value::Time::struct2obj($struct_hr);
+$ret = Wikidata::Datatype::Struct::Value::struct2obj($struct_hr);
 isa_ok($ret, 'Wikidata::Datatype::Value::Time');
 is($ret->after, 0, 'Time: Method after().');
 is($ret->before, 0, 'Time: Method before().');
