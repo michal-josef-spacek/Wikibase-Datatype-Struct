@@ -3,7 +3,7 @@ use warnings;
 
 use English;
 use Error::Pure::Utils qw(clean);
-use Test::More 'tests' => 6;
+use Test::More 'tests' => 7;
 use Test::NoWarnings;
 use Unicode::UTF8 qw(decode_utf8);
 use Wikidata::Datatype::Value::Item;
@@ -81,6 +81,18 @@ is_deeply(
 	},
 	'Time: Output of obj2struct() subroutine.',
 );
+
+# Test.
+$obj = Wikidata::Datatype::Value->new(
+	'value' => 'text',
+	'type' => 'bad',
+);
+eval {
+	Wikidata::Datatype::Struct::Value::obj2struct($obj);
+};
+is($EVAL_ERROR, "Type 'bad' is unsupported.\n",
+	"Type 'bad' is unsupported.");
+clean();
 
 # Test.
 eval {
