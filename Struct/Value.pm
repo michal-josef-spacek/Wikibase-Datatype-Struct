@@ -24,16 +24,17 @@ sub obj2struct {
 	}
 
 	my $struct_hr;
-	if ($obj->type eq 'item') {
+	my $type = $obj->type;
+	if ($type eq 'item') {
 		$struct_hr = Wikidata::Datatype::Struct::Value::Item::obj2struct($obj);
-	} elsif ($obj->type eq 'monolingualtext') {
+	} elsif ($type eq 'monolingualtext') {
 		$struct_hr = Wikidata::Datatype::Struct::Value::Monolingual::obj2struct($obj);
-	} elsif ($obj->type eq 'string') {
+	} elsif ($type eq 'string') {
 		$struct_hr = Wikidata::Datatype::Struct::Value::String::obj2struct($obj);
-	} elsif ($obj->type eq 'time') {
+	} elsif ($type eq 'time') {
 		$struct_hr = Wikidata::Datatype::Struct::Value::Time::obj2struct($obj);
 	} else {
-		err "Type '$obj->type' is unsupported.";
+		err "Type '$type' is unsupported.";
 	}
 
 	return $struct_hr;
