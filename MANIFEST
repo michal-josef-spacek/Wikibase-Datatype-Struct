@@ -34,6 +34,8 @@ t/Wikidata-Datatype-Struct-Snak/03-struct2obj.t
 t/Wikidata-Datatype-Struct-Snak/04-obj2struct.t
 t/Wikidata-Datatype-Struct-Statement/01-use.t
 t/Wikidata-Datatype-Struct-Statement/02-version.t
+t/Wikidata-Datatype-Struct-Statement/03-struct2obj.t
+t/Wikidata-Datatype-Struct-Statement/04-obj2struct.t
 t/Wikidata-Datatype-Struct-Value-Item/01-use.t
 t/Wikidata-Datatype-Struct-Value-Item/02-version.t
 t/Wikidata-Datatype-Struct-Value-Item/03-struct2obj.t
