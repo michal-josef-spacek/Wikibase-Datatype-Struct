@@ -35,8 +35,8 @@ is_deeply(
 			'property' => 'P11',
 			'snaktype' => 'value',
 		},
-		'type' => 'statement',
 		'rank' => 'normal',
+		'type' => 'statement',
 	},
 	'Output of obj2struct() subroutine.',
 );

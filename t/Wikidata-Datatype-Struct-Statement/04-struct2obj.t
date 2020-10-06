@@ -16,8 +16,8 @@ my $struct_hr = {
 		'property' => 'P11',
 		'snaktype' => 'value',
 	},
-	'type' => 'statement',
 	'rank' => 'normal',
+	'type' => 'statement',
 };
 my $ret = Wikidata::Datatype::Struct::Statement::struct2obj($struct_hr, 'Q42');
 isa_ok($ret, 'Wikidata::Datatype::Statement');
