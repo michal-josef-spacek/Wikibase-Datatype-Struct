@@ -36,19 +36,6 @@ sub struct2obj {
 	return $obj;
 }
 
-sub _struct2snaks_array_ref {
-	my $struct_hr = shift;
-
-	my $snaks_ar = [];
-	foreach my $property (@{$struct_hr->{'snaks-order'}}) {
-		push @{$snaks_ar}, map { 
-			Wikidata::Datatype::Struct::Snak::struct2obj($_);
-		} @{$struct_hr->{'snaks'}->{$property}};
-	}
-
-	return $snaks_ar;
-}
-
 sub _obj_array_ref2struct {
 	my ($snaks_ar) = @_;
 
@@ -70,6 +57,19 @@ sub _obj_array_ref2struct {
 	}
 
 	return $snaks_hr;
+}
+
+sub _struct2snaks_array_ref {
+	my $struct_hr = shift;
+
+	my $snaks_ar = [];
+	foreach my $property (@{$struct_hr->{'snaks-order'}}) {
+		push @{$snaks_ar}, map {
+			Wikidata::Datatype::Struct::Snak::struct2obj($_);
+		} @{$struct_hr->{'snaks'}->{$property}};
+	}
+
+	return $snaks_ar;
 }
 
 1;
