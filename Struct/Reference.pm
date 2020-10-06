@@ -65,7 +65,7 @@ sub _obj_array_ref2struct {
 
 			push @{$snaks_hr->{'snaks-order'}}, $snak_o->property;
 		}
-		push @{$snaks_hr->{'snaks'}->{$snak_o->property}}, 
+		push @{$snaks_hr->{'snaks'}->{$snak_o->property}},
 			Wikidata::Datatype::Struct::Snak::obj2struct($snak_o);
 	}
 
