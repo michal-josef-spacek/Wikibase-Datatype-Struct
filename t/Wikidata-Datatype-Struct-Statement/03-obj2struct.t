@@ -116,6 +116,25 @@ is_deeply(
 			'property' => 'P11',
 			'snaktype' => 'value',
 		},
+		'qualifiers-order' => [
+			'P642',
+		],
+		'qualifiers' => {
+			'P642' => [
+				{
+					'datatype' => 'wikibase-item',
+					'datavalue' => {
+						'type' => 'wikibase-entityid',
+						'value' => {
+							'id' => 'Q474741',
+							'entity-type' => 'item',
+						},
+					},
+					'property' => 'P642',
+					'snaktype' => 'value',
+				},
+			],
+		},
 		'rank' => 'normal',
 		'references' => [
 			{

@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-use Test::More 'tests' => 7;
+use Test::More 'tests' => 10;
 use Test::NoWarnings;
 use Wikidata::Datatype::Struct::Statement;
 
@@ -15,6 +15,25 @@ my $struct_hr = {
 		},
 		'property' => 'P11',
 		'snaktype' => 'value',
+	},
+	'qualifiers-order' => [
+		'P642',
+	],
+	'qualifiers' => {
+		'P642' => [
+			{
+				'datatype' => 'wikibase-item',
+				'datavalue' => {
+					'type' => 'wikibase-entityid',
+					'value' => {
+						'id' => 'Q474741',
+						'entity-type' => 'item',
+					},
+				},
+				'property' => 'P642',
+				'snaktype' => 'value',
+			},
+		],
 	},
 	'rank' => 'normal',
 	'references' => [
@@ -74,3 +93,6 @@ isa_ok($ret->snak, 'Wikidata::Datatype::Snak');
 is($ret->rank, 'normal', 'Method rank().');
 is(@{$ret->references}, 1, 'Count of references.');
 is(@{$ret->references->[0]->snaks}, 3, 'Count of snaks in reference.');
+is(@{$ret->property_snaks}, 1, 'Count of property snaks.');
+is($ret->property_snaks->[0]->property, 'P642', 'Qualifier property.');
+is($ret->property_snaks->[0]->datavalue->value, 'Q474741', 'Qualifier datavalue.');
