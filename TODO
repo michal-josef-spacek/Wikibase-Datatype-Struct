@@ -1,7 +1,6 @@
 TODO
 ====
 3. Pridat property snak do Statement.
-4. Pridat references do Statement.
 5. Dokumentace pro Struct
 6. Dokumentace pro Statement
 7. Dokumentace pro Sitelink
@@ -22,3 +21,6 @@ OK [20201004] skim
 
 2. Testy pro Statement
 OK [20201004] skim
+
+4. Pridat references do Statement.
+OK [20201005] skim

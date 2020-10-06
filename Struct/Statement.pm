@@ -7,6 +7,7 @@ use warnings;
 use Error::Pure qw(err);
 use Readonly;
 use Wikidata::Datatype::Statement;
+use Wikidata::Datatype::Struct::Reference;
 use Wikidata::Datatype::Struct::Snak;
 
 Readonly::Array our @EXPORT_OK => qw(obj2struct struct2obj);
@@ -23,10 +24,15 @@ sub obj2struct {
 	my $struct_hr = {
 		'mainsnak' => Wikidata::Datatype::Struct::Snak::obj2struct($obj->snak),
 		'rank' => $obj->rank,
+		@{$obj->references} ? (
+			'references' => [
+				map { Wikidata::Datatype::Struct::Reference::obj2struct($_); }
+				@{$obj->references},
+			],
+		) : (),
 		'type' => 'statement',
 		# TODO
 		# property_snak
-		# references
 	};
 
 	return $struct_hr;
@@ -38,10 +44,13 @@ sub struct2obj {
 	my $obj = Wikidata::Datatype::Statement->new(
 		'entity' => $entity,
 		'snak' => Wikidata::Datatype::Struct::Snak::struct2obj($struct_hr->{'mainsnak'}),
+		'references' => [
+			map { Wikidata::Datatype::Struct::Reference::struct2obj($_) }
+			@{$struct_hr->{'references'}}
+		],
 		'rank' => $struct_hr->{'rank'},
 		# TODO
 		# property_snak
-		# references
 	);
 
 	return $obj;
