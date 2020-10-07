@@ -10,7 +10,6 @@ TODO
 12. Dokumentace pro Value::Time
 13. Dokumentace pro Value::String
 14. Dokumentace pro Value::Monolingual
-15. Zobecnit _obj_array_ref2struct a ten druhy (pouzivaji se dvakrat, akorat jine klice).
 16.
 
 Applied
@@ -26,3 +25,6 @@ OK [20201005] skim
 
 3. Pridat property snak do Statement.
 OK [20201005] skim
+
+15. Zobecnit _obj_array_ref2struct a ten druhy (pouzivaji se dvakrat, akorat jine klice).
+OK [20201007] skim

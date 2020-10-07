@@ -20,6 +20,7 @@ Struct/Reference.pm
 Struct/Sitelink.pm
 Struct/Snak.pm
 Struct/Statement.pm
+Struct/Utils.pm
 Struct/Value.pm
 Struct/Value/Item.pm
 Struct/Value/Monolingual.pm
@@ -41,6 +42,10 @@ t/Wikidata-Datatype-Struct-Statement/01-use.t
 t/Wikidata-Datatype-Struct-Statement/02-version.t
 t/Wikidata-Datatype-Struct-Statement/03-obj2struct.t
 t/Wikidata-Datatype-Struct-Statement/04-struct2obj.t
+t/Wikidata-Datatype-Struct-Utils/01-use.t
+t/Wikidata-Datatype-Struct-Utils/02-version.t
+t/Wikidata-Datatype-Struct-Utils/03-obj_array_ref2struct.t
+t/Wikidata-Datatype-Struct-Utils/04-struct2snaks_array_ref.t
 t/Wikidata-Datatype-Struct-Value-Item/01-use.t
 t/Wikidata-Datatype-Struct-Value-Item/02-version.t
 t/Wikidata-Datatype-Struct-Value-Item/03-obj2struct.t
@@ -71,6 +76,8 @@ xt/Wikidata-Datatype-Struct-Snak/01-pod_coverage.t
 xt/Wikidata-Datatype-Struct-Snak/02-pod.t
 xt/Wikidata-Datatype-Struct-Statement/01-pod_coverage.t
 xt/Wikidata-Datatype-Struct-Statement/02-pod.t
+xt/Wikidata-Datatype-Struct-Utils/01-pod_coverage.t
+xt/Wikidata-Datatype-Struct-Utils/02-pod.t
 xt/Wikidata-Datatype-Struct-Value-Item/01-pod_coverage.t
 xt/Wikidata-Datatype-Struct-Value-Item/02-pod.t
 xt/Wikidata-Datatype-Struct-Value-Monolingual/01-pod_coverage.t
