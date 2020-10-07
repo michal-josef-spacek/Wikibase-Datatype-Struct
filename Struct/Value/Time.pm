@@ -23,7 +23,7 @@ sub obj2struct {
 		'value' => {
 			'after' => $obj->after,
 			'before' => $obj->before,
-			'calendarmodel' => 'http://www.wikidata.org/entity/Q1985727',
+			'calendarmodel' => $obj->calendarmodel,
 			'precision' => $obj->precision,
 			'time' => $obj->value,
 			'timezone' => $obj->timezone,
