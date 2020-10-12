@@ -9,6 +9,7 @@ use Readonly;
 use Wikidata::Datatype::Value;
 use Wikidata::Datatype::Struct::Value::Item;
 use Wikidata::Datatype::Struct::Value::Monolingual;
+use Wikidata::Datatype::Struct::Value::Property;
 use Wikidata::Datatype::Struct::Value::Quantity;
 use Wikidata::Datatype::Struct::Value::String;
 use Wikidata::Datatype::Struct::Value::Time;
@@ -30,6 +31,8 @@ sub obj2struct {
 		$struct_hr = Wikidata::Datatype::Struct::Value::Item::obj2struct($obj);
 	} elsif ($type eq 'monolingualtext') {
 		$struct_hr = Wikidata::Datatype::Struct::Value::Monolingual::obj2struct($obj);
+	} elsif ($type eq 'property') {
+		$struct_hr = Wikidata::Datatype::Struct::Value::Property::obj2struct($obj);
 	} elsif ($type eq 'quantity') {
 		$struct_hr = Wikidata::Datatype::Struct::Value::Quantity::obj2struct($obj, $base_uri);
 	} elsif ($type eq 'string') {
@@ -57,6 +60,8 @@ sub struct2obj {
 		$obj = Wikidata::Datatype::Struct::Value::String::struct2obj($struct_hr);
 	} elsif ($struct_hr->{'type'} eq 'time') {
 		$obj = Wikidata::Datatype::Struct::Value::Time::struct2obj($struct_hr);
+	} elsif ($struct_hr->{'type'} eq 'wikibase-property') {
+		$obj = Wikidata::Datatype::Struct::Value::Property::struct2obj($struct_hr);
 	} else {
 		err "Type '$struct_hr->{'type'}' is unsupported.";
 	}
