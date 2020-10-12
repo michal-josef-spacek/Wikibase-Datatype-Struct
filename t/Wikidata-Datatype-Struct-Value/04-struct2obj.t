@@ -3,7 +3,7 @@ use warnings;
 
 use English;
 use Error::Pure::Utils qw(clean);
-use Test::More 'tests' => 20;
+use Test::More 'tests' => 24;
 use Test::NoWarnings;
 use Unicode::UTF8 qw(decode_utf8);
 use Wikidata::Datatype::Struct::Value;
@@ -35,6 +35,20 @@ isa_ok($ret, 'Wikidata::Datatype::Value::Monolingual');
 is($ret->value, decode_utf8('Příklad.'), 'Monolingual: Method value().');
 is($ret->language, 'cs', 'Monolingual: Method language().');
 is($ret->type, 'monolingualtext', 'Monolingual: Method type().');
+
+# Test.
+$struct_hr = {
+	'value' => {
+		'amount' => '+10',
+		'unit' => 'https://test.wikidata.org/entity/Q123',
+	},
+	'type' => 'quantity',
+};
+$ret = Wikidata::Datatype::Struct::Value::struct2obj($struct_hr);
+isa_ok($ret, 'Wikidata::Datatype::Value::Quantity');
+is($ret->value, 10, 'Quantity: Method value().');
+is($ret->unit, 'Q123', 'Quantity: Method unit().');
+is($ret->type, 'quantity', 'Quantity: Method type().');
 
 # Test.
 $struct_hr = {

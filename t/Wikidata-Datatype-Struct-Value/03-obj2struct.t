@@ -3,11 +3,12 @@ use warnings;
 
 use English;
 use Error::Pure::Utils qw(clean);
-use Test::More 'tests' => 7;
+use Test::More 'tests' => 8;
 use Test::NoWarnings;
 use Unicode::UTF8 qw(decode_utf8);
 use Wikidata::Datatype::Value::Item;
 use Wikidata::Datatype::Value::Monolingual;
+use Wikidata::Datatype::Value::Quantity;
 use Wikidata::Datatype::Value::String;
 use Wikidata::Datatype::Value::Time;
 use Wikidata::Datatype::Struct::Value;
@@ -45,6 +46,24 @@ is_deeply(
 		'type' => 'monolingualtext',
 	},
 	'Monolingual: Output of obj2struct() subroutine.',
+);
+
+# Test.
+$obj = Wikidata::Datatype::Value::Quantity->new(
+	'unit' => 'Q123',
+	'value' => 10,
+);
+$ret_hr = Wikidata::Datatype::Struct::Value::obj2struct($obj, 'https://test.wikidata.org/entity/');
+is_deeply(
+	$ret_hr,
+	{
+		'value' => {
+			'amount' => '+10',
+			'unit' => 'https://test.wikidata.org/entity/Q123',
+		},
+		'type' => 'quantity',
+	},
+	'Quantity: Output of obj2struct() subroutine.',
 );
 
 # Test.
