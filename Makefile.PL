@@ -20,7 +20,9 @@ readme_from 'Struct.pm';
 recursive_author_tests('xt');
 requires 'Class::Utils' => 0.03;
 requires 'Error::Pure' => 0.15;
+requires 'Exporter' => 0;
 requires 'List::MoreUtils' => 0;
+requires 'Readonly' => 0;
 requires 'Unicode::UTF8' => 0;
 requires 'URI' => 0;
 resources 'bugtracker' => 'https://github.com/michal-josef-spacek/Wikidata-Datatype-Struct/issues',
