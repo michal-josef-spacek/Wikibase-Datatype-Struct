@@ -12,7 +12,7 @@ Readonly::Array our @EXPORT_OK => qw(obj_array_ref2struct struct2snaks_array_ref
 our $VERSION = 0.01;
 
 sub obj_array_ref2struct {
-	my ($snaks_ar, $key) = @_;
+	my ($snaks_ar, $key, $base_uri) = @_;
 
 	my $snaks_hr = {
 		$key.'-order' => [],
@@ -28,7 +28,7 @@ sub obj_array_ref2struct {
 			push @{$snaks_hr->{$key.'-order'}}, $snak_o->property;
 		}
 		push @{$snaks_hr->{$key}->{$snak_o->property}},
-			Wikidata::Datatype::Struct::Snak::obj2struct($snak_o);
+			Wikidata::Datatype::Struct::Snak::obj2struct($snak_o, $base_uri);
 	}
 
 	return $snaks_hr;

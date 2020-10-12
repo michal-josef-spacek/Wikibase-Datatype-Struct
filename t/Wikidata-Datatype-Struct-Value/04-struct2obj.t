@@ -76,8 +76,7 @@ $ret = Wikidata::Datatype::Struct::Value::struct2obj($struct_hr);
 isa_ok($ret, 'Wikidata::Datatype::Value::Time');
 is($ret->after, 0, 'Time: Method after().');
 is($ret->before, 0, 'Time: Method before().');
-is($ret->calendarmodel, 'http://www.wikidata.org/entity/Q1985727',
-	'Time: Method calendarmodel().');
+is($ret->calendarmodel, 'Q1985727', 'Time: Method calendarmodel().');
 is($ret->precision, 11, 'Time: Method precision().');
 is($ret->timezone, 0, 'Time: Method timezone().');
 is($ret->type, 'time', 'Time: Method type().');

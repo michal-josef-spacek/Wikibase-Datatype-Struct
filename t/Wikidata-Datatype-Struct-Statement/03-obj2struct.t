@@ -23,7 +23,8 @@ my $obj = Wikidata::Datatype::Statement->new(
 	),
 	'rank' => 'normal',
 );
-my $ret_hr = Wikidata::Datatype::Struct::Statement::obj2struct($obj);
+my $ret_hr = Wikidata::Datatype::Struct::Statement::obj2struct($obj,
+	'http://www.wikidata.org/entity/');
 is_deeply(
 	$ret_hr,
 	{
@@ -103,7 +104,8 @@ $obj = Wikidata::Datatype::Statement->new(
 		 ),
 	],
 );
-$ret_hr = Wikidata::Datatype::Struct::Statement::obj2struct($obj);
+$ret_hr = Wikidata::Datatype::Struct::Statement::obj2struct($obj,
+	'http://www.wikidata.org/entity/');
 is_deeply(
 	$ret_hr,
 	{

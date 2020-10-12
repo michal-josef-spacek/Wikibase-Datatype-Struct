@@ -16,21 +16,21 @@ Readonly::Array our @EXPORT_OK => qw(obj2struct struct2obj);
 our $VERSION = 0.01;
 
 sub obj2struct {
-	my $obj = shift;
+	my ($obj, $base_uri) = @_;
 
 	if (! $obj->isa('Wikidata::Datatype::Statement')) {
 		err "Object isn't 'Wikidata::Datatype::Statement'.";
 	}
 
 	my $struct_hr = {
-		'mainsnak' => Wikidata::Datatype::Struct::Snak::obj2struct($obj->snak),
+		'mainsnak' => Wikidata::Datatype::Struct::Snak::obj2struct($obj->snak, $base_uri),
 		@{$obj->property_snaks} ? (
 			%{obj_array_ref2struct($obj->property_snaks, 'qualifiers')},
 		) : (),
 		'rank' => $obj->rank,
 		@{$obj->references} ? (
 			'references' => [
-				map { Wikidata::Datatype::Struct::Reference::obj2struct($_); }
+				map { Wikidata::Datatype::Struct::Reference::obj2struct($_, $base_uri); }
 				@{$obj->references},
 			],
 		) : (),

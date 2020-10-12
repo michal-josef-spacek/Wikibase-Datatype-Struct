@@ -12,7 +12,8 @@ use Wikidata::Datatype::Struct::Value::Time;
 my $obj = Wikidata::Datatype::Value::Time->new(
 	'value' => '+2020-09-01T00:00:00Z',
 );
-my $ret_hr = Wikidata::Datatype::Struct::Value::Time::obj2struct($obj);
+my $ret_hr = Wikidata::Datatype::Struct::Value::Time::obj2struct($obj,
+	'http://www.wikidata.org/entity/');
 is_deeply(
 	$ret_hr,
 	{

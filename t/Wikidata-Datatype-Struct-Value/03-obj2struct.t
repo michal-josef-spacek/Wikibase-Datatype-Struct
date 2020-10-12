@@ -84,14 +84,14 @@ is_deeply(
 $obj = Wikidata::Datatype::Value::Time->new(
 	'value' => '+2020-09-01T00:00:00Z',
 );
-$ret_hr = Wikidata::Datatype::Struct::Value::obj2struct($obj);
+$ret_hr = Wikidata::Datatype::Struct::Value::obj2struct($obj, 'https://www.wikidata.org/entity/');
 is_deeply(
 	$ret_hr,
 	{
 		'value' => {
 			'after' => 0,
 			'before' => 0,
-			'calendarmodel' => 'http://www.wikidata.org/entity/Q1985727',
+			'calendarmodel' => 'https://www.wikidata.org/entity/Q1985727',
 			'precision' => 11,
 			'time' => '+2020-09-01T00:00:00Z',
 			'timezone' => 0,

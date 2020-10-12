@@ -14,14 +14,14 @@ Readonly::Array our @EXPORT_OK => qw(obj2struct struct2obj);
 our $VERSION = 0.01;
 
 sub obj2struct {
-	my $obj = shift;
+	my ($obj, $base_uri) = @_;
 
 	if (! $obj->isa('Wikidata::Datatype::Snak')) {
 		err "Object isn't 'Wikidata::Datatype::Snak'.";
 	}
 
 	my $struct_hr = {
-		'datavalue' => Wikidata::Datatype::Struct::Value::obj2struct($obj->datavalue),
+		'datavalue' => Wikidata::Datatype::Struct::Value::obj2struct($obj->datavalue, $base_uri),
 		'datatype' => $obj->datatype,
 		'property' => $obj->property,
 		'snaktype' => $obj->snaktype,

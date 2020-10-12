@@ -35,7 +35,7 @@ sub obj2struct {
 	} elsif ($type eq 'string') {
 		$struct_hr = Wikidata::Datatype::Struct::Value::String::obj2struct($obj);
 	} elsif ($type eq 'time') {
-		$struct_hr = Wikidata::Datatype::Struct::Value::Time::obj2struct($obj);
+		$struct_hr = Wikidata::Datatype::Struct::Value::Time::obj2struct($obj, $base_uri);
 	} else {
 		err "Type '$type' is unsupported.";
 	}
