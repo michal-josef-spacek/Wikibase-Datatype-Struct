@@ -3,7 +3,7 @@ use warnings;
 
 use English;
 use Error::Pure::Utils qw(clean);
-use Test::More 'tests' => 31;
+use Test::More 'tests' => 34;
 use Test::NoWarnings;
 use Unicode::UTF8 qw(decode_utf8);
 use Wikidata::Datatype::Struct::Value;
@@ -55,6 +55,20 @@ isa_ok($ret, 'Wikidata::Datatype::Value::Monolingual');
 is($ret->value, decode_utf8('Příklad.'), 'Monolingual: Method value().');
 is($ret->language, 'cs', 'Monolingual: Method language().');
 is($ret->type, 'monolingualtext', 'Monolingual: Method type().');
+
+# Test.
+$struct_hr = {
+	'value' => {
+		'entity-type' => 'property',
+		'id' => 'P123',
+		'numeric-id' => 123,
+	},
+	'type' => 'wikibase-entityid',
+};
+$ret = Wikidata::Datatype::Struct::Value::struct2obj($struct_hr);
+isa_ok($ret, 'Wikidata::Datatype::Value::Property');
+is($ret->value, 'P123', 'Property: Method value().');
+is($ret->type, 'property', 'Property: Method type().');
 
 # Test.
 $struct_hr = {
