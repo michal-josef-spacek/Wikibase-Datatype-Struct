@@ -3,7 +3,7 @@ use warnings;
 
 use English;
 use Error::Pure::Utils qw(clean);
-use Test::More 'tests' => 24;
+use Test::More 'tests' => 31;
 use Test::NoWarnings;
 use Unicode::UTF8 qw(decode_utf8);
 use Wikidata::Datatype::Struct::Value;
@@ -11,13 +11,33 @@ use Wikidata::Datatype::Struct::Value;
 # Test.
 my $struct_hr = {
 	'value' => {
+		'altitude' => 'null',
+		'globe' => 'http://test.wikidata.org/entity/Q111',
+		'latitude' => 10.1,
+		'longitude' => 20.1,
+		'precision' => 1,
+	},
+	'type' => 'globecoordinate',
+};
+my $ret = Wikidata::Datatype::Struct::Value::struct2obj($struct_hr);
+isa_ok($ret, 'Wikidata::Datatype::Value::Globecoordinate');
+is($ret->altitude, undef, 'Globecoordinate: Method altitude().');
+is($ret->latitude, 10.1, 'Globecoordinate: Method latitude().');
+is($ret->longitude, 20.1, 'Globecoordinate: Method longitude().');
+is($ret->precision, 1, 'Globecoordinate: Method precision().');
+is($ret->type, 'globecoordinate', 'Globecoordinate: Method type().');
+is_deeply($ret->value, [10.1, 20.1], 'Globecoordinate: Method value().');
+
+# Test.
+$struct_hr = {
+	'value' => {
 		'numeric-id' => 497,
 		'id' => 'Q497',
 		'entity-type' => 'item',
 	},
 	'type' => 'wikibase-entityid',
 };
-my $ret = Wikidata::Datatype::Struct::Value::struct2obj($struct_hr);
+$ret = Wikidata::Datatype::Struct::Value::struct2obj($struct_hr);
 isa_ok($ret, 'Wikidata::Datatype::Value::Item');
 is($ret->value, 'Q497', 'Item: Method value().');
 is($ret->type, 'item', 'Item: Method type().');

@@ -3,9 +3,10 @@ use warnings;
 
 use English;
 use Error::Pure::Utils qw(clean);
-use Test::More 'tests' => 9;
+use Test::More 'tests' => 10;
 use Test::NoWarnings;
 use Unicode::UTF8 qw(decode_utf8);
+use Wikidata::Datatype::Value::Globecoordinate;
 use Wikidata::Datatype::Value::Item;
 use Wikidata::Datatype::Value::Monolingual;
 use Wikidata::Datatype::Value::Property;
@@ -15,10 +16,31 @@ use Wikidata::Datatype::Value::Time;
 use Wikidata::Datatype::Struct::Value;
 
 # Test.
-my $obj = Wikidata::Datatype::Value::Item->new(
+my $obj = Wikidata::Datatype::Value::Globecoordinate->new(
+	'value' => [10.1, 20.1],
+);
+my $ret_hr = Wikidata::Datatype::Struct::Value::obj2struct($obj,
+	'http://test.wikidata.org/entity/');
+is_deeply(
+	$ret_hr,
+	{
+		'value' => {
+			'altitude' => 'null',
+			'globe' => 'http://test.wikidata.org/entity/Q2',
+			'latitude' => 10.1,
+			'longitude' => 20.1,
+			'precision' => '1e-07',
+		},
+		'type' => 'globecoordinate',
+	},
+	'Item: Output of obj2struct() subroutine.',
+);
+
+# Test.
+$obj = Wikidata::Datatype::Value::Item->new(
 	'value' => 'Q497',
 );
-my $ret_hr = Wikidata::Datatype::Struct::Value::obj2struct($obj);
+$ret_hr = Wikidata::Datatype::Struct::Value::obj2struct($obj);
 is_deeply(
 	$ret_hr,
 	{

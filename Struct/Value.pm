@@ -7,6 +7,7 @@ use warnings;
 use Error::Pure qw(err);
 use Readonly;
 use Wikidata::Datatype::Value;
+use Wikidata::Datatype::Struct::Value::Globecoordinate;
 use Wikidata::Datatype::Struct::Value::Item;
 use Wikidata::Datatype::Struct::Value::Monolingual;
 use Wikidata::Datatype::Struct::Value::Property;
@@ -27,7 +28,9 @@ sub obj2struct {
 
 	my $struct_hr;
 	my $type = $obj->type;
-	if ($type eq 'item') {
+	if ($type eq 'globecoordinate') {
+		$struct_hr = Wikidata::Datatype::Struct::Value::Globecoordinate::obj2struct($obj, $base_uri);
+	} elsif ($type eq 'item') {
 		$struct_hr = Wikidata::Datatype::Struct::Value::Item::obj2struct($obj);
 	} elsif ($type eq 'monolingualtext') {
 		$struct_hr = Wikidata::Datatype::Struct::Value::Monolingual::obj2struct($obj);
@@ -56,6 +59,8 @@ sub struct2obj {
 		} else {
 			$obj = Wikidata::Datatype::Struct::Value::Property::struct2obj($struct_hr);
 		}
+	} elsif ($struct_hr->{'type'} eq 'globecoordinate') {
+		$obj = Wikidata::Datatype::Struct::Value::Globecoordinate::struct2obj($struct_hr);
 	} elsif ($struct_hr->{'type'} eq 'monolingualtext') {
 		$obj = Wikidata::Datatype::Struct::Value::Monolingual::struct2obj($struct_hr);
 	} elsif ($struct_hr->{'type'} eq 'quantity') {
