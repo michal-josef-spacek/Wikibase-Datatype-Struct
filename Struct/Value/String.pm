@@ -20,8 +20,8 @@ sub obj2struct {
 	}
 
 	my $struct_hr = {
-		'value' => $obj->value,
 		'type' => 'string',
+		'value' => $obj->value,
 	};
 
 	return $struct_hr;
