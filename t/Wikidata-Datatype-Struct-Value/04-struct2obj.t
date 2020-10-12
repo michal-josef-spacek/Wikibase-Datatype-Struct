@@ -31,9 +31,9 @@ is_deeply($ret->value, [10.1, 20.1], 'Globecoordinate: Method value().');
 # Test.
 $struct_hr = {
 	'value' => {
-		'numeric-id' => 497,
-		'id' => 'Q497',
 		'entity-type' => 'item',
+		'id' => 'Q497',
+		'numeric-id' => 497,
 	},
 	'type' => 'wikibase-entityid',
 };
