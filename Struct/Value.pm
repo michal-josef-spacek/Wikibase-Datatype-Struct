@@ -53,13 +53,7 @@ sub struct2obj {
 	my $struct_hr = shift;
 
 	my $obj;
-	if ($struct_hr->{'type'} eq 'wikibase-entityid') {
-		if ($struct_hr->{'value'}->{'entity-type'} eq 'item') {
-			$obj = Wikidata::Datatype::Struct::Value::Item::struct2obj($struct_hr);
-		} else {
-			$obj = Wikidata::Datatype::Struct::Value::Property::struct2obj($struct_hr);
-		}
-	} elsif ($struct_hr->{'type'} eq 'globecoordinate') {
+	if ($struct_hr->{'type'} eq 'globecoordinate') {
 		$obj = Wikidata::Datatype::Struct::Value::Globecoordinate::struct2obj($struct_hr);
 	} elsif ($struct_hr->{'type'} eq 'monolingualtext') {
 		$obj = Wikidata::Datatype::Struct::Value::Monolingual::struct2obj($struct_hr);
@@ -69,6 +63,12 @@ sub struct2obj {
 		$obj = Wikidata::Datatype::Struct::Value::String::struct2obj($struct_hr);
 	} elsif ($struct_hr->{'type'} eq 'time') {
 		$obj = Wikidata::Datatype::Struct::Value::Time::struct2obj($struct_hr);
+	} elsif ($struct_hr->{'type'} eq 'wikibase-entityid') {
+		if ($struct_hr->{'value'}->{'entity-type'} eq 'item') {
+			$obj = Wikidata::Datatype::Struct::Value::Item::struct2obj($struct_hr);
+		} else {
+			$obj = Wikidata::Datatype::Struct::Value::Property::struct2obj($struct_hr);
+		}
 	} else {
 		err "Type '$struct_hr->{'type'}' is unsupported.";
 	}
