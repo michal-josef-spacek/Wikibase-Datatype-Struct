@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-use Test::More 'tests' => 10;
+use Test::More 'tests' => 9;
 use Test::NoWarnings;
 use Wikidata::Datatype::Struct::Statement;
 
@@ -86,9 +86,8 @@ my $struct_hr = {
 	],
 	'type' => 'statement',
 };
-my $ret = Wikidata::Datatype::Struct::Statement::struct2obj($struct_hr, 'Q42');
+my $ret = Wikidata::Datatype::Struct::Statement::struct2obj($struct_hr);
 isa_ok($ret, 'Wikidata::Datatype::Statement');
-is($ret->entity, 'Q42', 'Method entity().');
 isa_ok($ret->snak, 'Wikidata::Datatype::Snak');
 is($ret->rank, 'normal', 'Method rank().');
 is(@{$ret->references}, 1, 'Count of references.');

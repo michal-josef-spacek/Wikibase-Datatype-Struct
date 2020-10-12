@@ -13,7 +13,6 @@ use Wikidata::Datatype::Struct::Statement;
 
 # Test.
 my $obj = Wikidata::Datatype::Statement->new(
-	'entity' => 'Q42',
 	'snak' => Wikidata::Datatype::Snak->new(
 		'datatype' => 'string',
 		'datavalue' => Wikidata::Datatype::Value::String->new(
@@ -53,7 +52,6 @@ clean();
 
 # Test.
 $obj = Wikidata::Datatype::Statement->new(
-	'entity' => 'Q42',
 	'property_snaks' => [
 		Wikidata::Datatype::Snak->new(
 			'datatype' => 'wikibase-item',

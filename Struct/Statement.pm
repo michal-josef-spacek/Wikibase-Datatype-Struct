@@ -41,10 +41,9 @@ sub obj2struct {
 }
 
 sub struct2obj {
-	my ($struct_hr, $entity) = @_;
+	my $struct_hr = shift;
 
 	my $obj = Wikidata::Datatype::Statement->new(
-		'entity' => $entity,
 		'property_snaks' => struct2snaks_array_ref($struct_hr, 'qualifiers'),
 		'snak' => Wikidata::Datatype::Struct::Snak::struct2obj($struct_hr->{'mainsnak'}),
 		'references' => [
