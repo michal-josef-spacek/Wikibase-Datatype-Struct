@@ -25,6 +25,7 @@ Struct/Value.pm
 Struct/Value/Globecoordinate.pm
 Struct/Value/Item.pm
 Struct/Value/Monolingual.pm
+Struct/Value/Property.pm
 Struct/Value/Quantity.pm
 Struct/Value/String.pm
 Struct/Value/Time.pm
@@ -60,6 +61,10 @@ t/Wikidata-Datatype-Struct-Value-Monolingual/01-use.t
 t/Wikidata-Datatype-Struct-Value-Monolingual/02-version.t
 t/Wikidata-Datatype-Struct-Value-Monolingual/03-obj2struct.t
 t/Wikidata-Datatype-Struct-Value-Monolingual/04-struct2obj.t
+t/Wikidata-Datatype-Struct-Value-Property/01-use.t
+t/Wikidata-Datatype-Struct-Value-Property/02-version.t
+t/Wikidata-Datatype-Struct-Value-Property/03-obj2struct.t
+t/Wikidata-Datatype-Struct-Value-Property/04-struct2obj.t
 t/Wikidata-Datatype-Struct-Value-Quantity/01-use.t
 t/Wikidata-Datatype-Struct-Value-Quantity/02-version.t
 t/Wikidata-Datatype-Struct-Value-Quantity/03-obj2struct.t
@@ -94,6 +99,8 @@ xt/Wikidata-Datatype-Struct-Value-Item/01-pod_coverage.t
 xt/Wikidata-Datatype-Struct-Value-Item/02-pod.t
 xt/Wikidata-Datatype-Struct-Value-Monolingual/01-pod_coverage.t
 xt/Wikidata-Datatype-Struct-Value-Monolingual/02-pod.t
+xt/Wikidata-Datatype-Struct-Value-Property/01-pod_coverage.t
+xt/Wikidata-Datatype-Struct-Value-Property/02-pod.t
 xt/Wikidata-Datatype-Struct-Value-Quantity/01-pod_coverage.t
 xt/Wikidata-Datatype-Struct-Value-Quantity/02-pod.t
 xt/Wikidata-Datatype-Struct-Value-String/01-pod_coverage.t
