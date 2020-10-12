@@ -17,8 +17,9 @@ is_deeply(
 	$ret_hr,
 	{
 		'value' => {
-			'id' => 'Q497',
 			'entity-type' => 'item',
+			'id' => 'Q497',
+			'numeric-id' => 497,
 		},
 		'type' => 'wikibase-entityid',
 	},

@@ -128,8 +128,9 @@ is_deeply(
 					'datavalue' => {
 						'type' => 'wikibase-entityid',
 						'value' => {
-							'id' => 'Q474741',
 							'entity-type' => 'item',
+							'id' => 'Q474741',
+							'numeric-id' => 474741,
 						},
 					},
 					'property' => 'P642',
@@ -145,8 +146,9 @@ is_deeply(
 						'datatype' => 'wikibase-item',
 						'datavalue' => {
 							'value' => {
-								'id' => 'Q53919',
 								'entity-type' => 'item',
+								'id' => 'Q53919',
+								'numeric-id' => 53919,
 							},
 							'type' => 'wikibase-entityid'
 						},

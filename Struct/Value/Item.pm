@@ -19,10 +19,13 @@ sub obj2struct {
 		err "Object isn't 'Wikidata::Datatype::Value::Item'.";
 	}
 
+	my $numeric_id = $obj->value;
+	$numeric_id =~ s/^Q//ms;
 	my $struct_hr = {
 		'value' => {
-			'id' => $obj->value,
 			'entity-type' => $obj->type,
+			'id' => $obj->value,
+			'numeric-id' => $numeric_id,
 		},
 		'type' => 'wikibase-entityid',
 	};
