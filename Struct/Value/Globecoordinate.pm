@@ -216,7 +216,11 @@ L<Wikidata::Datatype::Value::Globecoordinate>.
 
 =item L<Wikidata::Datatype::Struct>
 
-TODO
+Wikidata structure serialization.
+
+=item L<Wikidata::Datatype::Value::Globecoordinate>
+
+Wikidata globe coordinate value datatype.
 
 =back
 

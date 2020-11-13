@@ -178,7 +178,11 @@ L<Wikidata::Datatype::Value::Item>.
 
 =item L<Wikidata::Datatype::Struct>
 
-TODO
+Wikidata structure serialization.
+
+=item L<Wikidata::Datatype::Value::Item>
+
+Wikidata item value datatype.
 
 =back
 
