@@ -53,3 +53,153 @@ sub struct2obj {
 1;
 
 __END__
+
+=pod
+
+=encoding utf8
+
+=head1 NAME
+
+Wikidata::Datatype::Struct::Value::Item - Wikidata item structure serialization.
+
+=head1 SYNOPSIS
+
+ use Wikidata::Datatype::Struct::Value::Item qw(obj2struct struct2obj);
+
+ my $struct_hr = obj2struct($obj);
+ my $obj = struct2obj($struct_hr);
+
+=head1 DESCRIPTION
+
+This conversion is between objects defined in Wikidata::Datatype and structures
+serialized via JSON to MediaWiki.
+
+=head1 SUBROUTINES
+
+=head2 C<obj2struct>
+
+ my $struct_hr = obj2struct($obj);
+
+Convert Wikidata::Datatype::Value::Item instance to structure.
+
+Returns reference to hash with structure.
+
+=head2 C<struct2obj>
+
+ my $obj = struct2obj($struct_hr);
+
+Convert structure of item to object.
+
+Returns Wikidata::Datatype::Value::Item istance.
+
+=head1 ERRORS
+
+ obj2struct():
+         Object isn't 'Wikidata::Datatype::Value::Item'.
+
+ struct2obj():
+         Structure isn't for 'item' datatype.
+
+=head1 EXAMPLE1
+
+ use strict;
+ use warnings;
+
+ use Data::Printer;
+ use Wikidata::Datatype::Value::Item;
+ use Wikidata::Datatype::Struct::Value::Item qw(obj2struct);
+
+ # Object.
+ my $obj = Wikidata::Datatype::Value::Item->new(
+         'value' => 'Q123',
+ );
+
+ # Get structure.
+ my $struct_hr = obj2struct($obj);
+
+ # Dump to output.
+ p $struct_hr;
+
+ # Output:
+ # \ {
+ #     type    "wikibase-entityid",
+ #     value   {
+ #         entity-type   "item",
+ #         id            "Q123",
+ #         numeric-id    123
+ #     }
+ # }
+
+=head1 EXAMPLE2
+
+ use strict;
+ use warnings;
+
+ use Data::Printer;
+ use Wikidata::Datatype::Struct::Value::Item qw(struct2obj);
+
+ # Item structure.
+ my $struct_hr = {
+         'type' => 'wikibase-entityid',
+         'value' => {
+                 'entity-type' => 'item',
+                 'id' => 'Q123',
+                 'numberic-id' => 123,
+         },
+ };
+
+ # Get object.
+ my $obj = struct2obj($struct_hr);
+
+ # Get value.
+ my $value = $obj->value;
+
+ # Get type.
+ my $type = $obj->type;
+
+ # Print out.
+ print "Type: $type\n";
+ print "Value: $value\n";
+
+ # Output:
+ # Type: item
+ # Value: Q123
+
+=head1 DEPENDENCIES
+
+L<Error::Pure>,
+L<Exporter>,
+L<Readonly>,
+L<Wikidata::Datatype::Value::Item>,
+
+=head1 SEE ALSO
+
+=over
+
+=item L<Wikidata::Datatype::Struct>
+
+TODO
+
+=back
+
+=head1 REPOSITORY
+
+L<https://github.com/michal-josef-spacek/Wikidata-Datatype-Struct>
+
+=head1 AUTHOR
+
+Michal Josef Špaček L<mailto:skim@cpan.org>
+
+L<http://skim.cz>
+
+=head1 LICENSE AND COPYRIGHT
+
+© Michal Josef Špaček 2020
+
+BSD 2-Clause License
+
+=head1 VERSION
+
+0.01
+
+=cut
