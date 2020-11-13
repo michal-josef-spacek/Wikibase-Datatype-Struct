@@ -170,7 +170,7 @@ Returns Wikidata::Datatype::Value::Item istance.
 L<Error::Pure>,
 L<Exporter>,
 L<Readonly>,
-L<Wikidata::Datatype::Value::Item>,
+L<Wikidata::Datatype::Value::Item>.
 
 =head1 SEE ALSO
 
