@@ -20,6 +20,7 @@ meta-spec:
 name: Wikidata-Datatype-Struct
 no_index:
   directory:
+    - examples
     - inc
     - t
     - xt
