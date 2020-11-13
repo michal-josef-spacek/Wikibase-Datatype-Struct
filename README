@@ -1,0 +1,63 @@
+NAME
+    Wikidata::Datatype::Struct - Wikidata structure serialization.
+
+DESCRIPTION
+    This conversion is between objects defined in Wikidata::Datatype and
+    structures serialized via JSON to MediaWiki.
+
+SEE ALSO
+    Wikidata::Datatype::Struct::Reference
+        TODO
+
+    Wikidata::Datatype::Struct::Sitelink
+        TODO
+
+    Wikidata::Datatype::Struct::Snak
+        TODO
+
+    Wikidata::Datatype::Struct::Statement
+        TODO
+
+    Wikidata::Datatype::Struct::Utils
+        TODO
+
+    Wikidata::Datatype::Struct::Value
+        TODO
+
+    Wikidata::Datatype::Struct::Value::Globecoordinate
+        Wikidata globe coordinate structure serialization.
+
+    Wikidata::Datatype::Struct::Value::Item
+        Wikidata item structure serialization.
+
+    Wikidata::Datatype::Struct::Value::Monolingual
+        TODO
+
+    Wikidata::Datatype::Struct::Value::Property
+        TODO
+
+    Wikidata::Datatype::Struct::Value::Quantity
+        TODO
+
+    Wikidata::Datatype::Struct::Value::String
+        TODO
+
+    Wikidata::Datatype::Struct::Value::Time
+        TODO
+
+REPOSITORY
+    <https://github.com/michal-josef-spacek/Wikidata-Datatype-Struct>
+
+AUTHOR
+    Michal Josef Špaček <mailto:skim@cpan.org>
+
+    <http://skim.cz>
+
+LICENSE AND COPYRIGHT
+    © Michal Josef Špaček 2020
+
+    BSD 2-Clause License
+
+VERSION
+    0.01
+
