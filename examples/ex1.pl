@@ -4,28 +4,26 @@ use strict;
 use warnings;
 
 use Data::Printer;
-use Wikidata::Datatype::Value::Globecoordinate;
-use Wikidata::Datatype::Struct::Value::Globecoordinate qw(obj2struct);
+use Wikidata::Datatype::Value::Monolingual;
+use Wikidata::Datatype::Struct::Value::Monolingual qw(obj2struct);
 
 # Object.
-my $obj = Wikidata::Datatype::Value::Globecoordinate->new(
-        'value' => [49.6398383, 18.1484031],
+my $obj = Wikidata::Datatype::Value::Monolingual->new(
+        'language' => 'en',
+        'value' => 'English text',
 );
 
 # Get structure.
-my $struct_hr = obj2struct($obj, 'http://test.wikidata.org/entity/');
+my $struct_hr = obj2struct($obj);
 
 # Dump to output.
 p $struct_hr;
 
 # Output:
 # \ {
-#     type    "globecoordinate",
+#     type    "monolingualtext",
 #     value   {
-#         altitude    "null",
-#         globe       "http://test.wikidata.org/entity/Q2",
-#         latitude    49.6398383,
-#         longitude   18.1484031,
-#         precision   1e-07
+#         language   "en",
+#         text       "English text"
 #     }
 # }
