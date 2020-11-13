@@ -37,7 +37,9 @@ sub obj2struct {
 sub struct2obj {
 	my $struct_hr = shift;
 
-	if ($struct_hr->{'type'} ne 'globecoordinate') {
+	if (! exists $struct_hr->{'type'}
+		|| $struct_hr->{'type'} ne 'globecoordinate') {
+
 		err "Structure isn't for 'globecoordinate' datatype.";
 	}
 
