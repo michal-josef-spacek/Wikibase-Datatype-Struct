@@ -101,3 +101,164 @@ sub _remove_plus {
 1;
 
 __END__
+
+=pod
+
+=encoding utf8
+
+=head1 NAME
+
+Wikidata::Datatype::Struct::Value::Quantity - Wikidata quantity structure serialization.
+
+=head1 SYNOPSIS
+
+ use Wikidata::Datatype::Struct::Value::Quantity qw(obj2struct struct2obj);
+
+ my $struct_hr = obj2struct($obj);
+ my $obj = struct2obj($struct_hr);
+
+=head1 DESCRIPTION
+
+This conversion is between objects defined in Wikidata::Datatype and structures
+serialized via JSON to MediaWiki.
+
+=head1 SUBROUTINES
+
+=head2 C<obj2struct>
+
+ my $struct_hr = obj2struct($obj);
+
+Convert Wikidata::Datatype::Value::Quantity instance to structure.
+
+Returns reference to hash with structure.
+
+=head2 C<struct2obj>
+
+ my $obj = struct2obj($struct_hr);
+
+Convert structure of quantity to object.
+
+Returns Wikidata::Datatype::Value::Quantity istance.
+
+=head1 ERRORS
+
+ obj2struct():
+         Object isn't 'Wikidata::Datatype::Value::Quantity'.
+
+ struct2obj():
+         Structure isn't for 'quantity' datatype.
+
+=head1 EXAMPLE1
+
+ use strict;
+ use warnings;
+
+ use Data::Printer;
+ use Wikidata::Datatype::Value::Quantity;
+ use Wikidata::Datatype::Struct::Value::Quantity qw(obj2struct);
+
+ # Object.
+ my $obj = Wikidata::Datatype::Value::Quantity->new(
+         'unit' => 'Q190900',
+         'value' => 10,
+ );
+
+ # Get structure.
+ my $struct_hr = obj2struct($obj, 'http://test.wikidata.org/entity/');
+
+ # Dump to output.
+ p $struct_hr;
+
+ # Output:
+ # \ {
+ #     type    "quantity",
+ #     value   {
+ #         amount   "+10",
+ #         unit     "http://test.wikidata.org/entity/Q190900"
+ #     }
+ # }
+
+=head1 EXAMPLE2
+
+ use strict;
+ use warnings;
+
+ use Data::Printer;
+ use Wikidata::Datatype::Struct::Value::Quantity qw(struct2obj);
+
+ # Item structure.
+ my $struct_hr = {
+         'type' => 'quantity',
+         'value' => {
+                 'amount' => '+10',
+                 'unit' => 'http://test.wikidata.org/entity/Q190900',
+         },
+ };
+
+ # Get object.
+ my $obj = struct2obj($struct_hr);
+
+ # Get type.
+ my $type = $obj->type;
+
+ # Get unit.
+ my $unit = $obj->unit;
+
+ # Get value.
+ my $value = $obj->value;
+
+ # Print out.
+ print "Type: $type\n";
+ if (defined $unit) {
+         print "Unit: $unit\n";
+ }
+ print "Value: $value\n";
+
+ # Output:
+ # Type: quantity
+ # Unit: Q190900
+ # Value: 10
+
+=head1 DEPENDENCIES
+
+L<Error::Pure>,
+L<Exporter>,
+L<Readonly>,
+L<URI>,
+L<Wikidata::Datatype::Value::Property>.
+
+=head1 SEE ALSO
+
+=over
+
+=item L<Wikidata::Datatype::Struct>
+
+Wikidata structure serialization.
+
+=item L<Wikidata::Datatype::Value::Quantity>
+
+Wikidata quantity value datatype.
+
+=back
+
+=head1 REPOSITORY
+
+L<https://github.com/michal-josef-spacek/Wikidata-Datatype-Struct>
+
+=head1 AUTHOR
+
+Michal Josef Špaček L<mailto:skim@cpan.org>
+
+L<http://skim.cz>
+
+=head1 LICENSE AND COPYRIGHT
+
+© Michal Josef Špaček 2020
+
+BSD 2-Clause License
+
+=head1 VERSION
+
+0.01
+
+=cut
