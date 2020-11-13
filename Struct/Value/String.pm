@@ -30,7 +30,9 @@ sub obj2struct {
 sub struct2obj {
 	my $struct_hr = shift;
 
-	if ($struct_hr->{'type'} ne 'string') {
+	if (! exists $struct_hr->{'type'}
+		|| $struct_hr->{'type'} ne 'string') {
+
 		err "Structure isn't for 'string' datatype.";
 	}
 

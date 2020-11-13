@@ -36,8 +36,12 @@ sub obj2struct {
 sub struct2obj {
 	my $struct_hr = shift;
 
-	if ($struct_hr->{'type'} ne 'wikibase-entityid') {
-		err "Structure isn't for 'wikibase-entityid' datatype.";
+	if (! exists $struct_hr->{'type'}
+		|| $struct_hr->{'type'} ne 'wikibase-entityid'
+		|| ! exists $struct_hr->{'value'}->{'entity-type'}
+		|| $struct_hr->{'value'}->{'entity-type'} ne 'property') {
+
+		err "Structure isn't for 'property' datatype.";
 	}
 
 	my $obj = Wikidata::Datatype::Value::Property->new(
@@ -95,7 +99,7 @@ Returns Wikidata::Datatype::Value::Property istance.
          Object isn't 'Wikidata::Datatype::Value::Property'.
 
  struct2obj():
-         Structure isn't for 'wikibase-entityid' datatype.
+         Structure isn't for 'property' datatype.
 
 =head1 EXAMPLE1
 

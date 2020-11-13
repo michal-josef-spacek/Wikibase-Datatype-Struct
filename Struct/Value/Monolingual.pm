@@ -33,7 +33,9 @@ sub obj2struct {
 sub struct2obj {
 	my $struct_hr = shift;
 
-	if ($struct_hr->{'type'} ne 'monolingualtext') {
+	if (! exists $struct_hr->{'type'}
+		|| $struct_hr->{'type'} ne 'monolingualtext') {
+
 		err "Structure isn't for 'monolingualtext' datatype.";
 	}
 

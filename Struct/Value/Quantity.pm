@@ -48,7 +48,9 @@ sub obj2struct {
 sub struct2obj {
 	my $struct_hr = shift;
 
-	if ($struct_hr->{'type'} ne 'quantity') {
+	if (! exists $struct_hr->{'type'}
+		|| $struct_hr->{'type'} ne 'quantity') {
+
 		err "Structure isn't for 'quantity' datatype.";
 	}
 
