@@ -66,8 +66,10 @@ sub struct2obj {
 	} elsif ($struct_hr->{'type'} eq 'wikibase-entityid') {
 		if ($struct_hr->{'value'}->{'entity-type'} eq 'item') {
 			$obj = Wikidata::Datatype::Struct::Value::Item::struct2obj($struct_hr);
-		} else {
+		} elsif ($struct_hr->{'value'}->{'entity-type'} eq 'property') {
 			$obj = Wikidata::Datatype::Struct::Value::Property::struct2obj($struct_hr);
+		} else {
+			err "Entity type '$struct_hr->{'value'}->{'entity-type'}' is unsupported.";
 		}
 	} else {
 		err "Type '$struct_hr->{'type'}' is unsupported.";
