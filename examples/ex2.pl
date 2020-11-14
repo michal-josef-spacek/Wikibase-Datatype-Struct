@@ -30,4 +30,6 @@ print "Site: $site\n";
 print "Title: $title\n";
 
 # Output:
-# TODO
+# Badges:
+# Site: enwiki
+# Title: Main page
