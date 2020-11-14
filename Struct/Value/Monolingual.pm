@@ -135,7 +135,7 @@ Returns Wikidata::Datatype::Value::Monolingual istance.
  use Data::Printer;
  use Wikidata::Datatype::Struct::Value::Monolingual qw(struct2obj);
 
- # Item structure.
+ # Monolingualtext structure.
  my $struct_hr = {
          'type' => 'monolingualtext',
          'value' => {

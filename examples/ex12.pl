@@ -6,7 +6,7 @@ use warnings;
 use Data::Printer;
 use Wikidata::Datatype::Struct::Value::Quantity qw(struct2obj);
 
-# Item structure.
+# Quantity structure.
 my $struct_hr = {
         'type' => 'quantity',
         'value' => {

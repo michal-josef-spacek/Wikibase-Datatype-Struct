@@ -139,7 +139,7 @@ Returns Wikidata::Datatype::Value::Property istance.
  use Data::Printer;
  use Wikidata::Datatype::Struct::Value::Property qw(struct2obj);
 
- # Item structure.
+ # Property structure.
  my $struct_hr = {
          'type' => 'wikibase-entityid',
          'value' => {

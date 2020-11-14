@@ -6,7 +6,7 @@ use warnings;
 use Data::Printer;
 use Wikidata::Datatype::Struct::Value::Globecoordinate qw(struct2obj);
 
-# Item structure.
+# Globe coordinate structure.
 my $struct_hr = {
         'type' => 'globecoordinate',
         'value' => {
