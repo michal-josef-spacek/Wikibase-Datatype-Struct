@@ -87,7 +87,7 @@ Returns reference to hash with structure.
 
 Convert structure of monolingual to object.
 
-Returns Wikidata::Datatype::Value::Monolingual istance.
+Returns Wikidata::Datatype::Value::Monolingual instance.
 
 =head1 ERRORS
 

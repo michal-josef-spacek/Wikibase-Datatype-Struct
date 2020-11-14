@@ -83,7 +83,7 @@ Returns reference to hash with structure.
 
 Convert structure of string to object.
 
-Returns Wikidata::Datatype::Value::String istance.
+Returns Wikidata::Datatype::Value::String instance.
 
 =head1 ERRORS
 

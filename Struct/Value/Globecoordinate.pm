@@ -103,7 +103,7 @@ Returns reference to hash with structure.
 
 Convert structure of item to object.
 
-Returns Wikidata::Datatype::Value::Globecoordinate istance.
+Returns Wikidata::Datatype::Value::Globecoordinate instance.
 
 =head1 ERRORS
 

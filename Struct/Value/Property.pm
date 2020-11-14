@@ -91,7 +91,7 @@ Returns reference to hash with structure.
 
 Convert structure of property to object.
 
-Returns Wikidata::Datatype::Value::Property istance.
+Returns Wikidata::Datatype::Value::Property instance.
 
 =head1 ERRORS
 

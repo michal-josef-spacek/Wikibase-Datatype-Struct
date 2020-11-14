@@ -138,7 +138,7 @@ Returns reference to hash with structure.
 
 Convert structure of quantity to object.
 
-Returns Wikidata::Datatype::Value::Quantity istance.
+Returns Wikidata::Datatype::Value::Quantity instance.
 
 =head1 ERRORS
 

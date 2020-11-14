@@ -91,7 +91,7 @@ Returns reference to hash with structure.
 
 Convert structure of item to object.
 
-Returns Wikidata::Datatype::Value::Item istance.
+Returns Wikidata::Datatype::Value::Item instance.
 
 =head1 ERRORS
 

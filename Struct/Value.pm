@@ -122,7 +122,7 @@ Returns reference to hash with structure.
 
 Convert structure of value to object.
 
-Returns Wikidata::Datatype::Value istance.
+Returns Wikidata::Datatype::Value instance.
 
 =head1 ERRORS
 

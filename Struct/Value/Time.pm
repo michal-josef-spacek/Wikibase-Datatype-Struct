@@ -99,7 +99,7 @@ Returns reference to hash with structure.
 
 Convert structure of time to object.
 
-Returns Wikidata::Datatype::Value::Time istance.
+Returns Wikidata::Datatype::Value::Time instance.
 
 =head1 ERRORS
 
