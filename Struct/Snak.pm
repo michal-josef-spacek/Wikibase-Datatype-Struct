@@ -98,6 +98,7 @@ Returns Wikidata::Datatype::Snak instance.
  use Data::Printer;
  use Wikidata::Datatype::Snak;
  use Wikidata::Datatype::Struct::Snak qw(obj2struct);
+ use Wikidata::Datatype::Value::Item;
 
  # Object.
  # instance of (P31) human (Q5)

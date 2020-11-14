@@ -4,8 +4,13 @@ use strict;
 use warnings;
 
 use Data::Printer;
+use Wikidata::Datatype::Reference;
+use Wikidata::Datatype::Snak;
 use Wikidata::Datatype::Statement;
 use Wikidata::Datatype::Struct::Statement qw(obj2struct);
+use Wikidata::Datatype::Value::Item;
+use Wikidata::Datatype::Value::String;
+use Wikidata::Datatype::Value::Time;
 
 # Object.
 my $obj = Wikidata::Datatype::Statement->new(
