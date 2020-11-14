@@ -1,7 +1,9 @@
 use strict;
 use warnings;
 
-use Test::More 'tests' => 7;
+use English;
+use Error::Pure::Utils qw(clean);
+use Test::More 'tests' => 9;
 use Test::NoWarnings;
 use Wikidata::Datatype::Struct::Utils qw(struct2snaks_array_ref);
 
@@ -39,3 +41,44 @@ is($snaks_ar->[0]->property, 'P1', 'Get #1 property value.');
 is($snaks_ar->[1]->datatype, 'string', 'Get #2 datatype value.');
 is($snaks_ar->[1]->datavalue->value, 'foo', 'Get #2 data value.');
 is($snaks_ar->[1]->property, 'P2', 'Get #2 property value.');
+
+# Test.
+$struct_hr = {
+	'foo' => {
+		'P1' => [{
+			'datatype' => 'bad',
+		}],
+	},
+	'foo-order' => [
+		'P1',
+	],
+};
+eval {
+	struct2snaks_array_ref($struct_hr, 'foo');
+};
+is($EVAL_ERROR, "Type doesn't exist.\n", "Type doesn't exist.");
+clean();
+
+# Test.
+$struct_hr = {
+	'foo' => {
+		'P1' => [{
+			'datatype' => 'bad',
+			'datavalue' => {
+				'type' => 'string',
+				'value' => 'foo',
+			},
+			'property' => 'P2',
+			'snaktype' => 'value',
+		}],
+	},
+	'foo-order' => [
+		'P1',
+	],
+};
+eval {
+	struct2snaks_array_ref($struct_hr, 'foo');
+};
+is($EVAL_ERROR, "Parameter 'datatype' = 'bad' isn't supported.\n",
+	"Datatype 'bad' isn't supported.");
+clean();
