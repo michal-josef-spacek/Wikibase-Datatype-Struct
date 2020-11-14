@@ -46,3 +46,174 @@ sub struct2obj {
 1;
 
 __END__
+
+=pod
+
+=encoding utf8
+
+=head1 NAME
+
+Wikidata::Datatype::Struct::Snak - Wikidata snak structure serialization.
+
+=head1 SYNOPSIS
+
+ use Wikidata::Datatype::Struct::Snak qw(obj2struct struct2obj);
+
+ my $struct_hr = obj2struct($obj);
+ my $obj = struct2obj($struct_hr);
+
+=head1 DESCRIPTION
+
+This conversion is between objects defined in Wikidata::Datatype and structures
+serialized via JSON to MediaWiki.
+
+=head1 SUBROUTINES
+
+=head2 C<obj2struct>
+
+ my $struct_hr = obj2struct($obj);
+
+Convert Wikidata::Datatype::Snak instance to structure.
+
+Returns reference to hash with structure.
+
+=head2 C<struct2obj>
+
+ my $obj = struct2obj($struct_hr);
+
+Convert structure of snak to object.
+
+Returns Wikidata::Datatype::Snak instance.
+
+=head1 ERRORS
+
+ obj2struct():
+         Object isn't 'Wikidata::Datatype::Snak'.
+
+=head1 EXAMPLE1
+
+ use strict;
+ use warnings;
+
+ use Data::Printer;
+ use Wikidata::Datatype::Snak;
+ use Wikidata::Datatype::Struct::Snak qw(obj2struct);
+
+ # Object.
+ # instance of (P31) human (Q5)
+ my $obj = Wikidata::Datatype::Snak->new(
+          'datatype' => 'wikibase-item',
+          'datavalue' => Wikidata::Datatype::Value::Item->new(
+                  'value' => 'Q5',
+          ),
+          'property' => 'P31',
+ );
+
+ # Get structure.
+ my $struct_hr = obj2struct($obj, 'http://test.wikidata.org/entity/');
+
+ # Dump to output.
+ p $struct_hr;
+
+ # Output:
+ # \ {
+ #     datatype    "wikibase-item",
+ #     datavalue   {
+ #         type    "wikibase-entityid",
+ #         value   {
+ #             entity-type   "item",
+ #             id            "Q5",
+ #             numeric-id    5
+ #         }
+ #     },
+ #     property    "P31",
+ #     snaktype    "value"
+ # }
+
+=head1 EXAMPLE2
+
+ use strict;
+ use warnings;
+
+ use Wikidata::Datatype::Struct::Snak qw(struct2obj);
+
+ # Item structure.
+ my $struct_hr = {
+         'datatype' => 'wikibase-item',
+         'datavalue' => {
+                 'type' => 'wikibase-entityid',
+                 'value' => {
+                         'entity-type' => 'item',
+                         'id' => 'Q5',
+                         'numeric-id' => 5,
+                 },
+         },
+         'property' => 'P31',
+         'snaktype' => 'value',
+ };
+
+ # Get object.
+ my $obj = struct2obj($struct_hr);
+
+ # Get value.
+ my $datavalue = $obj->datavalue->value;
+
+ # Get datatype.
+ my $datatype = $obj->datatype;
+
+ # Get property.
+ my $property = $obj->property;
+
+ # Print out.
+ print "Property: $property\n";
+ print "Type: $datatype\n";
+ print "Value: $datavalue\n";
+
+ # Output:
+ # Property: P31
+ # Type: wikibase-item
+ # Value: Q5
+
+=head1 DEPENDENCIES
+
+L<Error::Pure>,
+L<Exporter>,
+L<Readonly>,
+L<Wikidata::Datatype::Snak>,
+L<Wikidata::Datatype::Struct::Value>.
+
+=head1 SEE ALSO
+
+=over
+
+=item L<Wikidata::Datatype::Struct>
+
+Wikidata structure serialization.
+
+=item L<Wikidata::Datatype::Snak>
+
+Wikidata snak datatype.
+
+=back
+
+=head1 REPOSITORY
+
+L<https://github.com/michal-josef-spacek/Wikidata-Datatype-Struct>
+
+=head1 AUTHOR
+
+Michal Josef Špaček L<mailto:skim@cpan.org>
+
+L<http://skim.cz>
+
+=head1 LICENSE AND COPYRIGHT
+
+© Michal Josef Špaček 2020
+
+BSD 2-Clause License
+
+=head1 VERSION
+
+0.01
+
+=cut
