@@ -4,6 +4,7 @@ use base qw(Exporter);
 use strict;
 use warnings;
 
+use Error::Pure qw(err);
 use List::MoreUtils qw(none);
 use Wikidata::Datatype::Struct::Snak;
 
@@ -19,6 +20,10 @@ sub obj_array_ref2struct {
 		$key => {},
 	};
 	foreach my $snak_o (@{$snaks_ar}) {
+		if (! $snak_o->isa('Wikidata::Datatype::Snak')) {
+			err "Object isn't 'Wikidata::Datatype::Snak'.";
+		}
+
 		if (! exists $snaks_hr->{$key}->{$snak_o->property}) {
 			$snaks_hr->{$key}->{$snak_o->property} = [];
 		}
@@ -89,8 +94,7 @@ Returns reference to array with snaks objects.
 =head1 ERRORS
 
  obj_array_ref2struct():
-         From Wikidata::Datatype::Struct::Snak::obj2struct():
-                 Object isn't 'Wikidata::Datatype::Snak'.
+         Object isn't 'Wikidata::Datatype::Snak'.
 
  struct2snaks_array_ref():
          From Wikidata::Datatype::Struct::Snak::struct2obj():
@@ -227,8 +231,9 @@ Returns reference to array with snaks objects.
 
 =head1 DEPENDENCIES
 
-L<List::MoreUtils>,
+L<Error::Pure>,
 L<Exporter>,
+L<List::MoreUtils>,
 L<Wikidata::Datatype::Struct::Snak>.
 
 =head1 SEE ALSO

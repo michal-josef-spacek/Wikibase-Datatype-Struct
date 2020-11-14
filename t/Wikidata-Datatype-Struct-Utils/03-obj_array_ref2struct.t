@@ -1,7 +1,9 @@
 use strict;
 use warnings;
 
-use Test::More 'tests' => 2;
+use English;
+use Error::Pure::Utils qw(clean);
+use Test::More 'tests' => 3;
 use Test::NoWarnings;
 use Wikidata::Datatype::Snak;
 use Wikidata::Datatype::Struct::Utils qw(obj_array_ref2struct);
@@ -55,3 +57,12 @@ is_deeply(
 	},
 	'Convert two snaks in array to structure.',
 );
+
+# Test.
+$snaks_ar = ['bad'];
+eval {
+	obj_array_ref2struct($snaks_ar, 'foo');
+};
+is($EVAL_ERROR, "Object isn't 'Wikidata::Datatype::Snak'.\n",
+	"Object isn't 'Wikidata::Datatype::Snak");
+clean();
