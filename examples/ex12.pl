@@ -4,35 +4,37 @@ use strict;
 use warnings;
 
 use Data::Printer;
-use Wikidata::Datatype::Struct::Value::Monolingual qw(struct2obj);
+use Wikidata::Datatype::Struct::Value::Quantity qw(struct2obj);
 
 # Item structure.
 my $struct_hr = {
-        'type' => 'monolingualtext',
+        'type' => 'quantity',
         'value' => {
-                'language' => 'en',
-                'text' => 'English text',
+                'amount' => '+10',
+                'unit' => 'http://test.wikidata.org/entity/Q190900',
         },
 };
 
 # Get object.
 my $obj = struct2obj($struct_hr);
 
-# Get language.
-my $language = $obj->language;
-
 # Get type.
 my $type = $obj->type;
+
+# Get unit.
+my $unit = $obj->unit;
 
 # Get value.
 my $value = $obj->value;
 
 # Print out.
-print "Language: $language\n";
 print "Type: $type\n";
+if (defined $unit) {
+        print "Unit: $unit\n";
+}
 print "Value: $value\n";
 
 # Output:
-# Language: en
-# Type: monolingualtext
-# Value: English text
+# Type: quantity
+# Unit: Q190900
+# Value: 10
