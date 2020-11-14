@@ -150,7 +150,7 @@ Returns Wikidata::Datatype::Value::Time istance.
 
  use Wikidata::Datatype::Struct::Value::Time qw(struct2obj);
 
- # String structure.
+ # Time structure.
  my $struct_hr = {
          'type' => 'time',
          'value' => {
