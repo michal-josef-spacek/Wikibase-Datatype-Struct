@@ -5,7 +5,7 @@ use warnings;
 
 use Data::Printer;
 use Wikidata::Datatype::Value::Time;
-use Wikidata::Datatype::Struct::Value::Time qw(obj2struct);
+use Wikidata::Datatype::Struct::Value qw(obj2struct);
 
 # Object.
 my $obj = Wikidata::Datatype::Value::Time->new(

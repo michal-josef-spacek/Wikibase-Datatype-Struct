@@ -4,12 +4,13 @@ use strict;
 use warnings;
 
 use Data::Printer;
-use Wikidata::Datatype::Value::Property;
-use Wikidata::Datatype::Struct::Value::Property qw(obj2struct);
+use Wikidata::Datatype::Value::Monolingual;
+use Wikidata::Datatype::Struct::Value::Monolingual qw(obj2struct);
 
 # Object.
-my $obj = Wikidata::Datatype::Value::Property->new(
-        'value' => 'P123',
+my $obj = Wikidata::Datatype::Value::Monolingual->new(
+        'language' => 'en',
+        'value' => 'English text',
 );
 
 # Get structure.
@@ -20,10 +21,9 @@ p $struct_hr;
 
 # Output:
 # \ {
-#     type    "wikibase-entityid",
+#     type    "monolingualtext",
 #     value   {
-#         entity-type   "property",
-#         id            "P123",
-#         numeric-id    123
+#         language   "en",
+#         text       "English text"
 #     }
 # }
