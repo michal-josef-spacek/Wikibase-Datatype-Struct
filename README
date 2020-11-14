@@ -7,19 +7,19 @@ DESCRIPTION
 
 SEE ALSO
     Wikidata::Datatype::Struct::Reference
-        TODO
+        Wikidata reference structure serialization.
 
     Wikidata::Datatype::Struct::Sitelink
-        TODO
+        Wikidata sitelink structure serialization.
 
     Wikidata::Datatype::Struct::Snak
-        TODO
+        Wikidata snak structure serialization.
 
     Wikidata::Datatype::Struct::Statement
-        TODO
+        Wikidata statement structure serialization.
 
     Wikidata::Datatype::Struct::Utils
-        TODO
+        Wikidata structure serialization utilities.
 
     Wikidata::Datatype::Struct::Value
         Wikidata value structure serialization.

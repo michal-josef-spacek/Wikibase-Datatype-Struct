@@ -28,23 +28,23 @@ serialized via JSON to MediaWiki.
 
 =item L<Wikidata::Datatype::Struct::Reference>
 
-TODO
+Wikidata reference structure serialization.
 
 =item L<Wikidata::Datatype::Struct::Sitelink>
 
-TODO
+Wikidata sitelink structure serialization.
 
 =item L<Wikidata::Datatype::Struct::Snak>
 
-TODO
+Wikidata snak structure serialization.
 
 =item L<Wikidata::Datatype::Struct::Statement>
 
-TODO
+Wikidata statement structure serialization.
 
 =item L<Wikidata::Datatype::Struct::Utils>
 
-TODO
+Wikidata structure serialization utilities.
 
 =item L<Wikidata::Datatype::Struct::Value>
 
