@@ -97,8 +97,21 @@ Returns reference to array with snaks objects.
          Object isn't 'Wikidata::Datatype::Snak'.
 
  struct2snaks_array_ref():
+         From Wikidata::Datatype::Snak::new():
+                 From Wikidata::Datatype::Utils::check_required():
+                         Parameter 'datatype' is required.
+                         Parameter 'datavalue' is required.
+                         Parameter 'property' is required.
+                 From Wikidata::Datatype::Utils::check_isa():
+                         Parameter 'datavalue' must be a 'Wikidata::Datatype::Value::%s' object.
+                 Parameter 'datatype' = '%s' isn't supported.
+                 Parameter 'property' must begin with 'P' and number after it.
+                 Parameter 'snaktype' = '%s' isn't supported.
          From Wikidata::Datatype::Struct::Snak::struct2obj():
-                 TODO
+                 From Wikidata::Datatype::Struct::Value::struct2obj():
+                         Entity type '%s' is unsupported.
+                         Type doesn't exist.
+                         Type '%s' is unsupported.
 
 =head1 EXAMPLE1
 
