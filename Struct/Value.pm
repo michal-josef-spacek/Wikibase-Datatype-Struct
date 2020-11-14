@@ -52,6 +52,10 @@ sub obj2struct {
 sub struct2obj {
 	my $struct_hr = shift;
 
+	if (! exists $struct_hr->{'type'}) {
+		err "Type doesn't exist.";
+	}
+
 	my $obj;
 	if ($struct_hr->{'type'} eq 'globecoordinate') {
 		$obj = Wikidata::Datatype::Struct::Value::Globecoordinate::struct2obj($struct_hr);
