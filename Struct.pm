@@ -48,7 +48,7 @@ TODO
 
 =item L<Wikidata::Datatype::Struct::Value>
 
-TODO
+Wikidata value structure serialization.
 
 =item L<Wikidata::Datatype::Struct::Value::Globecoordinate>
 

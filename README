@@ -22,7 +22,7 @@ SEE ALSO
         TODO
 
     Wikidata::Datatype::Struct::Value
-        TODO
+        Wikidata value structure serialization.
 
     Wikidata::Datatype::Struct::Value::Globecoordinate
         Wikidata globe coordinate structure serialization.
