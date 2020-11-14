@@ -31,19 +31,19 @@ SEE ALSO
         Wikidata item structure serialization.
 
     Wikidata::Datatype::Struct::Value::Monolingual
-        TODO
+        Wikidata monolingual structure serialization.
 
     Wikidata::Datatype::Struct::Value::Property
-        TODO
+        Wikidata property structure serialization.
 
     Wikidata::Datatype::Struct::Value::Quantity
-        TODO
+        Wikidata quantity structure serialization.
 
     Wikidata::Datatype::Struct::Value::String
-        TODO
+        Wikidata string structure serialization.
 
     Wikidata::Datatype::Struct::Value::Time
-        TODO
+        Wikidata time structure serialization.
 
 REPOSITORY
     <https://github.com/michal-josef-spacek/Wikidata-Datatype-Struct>

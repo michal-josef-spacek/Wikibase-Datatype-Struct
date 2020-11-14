@@ -60,23 +60,23 @@ Wikidata item structure serialization.
 
 =item L<Wikidata::Datatype::Struct::Value::Monolingual>
 
-TODO
+Wikidata monolingual structure serialization.
 
 =item L<Wikidata::Datatype::Struct::Value::Property>
 
-TODO
+Wikidata property structure serialization.
 
 =item L<Wikidata::Datatype::Struct::Value::Quantity>
 
-TODO
+Wikidata quantity structure serialization.
 
 =item L<Wikidata::Datatype::Struct::Value::String>
 
-TODO
+Wikidata string structure serialization.
 
 =item L<Wikidata::Datatype::Struct::Value::Time>
 
-TODO
+Wikidata time structure serialization.
 
 =back
 
