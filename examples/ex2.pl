@@ -64,4 +64,4 @@ my $snaks_ar = $obj->snaks;
 print "Number of snaks: ".@{$snaks_ar}."\n";
 
 # Output:
-# TODO
+# Number of snaks: 3
