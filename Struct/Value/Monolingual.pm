@@ -132,7 +132,6 @@ Returns Wikidata::Datatype::Value::Monolingual istance.
  use strict;
  use warnings;
 
- use Data::Printer;
  use Wikidata::Datatype::Struct::Value::Monolingual qw(struct2obj);
 
  # Monolingualtext structure.

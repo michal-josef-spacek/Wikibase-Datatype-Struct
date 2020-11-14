@@ -73,7 +73,7 @@ serialized via JSON to MediaWiki.
 
  my $struct_hr = obj2struct($obj);
 
-Convert Wikidata::Datatype::Value::Strin instance to structure.
+Convert Wikidata::Datatype::Value::String instance to structure.
 
 Returns reference to hash with structure.
 
@@ -124,7 +124,6 @@ Returns Wikidata::Datatype::Value::String istance.
  use strict;
  use warnings;
 
- use Data::Printer;
  use Wikidata::Datatype::Struct::Value::String qw(struct2obj);
 
  # String structure.

@@ -136,7 +136,6 @@ Returns Wikidata::Datatype::Value::Item istance.
  use strict;
  use warnings;
 
- use Data::Printer;
  use Wikidata::Datatype::Struct::Value::Item qw(struct2obj);
 
  # Item structure.

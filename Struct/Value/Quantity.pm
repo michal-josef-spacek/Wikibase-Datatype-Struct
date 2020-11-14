@@ -183,7 +183,6 @@ Returns Wikidata::Datatype::Value::Quantity istance.
  use strict;
  use warnings;
 
- use Data::Printer;
  use Wikidata::Datatype::Struct::Value::Quantity qw(struct2obj);
 
  # Quantity structure.

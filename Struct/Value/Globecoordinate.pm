@@ -150,7 +150,6 @@ Returns Wikidata::Datatype::Value::Globecoordinate istance.
  use strict;
  use warnings;
 
- use Data::Printer;
  use Wikidata::Datatype::Struct::Value::Globecoordinate qw(struct2obj);
 
  # Globe coordinate structure.

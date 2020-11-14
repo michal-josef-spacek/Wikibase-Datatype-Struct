@@ -136,7 +136,6 @@ Returns Wikidata::Datatype::Value::Property istance.
  use strict;
  use warnings;
 
- use Data::Printer;
  use Wikidata::Datatype::Struct::Value::Property qw(struct2obj);
 
  # Property structure.
