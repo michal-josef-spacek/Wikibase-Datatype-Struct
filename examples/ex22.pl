@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use Wikidata::Datatype::Struct::Value::Globecoordinate qw(struct2obj);
+use Wikibase::Datatype::Struct::Value::Globecoordinate qw(struct2obj);
 
 # Globe coordinate structure.
 my $struct_hr = {

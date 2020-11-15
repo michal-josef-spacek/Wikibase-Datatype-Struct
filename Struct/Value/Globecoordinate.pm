@@ -1,4 +1,4 @@
-package Wikidata::Datatype::Struct::Value::Globecoordinate;
+package Wikibase::Datatype::Struct::Value::Globecoordinate;
 
 use base qw(Exporter);
 use strict;
@@ -7,7 +7,7 @@ use warnings;
 use Error::Pure qw(err);
 use Readonly;
 use URI;
-use Wikidata::Datatype::Value::Globecoordinate;
+use Wikibase::Datatype::Value::Globecoordinate;
 
 Readonly::Array our @EXPORT_OK => qw(obj2struct struct2obj);
 
@@ -16,8 +16,8 @@ our $VERSION = 0.01;
 sub obj2struct {
 	my ($obj, $base_uri) = @_;
 
-	if (! $obj->isa('Wikidata::Datatype::Value::Globecoordinate')) {
-		err "Object isn't 'Wikidata::Datatype::Value::Globecoordinate'.";
+	if (! $obj->isa('Wikibase::Datatype::Value::Globecoordinate')) {
+		err "Object isn't 'Wikibase::Datatype::Value::Globecoordinate'.";
 	}
 
 	my $struct_hr = {
@@ -46,7 +46,7 @@ sub struct2obj {
 	my $u = URI->new($struct_hr->{'value'}->{'globe'});
 	my @path_segments = $u->path_segments;
 	my $globe = $path_segments[-1];
-	my $obj = Wikidata::Datatype::Value::Globecoordinate->new(
+	my $obj = Wikibase::Datatype::Value::Globecoordinate->new(
 		$struct_hr->{'value'}->{'altitude'} ne 'null' ? (
 			'altitude' => $struct_hr->{'value'}->{'altitude'},
 		) : (),
@@ -71,18 +71,18 @@ __END__
 
 =head1 NAME
 
-Wikidata::Datatype::Struct::Value::Globecoordinate - Wikidata globe coordinate structure serialization.
+Wikibase::Datatype::Struct::Value::Globecoordinate - Wikibase globe coordinate structure serialization.
 
 =head1 SYNOPSIS
 
- use Wikidata::Datatype::Struct::Value::Globecoordinate qw(obj2struct struct2obj);
+ use Wikibase::Datatype::Struct::Value::Globecoordinate qw(obj2struct struct2obj);
 
  my $struct_hr = obj2struct($obj, $base_uri);
  my $obj = struct2obj($struct_hr);
 
 =head1 DESCRIPTION
 
-This conversion is between objects defined in Wikidata::Datatype and structures
+This conversion is between objects defined in Wikibase::Datatype and structures
 serialized via JSON to MediaWiki.
 
 =head1 SUBROUTINES
@@ -91,9 +91,9 @@ serialized via JSON to MediaWiki.
 
  my $struct_hr = obj2struct($obj, $base_uri);
 
-Convert Wikidata::Datatype::Value::Globecoordinate instance to structure.
+Convert Wikibase::Datatype::Value::Globecoordinate instance to structure.
 
-C<$base_uri> is base URL of Wikibase/Wikidata system (e.g. http://test.wikidata.org/entity/).
+C<$base_uri> is base URL of Wikibase/Wikibase system (e.g. http://test.wikidata.org/entity/).
 
 Returns reference to hash with structure.
 
@@ -103,12 +103,12 @@ Returns reference to hash with structure.
 
 Convert structure of item to object.
 
-Returns Wikidata::Datatype::Value::Globecoordinate instance.
+Returns Wikibase::Datatype::Value::Globecoordinate instance.
 
 =head1 ERRORS
 
  obj2struct():
-         Object isn't 'Wikidata::Datatype::Value::Globecoordinate'.
+         Object isn't 'Wikibase::Datatype::Value::Globecoordinate'.
 
  struct2obj():
          Structure isn't for 'globecoordinate' datatype.
@@ -119,11 +119,11 @@ Returns Wikidata::Datatype::Value::Globecoordinate instance.
  use warnings;
 
  use Data::Printer;
- use Wikidata::Datatype::Value::Globecoordinate;
- use Wikidata::Datatype::Struct::Value::Globecoordinate qw(obj2struct);
+ use Wikibase::Datatype::Value::Globecoordinate;
+ use Wikibase::Datatype::Struct::Value::Globecoordinate qw(obj2struct);
 
  # Object.
- my $obj = Wikidata::Datatype::Value::Globecoordinate->new(
+ my $obj = Wikibase::Datatype::Value::Globecoordinate->new(
          'value' => [49.6398383, 18.1484031],
  );
 
@@ -150,7 +150,7 @@ Returns Wikidata::Datatype::Value::Globecoordinate instance.
  use strict;
  use warnings;
 
- use Wikidata::Datatype::Struct::Value::Globecoordinate qw(struct2obj);
+ use Wikibase::Datatype::Struct::Value::Globecoordinate qw(struct2obj);
 
  # Globe coordinate structure.
  my $struct_hr = {
@@ -207,25 +207,25 @@ L<Error::Pure>,
 L<Exporter>,
 L<Readonly>,
 L<URI>,
-L<Wikidata::Datatype::Value::Globecoordinate>.
+L<Wikibase::Datatype::Value::Globecoordinate>.
 
 =head1 SEE ALSO
 
 =over
 
-=item L<Wikidata::Datatype::Struct>
+=item L<Wikibase::Datatype::Struct>
 
-Wikidata structure serialization.
+Wikibase structure serialization.
 
-=item L<Wikidata::Datatype::Value::Globecoordinate>
+=item L<Wikibase::Datatype::Value::Globecoordinate>
 
-Wikidata globe coordinate value datatype.
+Wikibase globe coordinate value datatype.
 
 =back
 
 =head1 REPOSITORY
 
-L<https://github.com/michal-josef-spacek/Wikidata-Datatype-Struct>
+L<https://github.com/michal-josef-spacek/Wikibase-Datatype-Struct>
 
 =head1 AUTHOR
 

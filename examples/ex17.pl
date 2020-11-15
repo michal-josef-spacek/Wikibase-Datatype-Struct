@@ -4,11 +4,11 @@ use strict;
 use warnings;
 
 use Data::Printer;
-use Wikidata::Datatype::Value::Monolingual;
-use Wikidata::Datatype::Struct::Value::Monolingual qw(obj2struct);
+use Wikibase::Datatype::Value::Monolingual;
+use Wikibase::Datatype::Struct::Value::Monolingual qw(obj2struct);
 
 # Object.
-my $obj = Wikidata::Datatype::Value::Monolingual->new(
+my $obj = Wikibase::Datatype::Value::Monolingual->new(
         'language' => 'en',
         'value' => 'English text',
 );

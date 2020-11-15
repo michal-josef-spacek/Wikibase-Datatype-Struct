@@ -1,5 +1,5 @@
 ---
-abstract: 'Wikidata data types struct conversions.'
+abstract: 'Wikibase data types struct conversions.'
 author:
   - 'Michal Josef Spacek <skim@cpan.org>'
 build_requires:
@@ -17,7 +17,7 @@ license: bsd
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
-name: Wikidata-Datatype-Struct
+name: Wikibase-Datatype-Struct
 no_index:
   directory:
     - examples
@@ -34,8 +34,8 @@ requires:
   Unicode::UTF8: 0
   perl: 5.6.2
 resources:
-  bugtracker: https://github.com/michal-josef-spacek/Wikidata-Datatype-Struct/issues
-  homepage: https://github.com/michal-josef-spacek/Wikidata-Datatype-Struct
+  bugtracker: https://github.com/michal-josef-spacek/Wikibase-Datatype-Struct/issues
+  homepage: https://github.com/michal-josef-spacek/Wikibase-Datatype-Struct
   license: http://opensource.org/licenses/bsd-license.php
-  repository: git://github.com/michal-josef-spacek/Wikidata-Datatype-Struct
+  repository: git://github.com/michal-josef-spacek/Wikibase-Datatype-Struct
 version: '0.01'

@@ -1,4 +1,4 @@
-package Wikidata::Datatype::Struct::Reference;
+package Wikibase::Datatype::Struct::Reference;
 
 use base qw(Exporter);
 use strict;
@@ -6,8 +6,8 @@ use warnings;
 
 use Error::Pure qw(err);
 use Readonly;
-use Wikidata::Datatype::Reference;
-use Wikidata::Datatype::Struct::Utils qw(obj_array_ref2struct struct2snaks_array_ref);
+use Wikibase::Datatype::Reference;
+use Wikibase::Datatype::Struct::Utils qw(obj_array_ref2struct struct2snaks_array_ref);
 
 Readonly::Array our @EXPORT_OK => qw(obj2struct struct2obj);
 
@@ -16,8 +16,8 @@ our $VERSION = 0.01;
 sub obj2struct {
 	my ($obj, $base_uri) = @_;
 
-	if (! $obj->isa('Wikidata::Datatype::Reference')) {
-		err "Object isn't 'Wikidata::Datatype::Reference'.";
+	if (! $obj->isa('Wikibase::Datatype::Reference')) {
+		err "Object isn't 'Wikibase::Datatype::Reference'.";
 	}
 
 	my $struct_hr = obj_array_ref2struct($obj->snaks, 'snaks', $base_uri);
@@ -28,7 +28,7 @@ sub obj2struct {
 sub struct2obj {
 	my $struct_hr = shift;
 
-	my $obj = Wikidata::Datatype::Reference->new(
+	my $obj = Wikibase::Datatype::Reference->new(
 		'snaks' => struct2snaks_array_ref($struct_hr, 'snaks'),
 	);
 
@@ -45,18 +45,18 @@ __END__
 
 =head1 NAME
 
-Wikidata::Datatype::Struct::Reference - Wikidata reference structure serialization.
+Wikibase::Datatype::Struct::Reference - Wikibase reference structure serialization.
 
 =head1 SYNOPSIS
 
- use Wikidata::Datatype::Struct::Reference qw(obj2struct struct2obj);
+ use Wikibase::Datatype::Struct::Reference qw(obj2struct struct2obj);
 
  my $struct_hr = obj2struct($obj);
  my $obj = struct2obj($struct_hr);
 
 =head1 DESCRIPTION
 
-This conversion is between objects defined in Wikidata::Datatype and structures
+This conversion is between objects defined in Wikibase::Datatype and structures
 serialized via JSON to MediaWiki.
 
 =head1 SUBROUTINES
@@ -65,7 +65,7 @@ serialized via JSON to MediaWiki.
 
  my $struct_hr = obj2struct($obj);
 
-Convert Wikidata::Datatype::Reference instance to structure.
+Convert Wikibase::Datatype::Reference instance to structure.
 
 Returns reference to hash with structure.
 
@@ -75,12 +75,12 @@ Returns reference to hash with structure.
 
 Convert structure of reference to object.
 
-Returns Wikidata::Datatype::Reference instance.
+Returns Wikibase::Datatype::Reference instance.
 
 =head1 ERRORS
 
  obj2struct():
-         Object isn't 'Wikidata::Datatype::Reference'.
+         Object isn't 'Wikibase::Datatype::Reference'.
 
 =head1 EXAMPLE1
 
@@ -88,39 +88,39 @@ Returns Wikidata::Datatype::Reference instance.
  use warnings;
 
  use Data::Printer;
- use Wikidata::Datatype::Reference;
- use Wikidata::Datatype::Snak;
- use Wikidata::Datatype::Struct::Reference qw(obj2struct);
- use Wikidata::Datatype::Value::Item;
- use Wikidata::Datatype::Value::String;
- use Wikidata::Datatype::Value::Time;
+ use Wikibase::Datatype::Reference;
+ use Wikibase::Datatype::Snak;
+ use Wikibase::Datatype::Struct::Reference qw(obj2struct);
+ use Wikibase::Datatype::Value::Item;
+ use Wikibase::Datatype::Value::String;
+ use Wikibase::Datatype::Value::Time;
 
  # Object.
  # instance of (P31) human (Q5)
- my $obj = Wikidata::Datatype::Reference->new(
+ my $obj = Wikibase::Datatype::Reference->new(
           'snaks' => [
                   # stated in (P248) Virtual International Authority File (Q53919)
-                  Wikidata::Datatype::Snak->new(
+                  Wikibase::Datatype::Snak->new(
                            'datatype' => 'wikibase-item',
-                           'datavalue' => Wikidata::Datatype::Value::Item->new(
+                           'datavalue' => Wikibase::Datatype::Value::Item->new(
                                    'value' => 'Q53919',
                            ),
                            'property' => 'P248',
                   ),
 
                   # VIAF ID (P214) 113230702
-                  Wikidata::Datatype::Snak->new(
+                  Wikibase::Datatype::Snak->new(
                            'datatype' => 'external-id',
-                           'datavalue' => Wikidata::Datatype::Value::String->new(
+                           'datavalue' => Wikibase::Datatype::Value::String->new(
                                    'value' => '113230702',
                            ),
                            'property' => 'P214',
                   ),
 
                   # retrieved (P813) 7 December 2013
-                  Wikidata::Datatype::Snak->new(
+                  Wikibase::Datatype::Snak->new(
                            'datatype' => 'time',
-                           'datavalue' => Wikidata::Datatype::Value::Time->new(
+                           'datavalue' => Wikibase::Datatype::Value::Time->new(
                                    'value' => '+2013-12-07T00:00:00Z',
                            ),
                            'property' => 'P813',
@@ -194,7 +194,7 @@ Returns Wikidata::Datatype::Reference instance.
  use strict;
  use warnings;
 
- use Wikidata::Datatype::Struct::Reference qw(struct2obj);
+ use Wikibase::Datatype::Struct::Reference qw(struct2obj);
 
  # Item structure.
  my $struct_hr = {
@@ -262,26 +262,26 @@ Returns Wikidata::Datatype::Reference instance.
 L<Error::Pure>,
 L<Exporter>,
 L<Readonly>,
-L<Wikidata::Datatype::Reference>,
-L<Wikidata::Datatype::Struct::Utils>.
+L<Wikibase::Datatype::Reference>,
+L<Wikibase::Datatype::Struct::Utils>.
 
 =head1 SEE ALSO
 
 =over
 
-=item L<Wikidata::Datatype::Struct>
+=item L<Wikibase::Datatype::Struct>
 
-Wikidata structure serialization.
+Wikibase structure serialization.
 
-=item L<Wikidata::Datatype::Reference>
+=item L<Wikibase::Datatype::Reference>
 
-Wikidata reference datatype.
+Wikibase reference datatype.
 
 =back
 
 =head1 REPOSITORY
 
-L<https://github.com/michal-josef-spacek/Wikidata-Datatype-Struct>
+L<https://github.com/michal-josef-spacek/Wikibase-Datatype-Struct>
 
 =head1 AUTHOR
 

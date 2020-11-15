@@ -4,11 +4,11 @@ use strict;
 use warnings;
 
 use Data::Printer;
-use Wikidata::Datatype::Value::String;
-use Wikidata::Datatype::Struct::Value::String qw(obj2struct);
+use Wikibase::Datatype::Value::String;
+use Wikibase::Datatype::Struct::Value::String qw(obj2struct);
 
 # Object.
-my $obj = Wikidata::Datatype::Value::String->new(
+my $obj = Wikibase::Datatype::Value::String->new(
         'value' => 'foo',
 );
 

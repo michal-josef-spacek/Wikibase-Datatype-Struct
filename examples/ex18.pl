@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use Wikidata::Datatype::Struct::Value::Monolingual qw(struct2obj);
+use Wikibase::Datatype::Struct::Value::Monolingual qw(struct2obj);
 
 # Monolingualtext structure.
 my $struct_hr = {

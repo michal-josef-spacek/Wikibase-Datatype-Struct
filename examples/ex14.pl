@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use Wikidata::Datatype::Struct::Value::Time qw(struct2obj);
+use Wikibase::Datatype::Struct::Value::Time qw(struct2obj);
 
 # Time structure.
 my $struct_hr = {

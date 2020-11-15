@@ -1,4 +1,4 @@
-package Wikidata::Datatype::Struct::Snak;
+package Wikibase::Datatype::Struct::Snak;
 
 use base qw(Exporter);
 use strict;
@@ -6,8 +6,8 @@ use warnings;
 
 use Error::Pure qw(err);
 use Readonly;
-use Wikidata::Datatype::Snak;
-use Wikidata::Datatype::Struct::Value;
+use Wikibase::Datatype::Snak;
+use Wikibase::Datatype::Struct::Value;
 
 Readonly::Array our @EXPORT_OK => qw(obj2struct struct2obj);
 
@@ -16,12 +16,12 @@ our $VERSION = 0.01;
 sub obj2struct {
 	my ($obj, $base_uri) = @_;
 
-	if (! $obj->isa('Wikidata::Datatype::Snak')) {
-		err "Object isn't 'Wikidata::Datatype::Snak'.";
+	if (! $obj->isa('Wikibase::Datatype::Snak')) {
+		err "Object isn't 'Wikibase::Datatype::Snak'.";
 	}
 
 	my $struct_hr = {
-		'datavalue' => Wikidata::Datatype::Struct::Value::obj2struct($obj->datavalue, $base_uri),
+		'datavalue' => Wikibase::Datatype::Struct::Value::obj2struct($obj->datavalue, $base_uri),
 		'datatype' => $obj->datatype,
 		'property' => $obj->property,
 		'snaktype' => $obj->snaktype,
@@ -33,8 +33,8 @@ sub obj2struct {
 sub struct2obj {
 	my $struct_hr = shift;
 
-	my $obj = Wikidata::Datatype::Snak->new(
-		'datavalue' => Wikidata::Datatype::Struct::Value::struct2obj($struct_hr->{'datavalue'}),
+	my $obj = Wikibase::Datatype::Snak->new(
+		'datavalue' => Wikibase::Datatype::Struct::Value::struct2obj($struct_hr->{'datavalue'}),
 		'datatype' => $struct_hr->{'datatype'},
 		'property' => $struct_hr->{'property'},
 		'snaktype' => $struct_hr->{'snaktype'},
@@ -53,18 +53,18 @@ __END__
 
 =head1 NAME
 
-Wikidata::Datatype::Struct::Snak - Wikidata snak structure serialization.
+Wikibase::Datatype::Struct::Snak - Wikibase snak structure serialization.
 
 =head1 SYNOPSIS
 
- use Wikidata::Datatype::Struct::Snak qw(obj2struct struct2obj);
+ use Wikibase::Datatype::Struct::Snak qw(obj2struct struct2obj);
 
  my $struct_hr = obj2struct($obj);
  my $obj = struct2obj($struct_hr);
 
 =head1 DESCRIPTION
 
-This conversion is between objects defined in Wikidata::Datatype and structures
+This conversion is between objects defined in Wikibase::Datatype and structures
 serialized via JSON to MediaWiki.
 
 =head1 SUBROUTINES
@@ -73,7 +73,7 @@ serialized via JSON to MediaWiki.
 
  my $struct_hr = obj2struct($obj);
 
-Convert Wikidata::Datatype::Snak instance to structure.
+Convert Wikibase::Datatype::Snak instance to structure.
 
 Returns reference to hash with structure.
 
@@ -83,12 +83,12 @@ Returns reference to hash with structure.
 
 Convert structure of snak to object.
 
-Returns Wikidata::Datatype::Snak instance.
+Returns Wikibase::Datatype::Snak instance.
 
 =head1 ERRORS
 
  obj2struct():
-         Object isn't 'Wikidata::Datatype::Snak'.
+         Object isn't 'Wikibase::Datatype::Snak'.
 
 =head1 EXAMPLE1
 
@@ -96,15 +96,15 @@ Returns Wikidata::Datatype::Snak instance.
  use warnings;
 
  use Data::Printer;
- use Wikidata::Datatype::Snak;
- use Wikidata::Datatype::Struct::Snak qw(obj2struct);
- use Wikidata::Datatype::Value::Item;
+ use Wikibase::Datatype::Snak;
+ use Wikibase::Datatype::Struct::Snak qw(obj2struct);
+ use Wikibase::Datatype::Value::Item;
 
  # Object.
  # instance of (P31) human (Q5)
- my $obj = Wikidata::Datatype::Snak->new(
+ my $obj = Wikibase::Datatype::Snak->new(
           'datatype' => 'wikibase-item',
-          'datavalue' => Wikidata::Datatype::Value::Item->new(
+          'datavalue' => Wikibase::Datatype::Value::Item->new(
                   'value' => 'Q5',
           ),
           'property' => 'P31',
@@ -136,7 +136,7 @@ Returns Wikidata::Datatype::Snak instance.
  use strict;
  use warnings;
 
- use Wikidata::Datatype::Struct::Snak qw(struct2obj);
+ use Wikibase::Datatype::Struct::Snak qw(struct2obj);
 
  # Item structure.
  my $struct_hr = {
@@ -180,26 +180,26 @@ Returns Wikidata::Datatype::Snak instance.
 L<Error::Pure>,
 L<Exporter>,
 L<Readonly>,
-L<Wikidata::Datatype::Snak>,
-L<Wikidata::Datatype::Struct::Value>.
+L<Wikibase::Datatype::Snak>,
+L<Wikibase::Datatype::Struct::Value>.
 
 =head1 SEE ALSO
 
 =over
 
-=item L<Wikidata::Datatype::Struct>
+=item L<Wikibase::Datatype::Struct>
 
-Wikidata structure serialization.
+Wikibase structure serialization.
 
-=item L<Wikidata::Datatype::Snak>
+=item L<Wikibase::Datatype::Snak>
 
-Wikidata snak datatype.
+Wikibase snak datatype.
 
 =back
 
 =head1 REPOSITORY
 
-L<https://github.com/michal-josef-spacek/Wikidata-Datatype-Struct>
+L<https://github.com/michal-josef-spacek/Wikibase-Datatype-Struct>
 
 =head1 AUTHOR
 

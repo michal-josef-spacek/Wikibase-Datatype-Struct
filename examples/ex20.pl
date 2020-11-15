@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use Wikidata::Datatype::Struct::Value::Property qw(struct2obj);
+use Wikibase::Datatype::Struct::Value::Property qw(struct2obj);
 
 # Property structure.
 my $struct_hr = {

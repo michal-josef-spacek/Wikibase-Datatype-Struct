@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use Wikidata::Datatype::Struct::Snak qw(struct2obj);
+use Wikibase::Datatype::Struct::Snak qw(struct2obj);
 
 # Item structure.
 my $struct_hr = {

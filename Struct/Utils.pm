@@ -1,4 +1,4 @@
-package Wikidata::Datatype::Struct::Utils;
+package Wikibase::Datatype::Struct::Utils;
 
 use base qw(Exporter);
 use strict;
@@ -6,7 +6,7 @@ use warnings;
 
 use Error::Pure qw(err);
 use List::MoreUtils qw(none);
-use Wikidata::Datatype::Struct::Snak;
+use Wikibase::Datatype::Struct::Snak;
 
 Readonly::Array our @EXPORT_OK => qw(obj_array_ref2struct struct2snaks_array_ref);
 
@@ -20,8 +20,8 @@ sub obj_array_ref2struct {
 		$key => {},
 	};
 	foreach my $snak_o (@{$snaks_ar}) {
-		if (! $snak_o->isa('Wikidata::Datatype::Snak')) {
-			err "Object isn't 'Wikidata::Datatype::Snak'.";
+		if (! $snak_o->isa('Wikibase::Datatype::Snak')) {
+			err "Object isn't 'Wikibase::Datatype::Snak'.";
 		}
 
 		if (! exists $snaks_hr->{$key}->{$snak_o->property}) {
@@ -33,7 +33,7 @@ sub obj_array_ref2struct {
 			push @{$snaks_hr->{$key.'-order'}}, $snak_o->property;
 		}
 		push @{$snaks_hr->{$key}->{$snak_o->property}},
-			Wikidata::Datatype::Struct::Snak::obj2struct($snak_o, $base_uri);
+			Wikibase::Datatype::Struct::Snak::obj2struct($snak_o, $base_uri);
 	}
 
 	return $snaks_hr;
@@ -45,7 +45,7 @@ sub struct2snaks_array_ref {
 	my $snaks_ar = [];
 	foreach my $property (@{$struct_hr->{$key.'-order'}}) {
 		push @{$snaks_ar}, map {
-			Wikidata::Datatype::Struct::Snak::struct2obj($_);
+			Wikibase::Datatype::Struct::Snak::struct2obj($_);
 		} @{$struct_hr->{$key}->{$property}};
 	}
 
@@ -62,11 +62,11 @@ __END__
 
 =head1 NAME
 
-Wikidata::Datatype::Struct::Utils - Wikidata structure serialization utilities.
+Wikibase::Datatype::Struct::Utils - Wikibase structure serialization utilities.
 
 =head1 SYNOPSIS
 
- use Wikidata::Datatype::Struct::Utils qw(obj_array_ref2struct struct2snaks_array_ref);
+ use Wikibase::Datatype::Struct::Utils qw(obj_array_ref2struct struct2snaks_array_ref);
 
  my $snaks_hr = obj_array_ref2struct($snaks_ar, $key, $base_uri);
  my $snaks_ar = struct2snaks_array_ref($struct_hr, $key);
@@ -94,21 +94,21 @@ Returns reference to array with snaks objects.
 =head1 ERRORS
 
  obj_array_ref2struct():
-         Object isn't 'Wikidata::Datatype::Snak'.
+         Object isn't 'Wikibase::Datatype::Snak'.
 
  struct2snaks_array_ref():
-         From Wikidata::Datatype::Snak::new():
-                 From Wikidata::Datatype::Utils::check_required():
+         From Wikibase::Datatype::Snak::new():
+                 From Wikibase::Datatype::Utils::check_required():
                          Parameter 'datatype' is required.
                          Parameter 'datavalue' is required.
                          Parameter 'property' is required.
-                 From Wikidata::Datatype::Utils::check_isa():
-                         Parameter 'datavalue' must be a 'Wikidata::Datatype::Value::%s' object.
+                 From Wikibase::Datatype::Utils::check_isa():
+                         Parameter 'datavalue' must be a 'Wikibase::Datatype::Value::%s' object.
                  Parameter 'datatype' = '%s' isn't supported.
                  Parameter 'property' must begin with 'P' and number after it.
                  Parameter 'snaktype' = '%s' isn't supported.
-         From Wikidata::Datatype::Struct::Snak::struct2obj():
-                 From Wikidata::Datatype::Struct::Value::struct2obj():
+         From Wikibase::Datatype::Struct::Snak::struct2obj():
+                 From Wikibase::Datatype::Struct::Value::struct2obj():
                          Entity type '%s' is unsupported.
                          Type doesn't exist.
                          Type '%s' is unsupported.
@@ -119,21 +119,21 @@ Returns reference to array with snaks objects.
  use warnings;
 
  use Data::Printer;
- use Wikidata::Datatype::Snak;
- use Wikidata::Datatype::Struct::Utils qw(obj_array_ref2struct);
- use Wikidata::Datatype::Value::Item;
- use Wikidata::Datatype::Value::String;
+ use Wikibase::Datatype::Snak;
+ use Wikibase::Datatype::Struct::Utils qw(obj_array_ref2struct);
+ use Wikibase::Datatype::Value::Item;
+ use Wikibase::Datatype::Value::String;
 
- my $snak1 = Wikidata::Datatype::Snak->new(
+ my $snak1 = Wikibase::Datatype::Snak->new(
          'datatype' => 'wikibase-item',
-         'datavalue' => Wikidata::Datatype::Value::Item->new(
+         'datavalue' => Wikibase::Datatype::Value::Item->new(
                  'value' => 'Q5',
          ),
          'property' => 'P31',
  );
- my $snak2 = Wikidata::Datatype::Snak->new(
+ my $snak2 = Wikibase::Datatype::Snak->new(
          'datatype' => 'math',
-         'datavalue' => Wikidata::Datatype::Value::String->new(
+         'datavalue' => Wikibase::Datatype::Value::String->new(
                  'value' => 'E = m c^2',
          ),
          'property' => 'P2534',
@@ -187,7 +187,7 @@ Returns reference to array with snaks objects.
  use strict;
  use warnings;
 
- use Wikidata::Datatype::Struct::Utils qw(struct2snaks_array_ref);
+ use Wikibase::Datatype::Struct::Utils qw(struct2snaks_array_ref);
 
  my $struct_hr = {
          'snaks' => {
@@ -247,21 +247,21 @@ Returns reference to array with snaks objects.
 L<Error::Pure>,
 L<Exporter>,
 L<List::MoreUtils>,
-L<Wikidata::Datatype::Struct::Snak>.
+L<Wikibase::Datatype::Struct::Snak>.
 
 =head1 SEE ALSO
 
 =over
 
-=item L<Wikidata::Datatype::Struct>
+=item L<Wikibase::Datatype::Struct>
 
-Wikidata structure serialization.
+Wikibase structure serialization.
 
 =back
 
 =head1 REPOSITORY
 
-L<https://github.com/michal-josef-spacek/Wikidata-Datatype-Struct>
+L<https://github.com/michal-josef-spacek/Wikibase-Datatype-Struct>
 
 =head1 AUTHOR
 

@@ -4,21 +4,21 @@ use strict;
 use warnings;
 
 use Data::Printer;
-use Wikidata::Datatype::Snak;
-use Wikidata::Datatype::Struct::Utils qw(obj_array_ref2struct);
-use Wikidata::Datatype::Value::Item;
-use Wikidata::Datatype::Value::String;
+use Wikibase::Datatype::Snak;
+use Wikibase::Datatype::Struct::Utils qw(obj_array_ref2struct);
+use Wikibase::Datatype::Value::Item;
+use Wikibase::Datatype::Value::String;
 
-my $snak1 = Wikidata::Datatype::Snak->new(
+my $snak1 = Wikibase::Datatype::Snak->new(
         'datatype' => 'wikibase-item',
-        'datavalue' => Wikidata::Datatype::Value::Item->new(
+        'datavalue' => Wikibase::Datatype::Value::Item->new(
                 'value' => 'Q5',
         ),
         'property' => 'P31',
 );
-my $snak2 = Wikidata::Datatype::Snak->new(
+my $snak2 = Wikibase::Datatype::Snak->new(
         'datatype' => 'math',
-        'datavalue' => Wikidata::Datatype::Value::String->new(
+        'datavalue' => Wikibase::Datatype::Value::String->new(
                 'value' => 'E = m c^2',
         ),
         'property' => 'P2534',

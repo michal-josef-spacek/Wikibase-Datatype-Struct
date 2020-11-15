@@ -1,4 +1,4 @@
-package Wikidata::Datatype::Struct::Value::String;
+package Wikibase::Datatype::Struct::Value::String;
 
 use base qw(Exporter);
 use strict;
@@ -6,7 +6,7 @@ use warnings;
 
 use Error::Pure qw(err);
 use Readonly;
-use Wikidata::Datatype::Value::String;
+use Wikibase::Datatype::Value::String;
 
 Readonly::Array our @EXPORT_OK => qw(obj2struct struct2obj);
 
@@ -15,8 +15,8 @@ our $VERSION = 0.01;
 sub obj2struct {
 	my $obj = shift;
 
-	if (! $obj->isa('Wikidata::Datatype::Value::String')) {
-		err "Object isn't 'Wikidata::Datatype::Value::String'.";
+	if (! $obj->isa('Wikibase::Datatype::Value::String')) {
+		err "Object isn't 'Wikibase::Datatype::Value::String'.";
 	}
 
 	my $struct_hr = {
@@ -36,7 +36,7 @@ sub struct2obj {
 		err "Structure isn't for 'string' datatype.";
 	}
 
-	my $obj = Wikidata::Datatype::Value::String->new(
+	my $obj = Wikibase::Datatype::Value::String->new(
 		'value' => $struct_hr->{'value'},
 	);
 
@@ -53,18 +53,18 @@ __END__
 
 =head1 NAME
 
-Wikidata::Datatype::Struct::Value::String - Wikidata string structure serialization.
+Wikibase::Datatype::Struct::Value::String - Wikibase string structure serialization.
 
 =head1 SYNOPSIS
 
- use Wikidata::Datatype::Struct::Value::String qw(obj2struct struct2obj);
+ use Wikibase::Datatype::Struct::Value::String qw(obj2struct struct2obj);
 
  my $struct_hr = obj2struct($obj);
  my $obj = struct2obj($struct_hr);
 
 =head1 DESCRIPTION
 
-This conversion is between objects defined in Wikidata::Datatype and structures
+This conversion is between objects defined in Wikibase::Datatype and structures
 serialized via JSON to MediaWiki.
 
 =head1 SUBROUTINES
@@ -73,7 +73,7 @@ serialized via JSON to MediaWiki.
 
  my $struct_hr = obj2struct($obj);
 
-Convert Wikidata::Datatype::Value::String instance to structure.
+Convert Wikibase::Datatype::Value::String instance to structure.
 
 Returns reference to hash with structure.
 
@@ -83,12 +83,12 @@ Returns reference to hash with structure.
 
 Convert structure of string to object.
 
-Returns Wikidata::Datatype::Value::String instance.
+Returns Wikibase::Datatype::Value::String instance.
 
 =head1 ERRORS
 
  obj2struct():
-         Object isn't 'Wikidata::Datatype::Value::String'.
+         Object isn't 'Wikibase::Datatype::Value::String'.
 
  struct2obj():
          Structure isn't for 'string' datatype.
@@ -99,11 +99,11 @@ Returns Wikidata::Datatype::Value::String instance.
  use warnings;
 
  use Data::Printer;
- use Wikidata::Datatype::Value::String;
- use Wikidata::Datatype::Struct::Value::String qw(obj2struct);
+ use Wikibase::Datatype::Value::String;
+ use Wikibase::Datatype::Struct::Value::String qw(obj2struct);
 
  # Object.
- my $obj = Wikidata::Datatype::Value::String->new(
+ my $obj = Wikibase::Datatype::Value::String->new(
          'value' => 'foo',
  );
 
@@ -124,7 +124,7 @@ Returns Wikidata::Datatype::Value::String instance.
  use strict;
  use warnings;
 
- use Wikidata::Datatype::Struct::Value::String qw(struct2obj);
+ use Wikibase::Datatype::Struct::Value::String qw(struct2obj);
 
  # String structure.
  my $struct_hr = {
@@ -154,25 +154,25 @@ Returns Wikidata::Datatype::Value::String instance.
 L<Error::Pure>,
 L<Exporter>,
 L<Readonly>,
-L<Wikidata::Datatype::Value::String>.
+L<Wikibase::Datatype::Value::String>.
 
 =head1 SEE ALSO
 
 =over
 
-=item L<Wikidata::Datatype::Struct>
+=item L<Wikibase::Datatype::Struct>
 
-Wikidata structure serialization.
+Wikibase structure serialization.
 
-=item L<Wikidata::Datatype::Value::String>
+=item L<Wikibase::Datatype::Value::String>
 
-Wikidata string value datatype.
+Wikibase string value datatype.
 
 =back
 
 =head1 REPOSITORY
 
-L<https://github.com/michal-josef-spacek/Wikidata-Datatype-Struct>
+L<https://github.com/michal-josef-spacek/Wikibase-Datatype-Struct>
 
 =head1 AUTHOR
 

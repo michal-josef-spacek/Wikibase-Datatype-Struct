@@ -1,4 +1,4 @@
-package Wikidata::Datatype::Struct::Value::Monolingual;
+package Wikibase::Datatype::Struct::Value::Monolingual;
 
 use base qw(Exporter);
 use strict;
@@ -6,7 +6,7 @@ use warnings;
 
 use Error::Pure qw(err);
 use Readonly;
-use Wikidata::Datatype::Value::Monolingual;
+use Wikibase::Datatype::Value::Monolingual;
 
 Readonly::Array our @EXPORT_OK => qw(obj2struct struct2obj);
 
@@ -15,8 +15,8 @@ our $VERSION = 0.01;
 sub obj2struct {
 	my $obj = shift;
 
-	if (! $obj->isa('Wikidata::Datatype::Value::Monolingual')) {
-		err "Object isn't 'Wikidata::Datatype::Value::Monolingual'.";
+	if (! $obj->isa('Wikibase::Datatype::Value::Monolingual')) {
+		err "Object isn't 'Wikibase::Datatype::Value::Monolingual'.";
 	}
 
 	my $struct_hr = {
@@ -39,7 +39,7 @@ sub struct2obj {
 		err "Structure isn't for 'monolingualtext' datatype.";
 	}
 
-	my $obj = Wikidata::Datatype::Value::Monolingual->new(
+	my $obj = Wikibase::Datatype::Value::Monolingual->new(
 		'language' => $struct_hr->{'value'}->{'language'},
 		'value' => $struct_hr->{'value'}->{'text'},
 	);
@@ -57,18 +57,18 @@ __END__
 
 =head1 NAME
 
-Wikidata::Datatype::Struct::Value::Monolingual - Wikidata monolingual structure serialization.
+Wikibase::Datatype::Struct::Value::Monolingual - Wikibase monolingual structure serialization.
 
 =head1 SYNOPSIS
 
- use Wikidata::Datatype::Struct::Value::Monolingual qw(obj2struct struct2obj);
+ use Wikibase::Datatype::Struct::Value::Monolingual qw(obj2struct struct2obj);
 
  my $struct_hr = obj2struct($obj);
  my $obj = struct2obj($struct_hr);
 
 =head1 DESCRIPTION
 
-This conversion is between objects defined in Wikidata::Datatype and structures
+This conversion is between objects defined in Wikibase::Datatype and structures
 serialized via JSON to MediaWiki.
 
 =head1 SUBROUTINES
@@ -77,7 +77,7 @@ serialized via JSON to MediaWiki.
 
  my $struct_hr = obj2struct($obj);
 
-Convert Wikidata::Datatype::Value::Monolingual instance to structure.
+Convert Wikibase::Datatype::Value::Monolingual instance to structure.
 
 Returns reference to hash with structure.
 
@@ -87,12 +87,12 @@ Returns reference to hash with structure.
 
 Convert structure of monolingual to object.
 
-Returns Wikidata::Datatype::Value::Monolingual instance.
+Returns Wikibase::Datatype::Value::Monolingual instance.
 
 =head1 ERRORS
 
  obj2struct():
-         Object isn't 'Wikidata::Datatype::Value::Monolingual'.
+         Object isn't 'Wikibase::Datatype::Value::Monolingual'.
 
  struct2obj():
          Structure isn't for 'monolingualtext' datatype.
@@ -103,11 +103,11 @@ Returns Wikidata::Datatype::Value::Monolingual instance.
  use warnings;
 
  use Data::Printer;
- use Wikidata::Datatype::Value::Monolingual;
- use Wikidata::Datatype::Struct::Value::Monolingual qw(obj2struct);
+ use Wikibase::Datatype::Value::Monolingual;
+ use Wikibase::Datatype::Struct::Value::Monolingual qw(obj2struct);
 
  # Object.
- my $obj = Wikidata::Datatype::Value::Monolingual->new(
+ my $obj = Wikibase::Datatype::Value::Monolingual->new(
          'language' => 'en',
          'value' => 'English text',
  );
@@ -132,7 +132,7 @@ Returns Wikidata::Datatype::Value::Monolingual instance.
  use strict;
  use warnings;
 
- use Wikidata::Datatype::Struct::Value::Monolingual qw(struct2obj);
+ use Wikibase::Datatype::Struct::Value::Monolingual qw(struct2obj);
 
  # Monolingualtext structure.
  my $struct_hr = {
@@ -170,25 +170,25 @@ Returns Wikidata::Datatype::Value::Monolingual instance.
 L<Error::Pure>,
 L<Exporter>,
 L<Readonly>,
-L<Wikidata::Datatype::Value::Monolingual>.
+L<Wikibase::Datatype::Value::Monolingual>.
 
 =head1 SEE ALSO
 
 =over
 
-=item L<Wikidata::Datatype::Struct>
+=item L<Wikibase::Datatype::Struct>
 
-Wikidata structure serialization.
+Wikibase structure serialization.
 
-=item L<Wikidata::Datatype::Value::Monolingual>
+=item L<Wikibase::Datatype::Value::Monolingual>
 
-Wikidata monolingual value datatype.
+Wikibase monolingual value datatype.
 
 =back
 
 =head1 REPOSITORY
 
-L<https://github.com/michal-josef-spacek/Wikidata-Datatype-Struct>
+L<https://github.com/michal-josef-spacek/Wikibase-Datatype-Struct>
 
 =head1 AUTHOR
 

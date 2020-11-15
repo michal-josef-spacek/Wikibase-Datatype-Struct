@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use Wikidata::Datatype::Struct::Utils qw(struct2snaks_array_ref);
+use Wikibase::Datatype::Struct::Utils qw(struct2snaks_array_ref);
 
 my $struct_hr = {
         'snaks' => {

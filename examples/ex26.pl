@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use Wikidata::Datatype::Struct::Value::Quantity qw(struct2obj);
+use Wikibase::Datatype::Struct::Value::Quantity qw(struct2obj);
 
 # Quantity structure.
 my $struct_hr = {

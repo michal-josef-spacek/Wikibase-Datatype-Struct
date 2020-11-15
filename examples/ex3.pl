@@ -4,11 +4,11 @@ use strict;
 use warnings;
 
 use Data::Printer;
-use Wikidata::Datatype::Sitelink;
-use Wikidata::Datatype::Struct::Sitelink qw(obj2struct);
+use Wikibase::Datatype::Sitelink;
+use Wikibase::Datatype::Struct::Sitelink qw(obj2struct);
 
 # Object.
-my $obj = Wikidata::Datatype::Sitelink->new(
+my $obj = Wikibase::Datatype::Sitelink->new(
         'site' => 'enwiki',
         'title' => 'Main page',
 );

@@ -4,11 +4,11 @@ use strict;
 use warnings;
 
 use Data::Printer;
-use Wikidata::Datatype::Value::Globecoordinate;
-use Wikidata::Datatype::Struct::Value::Globecoordinate qw(obj2struct);
+use Wikibase::Datatype::Value::Globecoordinate;
+use Wikibase::Datatype::Struct::Value::Globecoordinate qw(obj2struct);
 
 # Object.
-my $obj = Wikidata::Datatype::Value::Globecoordinate->new(
+my $obj = Wikibase::Datatype::Value::Globecoordinate->new(
         'value' => [49.6398383, 18.1484031],
 );
 

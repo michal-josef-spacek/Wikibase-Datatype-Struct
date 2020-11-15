@@ -1,4 +1,4 @@
-package Wikidata::Datatype::Struct::Value::Property;
+package Wikibase::Datatype::Struct::Value::Property;
 
 use base qw(Exporter);
 use strict;
@@ -6,7 +6,7 @@ use warnings;
 
 use Error::Pure qw(err);
 use Readonly;
-use Wikidata::Datatype::Value::Property;
+use Wikibase::Datatype::Value::Property;
 
 Readonly::Array our @EXPORT_OK => qw(obj2struct struct2obj);
 
@@ -15,8 +15,8 @@ our $VERSION = 0.01;
 sub obj2struct {
 	my $obj = shift;
 
-	if (! $obj->isa('Wikidata::Datatype::Value::Property')) {
-		err "Object isn't 'Wikidata::Datatype::Value::Property'.";
+	if (! $obj->isa('Wikibase::Datatype::Value::Property')) {
+		err "Object isn't 'Wikibase::Datatype::Value::Property'.";
 	}
 
 	my $numeric_id = $obj->value;
@@ -44,7 +44,7 @@ sub struct2obj {
 		err "Structure isn't for 'property' datatype.";
 	}
 
-	my $obj = Wikidata::Datatype::Value::Property->new(
+	my $obj = Wikibase::Datatype::Value::Property->new(
 		'value' => $struct_hr->{'value'}->{'id'},
 	);
 
@@ -61,18 +61,18 @@ __END__
 
 =head1 NAME
 
-Wikidata::Datatype::Struct::Value::Property - Wikidata property structure serialization.
+Wikibase::Datatype::Struct::Value::Property - Wikibase property structure serialization.
 
 =head1 SYNOPSIS
 
- use Wikidata::Datatype::Struct::Value::Property qw(obj2struct struct2obj);
+ use Wikibase::Datatype::Struct::Value::Property qw(obj2struct struct2obj);
 
  my $struct_hr = obj2struct($obj);
  my $obj = struct2obj($struct_hr);
 
 =head1 DESCRIPTION
 
-This conversion is between objects defined in Wikidata::Datatype and structures
+This conversion is between objects defined in Wikibase::Datatype and structures
 serialized via JSON to MediaWiki.
 
 =head1 SUBROUTINES
@@ -81,7 +81,7 @@ serialized via JSON to MediaWiki.
 
  my $struct_hr = obj2struct($obj);
 
-Convert Wikidata::Datatype::Value::Property instance to structure.
+Convert Wikibase::Datatype::Value::Property instance to structure.
 
 Returns reference to hash with structure.
 
@@ -91,12 +91,12 @@ Returns reference to hash with structure.
 
 Convert structure of property to object.
 
-Returns Wikidata::Datatype::Value::Property instance.
+Returns Wikibase::Datatype::Value::Property instance.
 
 =head1 ERRORS
 
  obj2struct():
-         Object isn't 'Wikidata::Datatype::Value::Property'.
+         Object isn't 'Wikibase::Datatype::Value::Property'.
 
  struct2obj():
          Structure isn't for 'property' datatype.
@@ -107,11 +107,11 @@ Returns Wikidata::Datatype::Value::Property instance.
  use warnings;
 
  use Data::Printer;
- use Wikidata::Datatype::Value::Property;
- use Wikidata::Datatype::Struct::Value::Property qw(obj2struct);
+ use Wikibase::Datatype::Value::Property;
+ use Wikibase::Datatype::Struct::Value::Property qw(obj2struct);
 
  # Object.
- my $obj = Wikidata::Datatype::Value::Property->new(
+ my $obj = Wikibase::Datatype::Value::Property->new(
          'value' => 'P123',
  );
 
@@ -136,7 +136,7 @@ Returns Wikidata::Datatype::Value::Property instance.
  use strict;
  use warnings;
 
- use Wikidata::Datatype::Struct::Value::Property qw(struct2obj);
+ use Wikibase::Datatype::Struct::Value::Property qw(struct2obj);
 
  # Property structure.
  my $struct_hr = {
@@ -170,25 +170,25 @@ Returns Wikidata::Datatype::Value::Property instance.
 L<Error::Pure>,
 L<Exporter>,
 L<Readonly>,
-L<Wikidata::Datatype::Value::Property>.
+L<Wikibase::Datatype::Value::Property>.
 
 =head1 SEE ALSO
 
 =over
 
-=item L<Wikidata::Datatype::Struct>
+=item L<Wikibase::Datatype::Struct>
 
-Wikidata structure serialization.
+Wikibase structure serialization.
 
-=item L<Wikidata::Datatype::Value::Property>
+=item L<Wikibase::Datatype::Value::Property>
 
-Wikidata property value datatype.
+Wikibase property value datatype.
 
 =back
 
 =head1 REPOSITORY
 
-L<https://github.com/michal-josef-spacek/Wikidata-Datatype-Struct>
+L<https://github.com/michal-josef-spacek/Wikibase-Datatype-Struct>
 
 =head1 AUTHOR
 

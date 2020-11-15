@@ -1,4 +1,4 @@
-package Wikidata::Datatype::Struct::Value::Quantity;
+package Wikibase::Datatype::Struct::Value::Quantity;
 
 use base qw(Exporter);
 use strict;
@@ -7,7 +7,7 @@ use warnings;
 use Error::Pure qw(err);
 use Readonly;
 use URI;
-use Wikidata::Datatype::Value::Quantity;
+use Wikibase::Datatype::Value::Quantity;
 
 Readonly::Array our @EXPORT_OK => qw(obj2struct struct2obj);
 
@@ -16,8 +16,8 @@ our $VERSION = 0.01;
 sub obj2struct {
 	my ($obj, $base_uri) = @_;
 
-	if (! $obj->isa('Wikidata::Datatype::Value::Quantity')) {
-		err "Object isn't 'Wikidata::Datatype::Value::Quantity'.";
+	if (! $obj->isa('Wikibase::Datatype::Value::Quantity')) {
+		err "Object isn't 'Wikibase::Datatype::Value::Quantity'.";
 	}
 
 	my $amount = $obj->value;
@@ -64,7 +64,7 @@ sub struct2obj {
 		my @path_segments = $u->path_segments;
 		$unit = $path_segments[-1];
 	}
-	my $obj = Wikidata::Datatype::Value::Quantity->new(
+	my $obj = Wikibase::Datatype::Value::Quantity->new(
 		$struct_hr->{'value'}->{'lowerBound'} ? (
 			'lower_bound' => _remove_plus($struct_hr->{'value'}->{'lowerBound'}),
 		) : (),
@@ -108,18 +108,18 @@ __END__
 
 =head1 NAME
 
-Wikidata::Datatype::Struct::Value::Quantity - Wikidata quantity structure serialization.
+Wikibase::Datatype::Struct::Value::Quantity - Wikibase quantity structure serialization.
 
 =head1 SYNOPSIS
 
- use Wikidata::Datatype::Struct::Value::Quantity qw(obj2struct struct2obj);
+ use Wikibase::Datatype::Struct::Value::Quantity qw(obj2struct struct2obj);
 
  my $struct_hr = obj2struct($obj);
  my $obj = struct2obj($struct_hr);
 
 =head1 DESCRIPTION
 
-This conversion is between objects defined in Wikidata::Datatype and structures
+This conversion is between objects defined in Wikibase::Datatype and structures
 serialized via JSON to MediaWiki.
 
 =head1 SUBROUTINES
@@ -128,7 +128,7 @@ serialized via JSON to MediaWiki.
 
  my $struct_hr = obj2struct($obj);
 
-Convert Wikidata::Datatype::Value::Quantity instance to structure.
+Convert Wikibase::Datatype::Value::Quantity instance to structure.
 
 Returns reference to hash with structure.
 
@@ -138,12 +138,12 @@ Returns reference to hash with structure.
 
 Convert structure of quantity to object.
 
-Returns Wikidata::Datatype::Value::Quantity instance.
+Returns Wikibase::Datatype::Value::Quantity instance.
 
 =head1 ERRORS
 
  obj2struct():
-         Object isn't 'Wikidata::Datatype::Value::Quantity'.
+         Object isn't 'Wikibase::Datatype::Value::Quantity'.
 
  struct2obj():
          Structure isn't for 'quantity' datatype.
@@ -154,11 +154,11 @@ Returns Wikidata::Datatype::Value::Quantity instance.
  use warnings;
 
  use Data::Printer;
- use Wikidata::Datatype::Value::Quantity;
- use Wikidata::Datatype::Struct::Value::Quantity qw(obj2struct);
+ use Wikibase::Datatype::Value::Quantity;
+ use Wikibase::Datatype::Struct::Value::Quantity qw(obj2struct);
 
  # Object.
- my $obj = Wikidata::Datatype::Value::Quantity->new(
+ my $obj = Wikibase::Datatype::Value::Quantity->new(
          'unit' => 'Q190900',
          'value' => 10,
  );
@@ -183,7 +183,7 @@ Returns Wikidata::Datatype::Value::Quantity instance.
  use strict;
  use warnings;
 
- use Wikidata::Datatype::Struct::Value::Quantity qw(struct2obj);
+ use Wikibase::Datatype::Struct::Value::Quantity qw(struct2obj);
 
  # Quantity structure.
  my $struct_hr = {
@@ -224,25 +224,25 @@ L<Error::Pure>,
 L<Exporter>,
 L<Readonly>,
 L<URI>,
-L<Wikidata::Datatype::Value::Property>.
+L<Wikibase::Datatype::Value::Property>.
 
 =head1 SEE ALSO
 
 =over
 
-=item L<Wikidata::Datatype::Struct>
+=item L<Wikibase::Datatype::Struct>
 
-Wikidata structure serialization.
+Wikibase structure serialization.
 
-=item L<Wikidata::Datatype::Value::Quantity>
+=item L<Wikibase::Datatype::Value::Quantity>
 
-Wikidata quantity value datatype.
+Wikibase quantity value datatype.
 
 =back
 
 =head1 REPOSITORY
 
-L<https://github.com/michal-josef-spacek/Wikidata-Datatype-Struct>
+L<https://github.com/michal-josef-spacek/Wikibase-Datatype-Struct>
 
 =head1 AUTHOR
 

@@ -1,4 +1,4 @@
-package Wikidata::Datatype::Struct::Value::Time;
+package Wikibase::Datatype::Struct::Value::Time;
 
 use base qw(Exporter);
 use strict;
@@ -7,7 +7,7 @@ use warnings;
 use Error::Pure qw(err);
 use Readonly;
 use URI;
-use Wikidata::Datatype::Value::Time;
+use Wikibase::Datatype::Value::Time;
 
 Readonly::Array our @EXPORT_OK => qw(obj2struct struct2obj);
 
@@ -16,8 +16,8 @@ our $VERSION = 0.01;
 sub obj2struct {
 	my ($obj, $base_uri) = @_;
 
-	if (! $obj->isa('Wikidata::Datatype::Value::Time')) {
-		err "Object isn't 'Wikidata::Datatype::Value::Time'.";
+	if (! $obj->isa('Wikibase::Datatype::Value::Time')) {
+		err "Object isn't 'Wikibase::Datatype::Value::Time'.";
 	}
 
 	my $struct_hr = {
@@ -47,7 +47,7 @@ sub struct2obj {
 	my $u = URI->new($struct_hr->{'value'}->{'calendarmodel'});
 	my @path_segments = $u->path_segments;
 	my $calendar_model = $path_segments[-1];
-	my $obj = Wikidata::Datatype::Value::Time->new(
+	my $obj = Wikibase::Datatype::Value::Time->new(
 		'after' => $struct_hr->{'value'}->{'after'},
 		'before' => $struct_hr->{'value'}->{'before'},
 		'calendarmodel' => $calendar_model,
@@ -69,18 +69,18 @@ __END__
 
 =head1 NAME
 
-Wikidata::Datatype::Struct::Value::Time - Wikidata time structure serialization.
+Wikibase::Datatype::Struct::Value::Time - Wikibase time structure serialization.
 
 =head1 SYNOPSIS
 
- use Wikidata::Datatype::Struct::Value::Time qw(obj2struct struct2obj);
+ use Wikibase::Datatype::Struct::Value::Time qw(obj2struct struct2obj);
 
  my $struct_hr = obj2struct($obj);
  my $obj = struct2obj($struct_hr);
 
 =head1 DESCRIPTION
 
-This conversion is between objects defined in Wikidata::Datatype and structures
+This conversion is between objects defined in Wikibase::Datatype and structures
 serialized via JSON to MediaWiki.
 
 =head1 SUBROUTINES
@@ -89,7 +89,7 @@ serialized via JSON to MediaWiki.
 
  my $struct_hr = obj2struct($obj);
 
-Convert Wikidata::Datatype::Value::Time instance to structure.
+Convert Wikibase::Datatype::Value::Time instance to structure.
 
 Returns reference to hash with structure.
 
@@ -99,12 +99,12 @@ Returns reference to hash with structure.
 
 Convert structure of time to object.
 
-Returns Wikidata::Datatype::Value::Time instance.
+Returns Wikibase::Datatype::Value::Time instance.
 
 =head1 ERRORS
 
  obj2struct():
-         Object isn't 'Wikidata::Datatype::Value::Time'.
+         Object isn't 'Wikibase::Datatype::Value::Time'.
 
  struct2obj():
          Structure isn't for 'time' datatype.
@@ -115,11 +115,11 @@ Returns Wikidata::Datatype::Value::Time instance.
  use warnings;
 
  use Data::Printer;
- use Wikidata::Datatype::Value::Time;
- use Wikidata::Datatype::Struct::Value::Time qw(obj2struct);
+ use Wikibase::Datatype::Value::Time;
+ use Wikibase::Datatype::Struct::Value::Time qw(obj2struct);
 
  # Object.
- my $obj = Wikidata::Datatype::Value::Time->new(
+ my $obj = Wikibase::Datatype::Value::Time->new(
          'precision' => 10,
          'value' => '+2020-09-01T00:00:00Z',
  );
@@ -148,7 +148,7 @@ Returns Wikidata::Datatype::Value::Time instance.
  use strict;
  use warnings;
 
- use Wikidata::Datatype::Struct::Value::Time qw(struct2obj);
+ use Wikibase::Datatype::Struct::Value::Time qw(struct2obj);
 
  # Time structure.
  my $struct_hr = {
@@ -196,25 +196,25 @@ L<Error::Pure>,
 L<Exporter>,
 L<Readonly>,
 L<URL>,
-L<Wikidata::Datatype::Value::Time>.
+L<Wikibase::Datatype::Value::Time>.
 
 =head1 SEE ALSO
 
 =over
 
-=item L<Wikidata::Datatype::Struct>
+=item L<Wikibase::Datatype::Struct>
 
-Wikidata structure serialization.
+Wikibase structure serialization.
 
-=item L<Wikidata::Datatype::Value::Time>
+=item L<Wikibase::Datatype::Value::Time>
 
-Wikidata time value datatype.
+Wikibase time value datatype.
 
 =back
 
 =head1 REPOSITORY
 
-L<https://github.com/michal-josef-spacek/Wikidata-Datatype-Struct>
+L<https://github.com/michal-josef-spacek/Wikibase-Datatype-Struct>
 
 =head1 AUTHOR
 

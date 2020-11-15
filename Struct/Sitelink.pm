@@ -1,4 +1,4 @@
-package Wikidata::Datatype::Struct::Sitelink;
+package Wikibase::Datatype::Struct::Sitelink;
 
 use base qw(Exporter);
 use strict;
@@ -6,8 +6,8 @@ use warnings;
 
 use Error::Pure qw(err);
 use Readonly;
-use Wikidata::Datatype::Sitelink;
-use Wikidata::Datatype::Value::Item;
+use Wikibase::Datatype::Sitelink;
+use Wikibase::Datatype::Value::Item;
 
 Readonly::Array our @EXPORT_OK => qw(obj2struct struct2obj);
 
@@ -16,8 +16,8 @@ our $VERSION = 0.01;
 sub obj2struct {
 	my $obj = shift;
 
-	if (! $obj->isa('Wikidata::Datatype::Sitelink')) {
-		err "Object isn't 'Wikidata::Datatype::Sitelink'.";
+	if (! $obj->isa('Wikibase::Datatype::Sitelink')) {
+		err "Object isn't 'Wikibase::Datatype::Sitelink'.";
 	}
 
 	my $struct_hr = {
@@ -34,9 +34,9 @@ sub obj2struct {
 sub struct2obj {
 	my ($struct_hr, $entity) = @_;
 
-	my $obj = Wikidata::Datatype::Sitelink->new(
+	my $obj = Wikibase::Datatype::Sitelink->new(
 		'badges' => [
-			map { Wikidata::Datatype::Value::Item->new('value' => $_); }
+			map { Wikibase::Datatype::Value::Item->new('value' => $_); }
 			@{$struct_hr->{'badges'}},
 		],
 		'site' => $struct_hr->{'site'},
@@ -56,18 +56,18 @@ __END__
 
 =head1 NAME
 
-Wikidata::Datatype::Struct::Sitelink - Wikidata sitelink structure serialization.
+Wikibase::Datatype::Struct::Sitelink - Wikibase sitelink structure serialization.
 
 =head1 SYNOPSIS
 
- use Wikidata::Datatype::Struct::Sitelink qw(obj2struct struct2obj);
+ use Wikibase::Datatype::Struct::Sitelink qw(obj2struct struct2obj);
 
  my $struct_hr = obj2struct($obj);
  my $obj = struct2obj($struct_hr);
 
 =head1 DESCRIPTION
 
-This conversion is between objects defined in Wikidata::Datatype and structures
+This conversion is between objects defined in Wikibase::Datatype and structures
 serialized via JSON to MediaWiki.
 
 =head1 SUBROUTINES
@@ -76,7 +76,7 @@ serialized via JSON to MediaWiki.
 
  my $struct_hr = obj2struct($obj);
 
-Convert Wikidata::Datatype::Sitelink instance to structure.
+Convert Wikibase::Datatype::Sitelink instance to structure.
 
 Returns reference to hash with structure.
 
@@ -86,12 +86,12 @@ Returns reference to hash with structure.
 
 Convert structure of sitelink to object.
 
-Returns Wikidata::Datatype::Sitelink instance.
+Returns Wikibase::Datatype::Sitelink instance.
 
 =head1 ERRORS
 
  obj2struct():
-         Object isn't 'Wikidata::Datatype::Sitelink'.
+         Object isn't 'Wikibase::Datatype::Sitelink'.
 
 =head1 EXAMPLE1
 
@@ -99,11 +99,11 @@ Returns Wikidata::Datatype::Sitelink instance.
  use warnings;
 
  use Data::Printer;
- use Wikidata::Datatype::Sitelink;
- use Wikidata::Datatype::Struct::Sitelink qw(obj2struct);
+ use Wikibase::Datatype::Sitelink;
+ use Wikibase::Datatype::Struct::Sitelink qw(obj2struct);
 
  # Object.
- my $obj = Wikidata::Datatype::Sitelink->new(
+ my $obj = Wikibase::Datatype::Sitelink->new(
          'site' => 'enwiki',
          'title' => 'Main page',
  );
@@ -126,7 +126,7 @@ Returns Wikidata::Datatype::Sitelink instance.
  use strict;
  use warnings;
 
- use Wikidata::Datatype::Struct::Sitelink qw(struct2obj);
+ use Wikibase::Datatype::Struct::Sitelink qw(struct2obj);
 
  # Item structure.
  my $struct_hr = {
@@ -162,26 +162,26 @@ Returns Wikidata::Datatype::Sitelink instance.
 L<Error::Pure>,
 L<Exporter>,
 L<Readonly>,
-L<Wikidata::Datatype::Sitelink>,
-L<Wikidata::Datatype::Value::Item>.
+L<Wikibase::Datatype::Sitelink>,
+L<Wikibase::Datatype::Value::Item>.
 
 =head1 SEE ALSO
 
 =over
 
-=item L<Wikidata::Datatype::Struct>
+=item L<Wikibase::Datatype::Struct>
 
-Wikidata structure serialization.
+Wikibase structure serialization.
 
-=item L<Wikidata::Datatype::Sitelink>
+=item L<Wikibase::Datatype::Sitelink>
 
-Wikidata sitelink datatype.
+Wikibase sitelink datatype.
 
 =back
 
 =head1 REPOSITORY
 
-L<https://github.com/michal-josef-spacek/Wikidata-Datatype-Struct>
+L<https://github.com/michal-josef-spacek/Wikibase-Datatype-Struct>
 
 =head1 AUTHOR
 

@@ -4,15 +4,15 @@ use strict;
 use warnings;
 
 use Data::Printer;
-use Wikidata::Datatype::Snak;
-use Wikidata::Datatype::Struct::Snak qw(obj2struct);
-use Wikidata::Datatype::Value::Item;
+use Wikibase::Datatype::Snak;
+use Wikibase::Datatype::Struct::Snak qw(obj2struct);
+use Wikibase::Datatype::Value::Item;
 
 # Object.
 # instance of (P31) human (Q5)
-my $obj = Wikidata::Datatype::Snak->new(
+my $obj = Wikibase::Datatype::Snak->new(
          'datatype' => 'wikibase-item',
-         'datavalue' => Wikidata::Datatype::Value::Item->new(
+         'datavalue' => Wikibase::Datatype::Value::Item->new(
                  'value' => 'Q5',
          ),
          'property' => 'P31',

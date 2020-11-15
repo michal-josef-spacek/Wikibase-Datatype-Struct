@@ -1,4 +1,4 @@
-package Wikidata::Datatype::Struct;
+package Wikibase::Datatype::Struct;
 
 use strict;
 use warnings;
@@ -15,74 +15,74 @@ __END__
 
 =head1 NAME
 
-Wikidata::Datatype::Struct - Wikidata structure serialization.
+Wikibase::Datatype::Struct - Wikibase structure serialization.
 
 =head1 DESCRIPTION
 
-This conversion is between objects defined in Wikidata::Datatype and structures
+This conversion is between objects defined in Wikibase::Datatype and structures
 serialized via JSON to MediaWiki.
 
 =head1 SEE ALSO
 
 =over
 
-=item L<Wikidata::Datatype::Struct::Reference>
+=item L<Wikibase::Datatype::Struct::Reference>
 
-Wikidata reference structure serialization.
+Wikibase reference structure serialization.
 
-=item L<Wikidata::Datatype::Struct::Sitelink>
+=item L<Wikibase::Datatype::Struct::Sitelink>
 
-Wikidata sitelink structure serialization.
+Wikibase sitelink structure serialization.
 
-=item L<Wikidata::Datatype::Struct::Snak>
+=item L<Wikibase::Datatype::Struct::Snak>
 
-Wikidata snak structure serialization.
+Wikibase snak structure serialization.
 
-=item L<Wikidata::Datatype::Struct::Statement>
+=item L<Wikibase::Datatype::Struct::Statement>
 
-Wikidata statement structure serialization.
+Wikibase statement structure serialization.
 
-=item L<Wikidata::Datatype::Struct::Utils>
+=item L<Wikibase::Datatype::Struct::Utils>
 
-Wikidata structure serialization utilities.
+Wikibase structure serialization utilities.
 
-=item L<Wikidata::Datatype::Struct::Value>
+=item L<Wikibase::Datatype::Struct::Value>
 
-Wikidata value structure serialization.
+Wikibase value structure serialization.
 
-=item L<Wikidata::Datatype::Struct::Value::Globecoordinate>
+=item L<Wikibase::Datatype::Struct::Value::Globecoordinate>
 
-Wikidata globe coordinate structure serialization.
+Wikibase globe coordinate structure serialization.
 
-=item L<Wikidata::Datatype::Struct::Value::Item>
+=item L<Wikibase::Datatype::Struct::Value::Item>
 
-Wikidata item structure serialization.
+Wikibase item structure serialization.
 
-=item L<Wikidata::Datatype::Struct::Value::Monolingual>
+=item L<Wikibase::Datatype::Struct::Value::Monolingual>
 
-Wikidata monolingual structure serialization.
+Wikibase monolingual structure serialization.
 
-=item L<Wikidata::Datatype::Struct::Value::Property>
+=item L<Wikibase::Datatype::Struct::Value::Property>
 
-Wikidata property structure serialization.
+Wikibase property structure serialization.
 
-=item L<Wikidata::Datatype::Struct::Value::Quantity>
+=item L<Wikibase::Datatype::Struct::Value::Quantity>
 
-Wikidata quantity structure serialization.
+Wikibase quantity structure serialization.
 
-=item L<Wikidata::Datatype::Struct::Value::String>
+=item L<Wikibase::Datatype::Struct::Value::String>
 
-Wikidata string structure serialization.
+Wikibase string structure serialization.
 
-=item L<Wikidata::Datatype::Struct::Value::Time>
+=item L<Wikibase::Datatype::Struct::Value::Time>
 
-Wikidata time structure serialization.
+Wikibase time structure serialization.
 
 =back
 
 =head1 REPOSITORY
 
-L<https://github.com/michal-josef-spacek/Wikidata-Datatype-Struct>
+L<https://github.com/michal-josef-spacek/Wikibase-Datatype-Struct>
 
 =head1 AUTHOR
 
