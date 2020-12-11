@@ -7,6 +7,7 @@ use warnings;
 use Error::Pure qw(err);
 use Readonly;
 use Wikibase::Datatype::Item;
+use Wikibase::Datatype::Struct::Language;
 use Wikibase::Datatype::Struct::Sitelink;
 use Wikibase::Datatype::Struct::Statement;
 use Wikibase::Datatype::Struct::Value::Monolingual;
@@ -34,10 +35,8 @@ sub obj2struct {
 		if (! exists $struct_hr->{'aliases'}->{$alias->language}) {
 			$struct_hr->{'aliases'}->{$alias->language} = [];
 		}
-		push @{$struct_hr->{'aliases'}->{$alias->language}}, {
-			'language' => $alias->language,
-			'value' => $alias->value,
-		}
+		push @{$struct_hr->{'aliases'}->{$alias->language}},
+			Wikibase::Datatype::Struct::Language::obj2struct($alias);
 	}
 
 	# Claims.
@@ -49,10 +48,8 @@ sub obj2struct {
 
 	# Descriptions.
 	foreach my $desc (@{$obj->descriptions}) {
-		$struct_hr->{'descriptions'}->{$desc->language} = {
-			'language' => $desc->language,
-			'value' => $desc->value,
-		};
+		$struct_hr->{'descriptions'}->{$desc->language}
+			= Wikibase::Datatype::Struct::Language::obj2struct($desc);
 	}
 
 	# Id.
@@ -62,10 +59,8 @@ sub obj2struct {
 
 	# Labels.
 	foreach my $label (@{$obj->labels}) {
-		$struct_hr->{'labels'}->{$label->language} = {
-			'language' => $label->language,
-			'value' => $label->value,
-		};
+		$struct_hr->{'labels'}->{$label->language}
+			= Wikibase::Datatype::Struct::Language::obj2struct($label);
 	}
 	
 	# Last revision id.
