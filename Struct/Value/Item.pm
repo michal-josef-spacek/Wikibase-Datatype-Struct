@@ -15,6 +15,9 @@ our $VERSION = 0.02;
 sub obj2struct {
 	my $obj = shift;
 
+	if (! defined $obj) {
+		err "Object doesn't exist.";
+	}
 	if (! $obj->isa('Wikibase::Datatype::Value::Item')) {
 		err "Object isn't 'Wikibase::Datatype::Value::Item'.";
 	}
@@ -96,6 +99,7 @@ Returns Wikibase::Datatype::Value::Item instance.
 =head1 ERRORS
 
  obj2struct():
+         Object doesn't exist.
          Object isn't 'Wikibase::Datatype::Value::Item'.
 
  struct2obj():

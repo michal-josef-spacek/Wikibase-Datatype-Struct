@@ -3,7 +3,7 @@ use warnings;
 
 use English;
 use Error::Pure::Utils qw(clean);
-use Test::More 'tests' => 6;
+use Test::More 'tests' => 7;
 use Test::NoWarnings;
 use Wikibase::Datatype::Value::Quantity;
 use Wikibase::Datatype::Struct::Value::Quantity;
@@ -84,4 +84,11 @@ eval {
 	Wikibase::Datatype::Struct::Value::Quantity::obj2struct($obj);
 };
 is($EVAL_ERROR, "Base URI is required.\n", 'Base URI is required.');
+clean();
+
+# Test.
+eval {
+	Wikibase::Datatype::Struct::Value::Quantity::obj2struct();
+};
+is($EVAL_ERROR, "Object doesn't exist.\n", "Object doesn't exist.");
 clean();

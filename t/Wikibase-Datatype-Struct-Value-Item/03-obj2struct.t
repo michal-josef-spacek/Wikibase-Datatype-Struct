@@ -3,7 +3,7 @@ use warnings;
 
 use English;
 use Error::Pure::Utils qw(clean);
-use Test::More 'tests' => 3;
+use Test::More 'tests' => 4;
 use Test::NoWarnings;
 use Wikibase::Datatype::Value::Item;
 use Wikibase::Datatype::Struct::Value::Item;
@@ -32,4 +32,11 @@ eval {
 };
 is($EVAL_ERROR, "Object isn't 'Wikibase::Datatype::Value::Item'.\n",
 	"Object isn't 'Wikibase::Datatype::Value::Item'.");
+clean();
+
+# Test.
+eval {
+	Wikibase::Datatype::Struct::Value::Item::obj2struct();
+};
+is($EVAL_ERROR, "Object doesn't exist.\n", "Object doesn't exist.");
 clean();

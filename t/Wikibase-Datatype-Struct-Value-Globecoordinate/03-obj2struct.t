@@ -3,7 +3,7 @@ use warnings;
 
 use English;
 use Error::Pure::Utils qw(clean);
-use Test::More 'tests' => 4;
+use Test::More 'tests' => 5;
 use Test::NoWarnings;
 use Wikibase::Datatype::Value::Globecoordinate;
 use Wikibase::Datatype::Struct::Value::Globecoordinate;
@@ -58,3 +58,10 @@ is_deeply(
 	},
 	'Output of obj2struct() subroutine. With altitude.',
 );
+
+# Test.
+eval {
+	Wikibase::Datatype::Struct::Value::Globecoordinate::obj2struct();
+};
+is($EVAL_ERROR, "Object doesn't exist.\n", "Object doesn't exist.");
+clean();

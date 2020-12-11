@@ -3,7 +3,7 @@ use warnings;
 
 use English;
 use Error::Pure::Utils qw(clean);
-use Test::More 'tests' => 3;
+use Test::More 'tests' => 4;
 use Test::NoWarnings;
 use Unicode::UTF8 qw(decode_utf8);
 use Wikibase::Datatype::Sitelink;
@@ -36,4 +36,11 @@ eval {
 };
 is($EVAL_ERROR, "Object isn't 'Wikibase::Datatype::Sitelink'.\n",
 	"Object isn't 'Wikibase::Datatype::Sitelink'.");
+clean();
+
+# Test.
+eval {
+	Wikibase::Datatype::Struct::Sitelink::obj2struct();
+};
+is($EVAL_ERROR, "Object doesn't exist.\n", "Object doesn't exist.");
 clean();

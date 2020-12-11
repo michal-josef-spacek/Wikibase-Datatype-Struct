@@ -3,7 +3,7 @@ use warnings;
 
 use English;
 use Error::Pure::Utils qw(clean);
-use Test::More 'tests' => 10;
+use Test::More 'tests' => 11;
 use Test::NoWarnings;
 use Unicode::UTF8 qw(decode_utf8);
 use Wikibase::Datatype::Value::Globecoordinate;
@@ -161,4 +161,11 @@ eval {
 };
 is($EVAL_ERROR, "Object isn't 'Wikibase::Datatype::Value'.\n",
 	"Object isn't 'Wikibase::Datatype::Value'.");
+clean();
+
+# Test.
+eval {
+	Wikibase::Datatype::Struct::Value::obj2struct();
+};
+is($EVAL_ERROR, "Object doesn't exist.\n", "Object doesn't exist.");
 clean();

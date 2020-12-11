@@ -3,7 +3,7 @@ use warnings;
 
 use English;
 use Error::Pure::Utils qw(clean);
-use Test::More 'tests' => 4;
+use Test::More 'tests' => 5;
 use Test::NoWarnings;
 use Wikibase::Datatype::Snak;
 use Wikibase::Datatype::Statement;
@@ -190,3 +190,10 @@ is_deeply(
 	},
 	'Output of obj2struct() subroutine - with property snak and references.',
 );
+
+# Test.
+eval {
+	Wikibase::Datatype::Struct::Statement::obj2struct();
+};
+is($EVAL_ERROR, "Object doesn't exist.\n", "Object doesn't exist.");
+clean();

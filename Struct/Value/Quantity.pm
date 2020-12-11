@@ -16,6 +16,9 @@ our $VERSION = 0.02;
 sub obj2struct {
 	my ($obj, $base_uri) = @_;
 
+	if (! defined $obj) {
+		err "Object doesn't exist.";
+	}
 	if (! $obj->isa('Wikibase::Datatype::Value::Quantity')) {
 		err "Object isn't 'Wikibase::Datatype::Value::Quantity'.";
 	}
@@ -148,6 +151,7 @@ Returns Wikibase::Datatype::Value::Quantity instance.
 
  obj2struct():
          Base URI is required.
+         Object doesn't exist.
          Object isn't 'Wikibase::Datatype::Value::Quantity'.
 
  struct2obj():

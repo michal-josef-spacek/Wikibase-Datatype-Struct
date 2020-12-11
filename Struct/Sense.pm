@@ -17,6 +17,9 @@ our $VERSION = 0.02;
 sub obj2struct {
 	my ($obj, $base_uri) = @_;
 
+	if (! defined $obj) {
+		err "Object doesn't exist.";
+	}
 	if (! $obj->isa('Wikibase::Datatype::Sense')) {
 		err "Object isn't 'Wikibase::Datatype::Sense'.";
 	}
@@ -119,6 +122,7 @@ Returns Wikibase::Datatype::Sense instance.
 
  obj2struct():
          Base URI is required.
+         Object doesn't exist.
          Object isn't 'Wikibase::Datatype::Sense'.
 
 =head1 EXAMPLE1
