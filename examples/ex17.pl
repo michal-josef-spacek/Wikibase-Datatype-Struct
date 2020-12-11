@@ -15,11 +15,11 @@ use Wikibase::Datatype::Value::Monolingual;
 my $statement = Wikibase::Datatype::Statement->new(
         # instance of (P31) human (Q5)
         'snak' => Wikibase::Datatype::Snak->new(
-                 'datatype' => 'wikibase-item',
-                 'datavalue' => Wikibase::Datatype::Value::Item->new(
-                         'value' => 'Q5',
-                 ),
-                 'property' => 'P31',
+                'datatype' => 'wikibase-item',
+                'datavalue' => Wikibase::Datatype::Value::Item->new(
+                        'value' => 'Q5',
+                ),
+                'property' => 'P31',
         ),
 );
 
@@ -27,12 +27,12 @@ my $statement = Wikibase::Datatype::Statement->new(
 my $obj = Wikibase::Datatype::Sense->new(
         'glosses' => [
                 Wikibase::Datatype::Value::Monolingual->new(
-                         'language' => 'en',
-                         'value' => 'Glosse en',
+                        'language' => 'en',
+                        'value' => 'Glosse en',
                 ),
                 Wikibase::Datatype::Value::Monolingual->new(
-                         'language' => 'cs',
-                         'value' => 'Glosse cs',
+                        'language' => 'cs',
+                        'value' => 'Glosse cs',
                 ),
         ],
         'id' => 'ID',
