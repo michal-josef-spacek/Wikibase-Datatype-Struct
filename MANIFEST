@@ -23,6 +23,8 @@ examples/ex28.pl
 examples/ex29.pl
 examples/ex3.pl
 examples/ex30.pl
+examples/ex31.pl
+examples/ex32.pl
 examples/ex4.pl
 examples/ex5.pl
 examples/ex6.pl
@@ -49,6 +51,7 @@ Struct.pm
 Struct/Item.pm
 Struct/Language.pm
 Struct/Reference.pm
+Struct/Sense.pm
 Struct/Sitelink.pm
 Struct/Snak.pm
 Struct/Statement.pm
@@ -71,6 +74,10 @@ t/Wikibase-Datatype-Struct-Reference/01-use.t
 t/Wikibase-Datatype-Struct-Reference/02-version.t
 t/Wikibase-Datatype-Struct-Reference/03-obj2struct.t
 t/Wikibase-Datatype-Struct-Reference/04-struct2obj.t
+t/Wikibase-Datatype-Struct-Sense/01-use.t
+t/Wikibase-Datatype-Struct-Sense/02-version.t
+t/Wikibase-Datatype-Struct-Sense/03-obj2struct.t
+t/Wikibase-Datatype-Struct-Sense/04-struct2obj.t
 t/Wikibase-Datatype-Struct-Sitelink/01-use.t
 t/Wikibase-Datatype-Struct-Sitelink/02-version.t
 t/Wikibase-Datatype-Struct-Sitelink/03-obj2struct.t
@@ -127,6 +134,8 @@ xt/Wikibase-Datatype-Struct-Language/01-pod_coverage.t
 xt/Wikibase-Datatype-Struct-Language/02-pod.t
 xt/Wikibase-Datatype-Struct-Reference/01-pod_coverage.t
 xt/Wikibase-Datatype-Struct-Reference/02-pod.t
+xt/Wikibase-Datatype-Struct-Sense/01-pod_coverage.t
+xt/Wikibase-Datatype-Struct-Sense/02-pod.t
 xt/Wikibase-Datatype-Struct-Sitelink/01-pod_coverage.t
 xt/Wikibase-Datatype-Struct-Sitelink/02-pod.t
 xt/Wikibase-Datatype-Struct-Snak/01-pod_coverage.t
