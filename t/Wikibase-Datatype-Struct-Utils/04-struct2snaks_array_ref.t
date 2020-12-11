@@ -46,7 +46,7 @@ is($snaks_ar->[1]->property, 'P2', 'Get #2 property value.');
 $struct_hr = {
 	'foo' => {
 		'P1' => [{
-			'datatype' => 'bad',
+			'datatype' => 'string',
 		}],
 	},
 	'foo-order' => [
@@ -56,7 +56,8 @@ $struct_hr = {
 eval {
 	struct2snaks_array_ref($struct_hr, 'foo');
 };
-is($EVAL_ERROR, "Type doesn't exist.\n", "Type doesn't exist.");
+is($EVAL_ERROR, "Parameter 'datavalue' is required.\n",
+	"Parameter 'datavalue' is required.");
 clean();
 
 # Test.
