@@ -8,6 +8,7 @@ build_requires:
   ExtUtils::MakeMaker: 6.59
   Test::More: 0
   Test::NoWarnings: 0
+  Unicode::UTF8: 0
 configure_requires:
   ExtUtils::MakeMaker: 6.59
 distribution_type: module
@@ -31,7 +32,7 @@ requires:
   List::MoreUtils: 0
   Readonly: 0
   URI: 0
-  Unicode::UTF8: 0
+  Wikibase::Datatype: 0.03
   perl: 5.6.2
 resources:
   bugtracker: https://github.com/michal-josef-spacek/Wikibase-Datatype-Struct/issues
