@@ -41,8 +41,8 @@ sub obj2struct {
 
 	# Claims.
 	foreach my $statement (@{$obj->statements}) {
-		$struct_hr->{'statements'}->{$statement->snak->property} //= [];
-		push @{$struct_hr->{'statements'}->{$statement->snak->property}},
+		$struct_hr->{'claims'}->{$statement->snak->property} //= [];
+		push @{$struct_hr->{'claims'}->{$statement->snak->property}},
 			Wikibase::Datatype::Struct::Statement::obj2struct($statement, $base_uri);
 	}
 
@@ -467,7 +467,7 @@ Returns Wikibase::Datatype::Item instance.
  #             title    "Douglas Adams"
  #         }
  #     },
- #     statements     {
+ #     claims     {
  #         P21   [
  #             [0] {
  #                 mainsnak     {

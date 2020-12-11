@@ -251,7 +251,7 @@ p $struct_hr;
 #             title    "Douglas Adams"
 #         }
 #     },
-#     statements     {
+#     claims     {
 #         P21   [
 #             [0] {
 #                 mainsnak     {
