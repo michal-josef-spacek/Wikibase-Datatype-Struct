@@ -36,8 +36,14 @@ sub obj2struct {
 sub struct2obj {
 	my $struct_hr = shift;
 
+	# Data value isn't required for snaktype 'novalue'.
+	my $datavalue;
+	if (exists $struct_hr->{'datavalue'}) {
+		$datavalue = Wikibase::Datatype::Struct::Value::struct2obj($struct_hr->{'datavalue'});
+	}
+
 	my $obj = Wikibase::Datatype::Snak->new(
-		'datavalue' => Wikibase::Datatype::Struct::Value::struct2obj($struct_hr->{'datavalue'}),
+		'datavalue' => $datavalue,
 		'datatype' => $struct_hr->{'datatype'},
 		'property' => $struct_hr->{'property'},
 		'snaktype' => $struct_hr->{'snaktype'},
