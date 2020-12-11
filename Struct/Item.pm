@@ -154,15 +154,15 @@ sub struct2obj {
 	my $obj = Wikibase::Datatype::Item->new(
 		'aliases' => $aliases_ar,
 		'descriptions' => $descriptions_ar,
-		'id' => $struct_hr->{'id'},
+		$struct_hr->{'id'} ? ('id' => $struct_hr->{'id'}) : (),
 		'labels' => $labels_ar,
-		'lastrevid' => $struct_hr->{'lastrevid'},
-		'modified' => $struct_hr->{'modified'},
-		'ns' => $struct_hr->{'ns'},
-		'page_id' => $struct_hr->{'pageid'},
+		$struct_hr->{'lastrevid'} ? ('lastrevid' => $struct_hr->{'lastrevid'}) : (),
+		$struct_hr->{'modified'} ? ('modified' => $struct_hr->{'modified'}) : (),
+		$struct_hr->{'ns'} ? ('ns' => $struct_hr->{'ns'}) : (),
+		$struct_hr->{'pageid'} ? ('page_id' => $struct_hr->{'pageid'}) : (),
 		'sitelinks' => $sitelinks_ar,
 		'statements' => $statements_ar,
-		'title' => $struct_hr->{'title'},
+		$struct_hr->{'title'} ? ('title' => $struct_hr->{'title'}) : (),
 	);
 
 	return $obj;
