@@ -39,4 +39,4 @@ resources:
   homepage: https://github.com/michal-josef-spacek/Wikibase-Datatype-Struct
   license: http://opensource.org/licenses/bsd-license.php
   repository: git://github.com/michal-josef-spacek/Wikibase-Datatype-Struct
-version: '0.01'
+version: '0.02'
