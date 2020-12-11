@@ -67,6 +67,7 @@ Struct/Value/String.pm
 Struct/Value/Time.pm
 t/Wikibase-Datatype-Struct-Item/01-use.t
 t/Wikibase-Datatype-Struct-Item/02-version.t
+t/Wikibase-Datatype-Struct-Item/03-obj2struct.t
 t/Wikibase-Datatype-Struct-Language/01-use.t
 t/Wikibase-Datatype-Struct-Language/02-version.t
 t/Wikibase-Datatype-Struct-Language/03-obj2struct.t
