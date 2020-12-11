@@ -3,7 +3,6 @@ TODO
 19. Pridat dalsi checky na struct2obj().
 20. Pridat Lexeme
 31. Pridat Form
-33. Pridat Sense.
 34. Testy pro Item.
 35. Helper pro serializaci Language v realnem pripade.
 37.
@@ -68,4 +67,7 @@ OK [20201114] skim
 OK [20201211] skim
 
 36. v Sense je v prikladu #1 spatne odsazovani.
+OK [20201211] skim
+
+33. Pridat Sense.
 OK [20201211] skim
