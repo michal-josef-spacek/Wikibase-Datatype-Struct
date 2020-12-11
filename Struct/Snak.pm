@@ -27,7 +27,9 @@ sub obj2struct {
 	}
 
 	my $struct_hr = {
-		'datavalue' => Wikibase::Datatype::Struct::Value::obj2struct($obj->datavalue, $base_uri),
+		defined $obj->datavalue
+			? ('datavalue' => Wikibase::Datatype::Struct::Value::obj2struct($obj->datavalue, $base_uri))
+			: (),
 		'datatype' => $obj->datatype,
 		'property' => $obj->property,
 		'snaktype' => $obj->snaktype,

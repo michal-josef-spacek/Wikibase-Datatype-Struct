@@ -1,5 +1,6 @@
 0.02
  - Add check for defined object in obj2struct() methods.
+ - Fix issue with novalue Snak.
 
 0.01 2020-12-11T17:07:30+01:00
  - First version.

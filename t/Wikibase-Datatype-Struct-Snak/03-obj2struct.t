@@ -3,7 +3,7 @@ use warnings;
 
 use English;
 use Error::Pure::Utils qw(clean);
-use Test::More 'tests' => 5;
+use Test::More 'tests' => 6;
 use Test::NoWarnings;
 use Wikibase::Datatype::Snak;
 use Wikibase::Datatype::Value::String;
@@ -61,3 +61,21 @@ eval {
 };
 is($EVAL_ERROR, "Object doesn't exist.\n", "Object doesn't exist.");
 clean();
+
+# Test.
+$obj = Wikibase::Datatype::Snak->new(
+	'datatype' => 'string',
+	'property' => 'P11',
+	'snaktype' => 'novalue',
+);
+$ret_hr = Wikibase::Datatype::Struct::Snak::obj2struct($obj,
+	'https://test.wikidata.org/entity');
+is_deeply(
+	$ret_hr,
+	{
+		'datatype' => 'string',
+		'property' => 'P11',
+		'snaktype' => 'novalue',
+	},
+	'Output of obj2struct() subroutine with snaktype novalue.',
+);
