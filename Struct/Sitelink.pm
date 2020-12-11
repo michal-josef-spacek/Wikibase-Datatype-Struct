@@ -32,7 +32,7 @@ sub obj2struct {
 }
 
 sub struct2obj {
-	my ($struct_hr, $entity) = @_;
+	my $struct_hr = shift;
 
 	my $obj = Wikibase::Datatype::Sitelink->new(
 		'badges' => [
