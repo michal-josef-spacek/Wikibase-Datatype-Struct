@@ -15,6 +15,10 @@ our $VERSION = 0.01;
 sub obj_array_ref2struct {
 	my ($snaks_ar, $key, $base_uri) = @_;
 
+	if (! defined $base_uri) {
+		err 'Base URI is required.';
+	}
+
 	my $snaks_hr = {
 		$key.'-order' => [],
 		$key => {},
@@ -79,6 +83,7 @@ Wikibase::Datatype::Struct::Utils - Wikibase structure serialization utilities.
 
 Helper subroutine for converting list of Snak objects to snaks structure.
 This subroutine is used in Statement and Reference module.
+C<$base_uri> is base URI of Wikibase system (e.g. http://test.wikidata.org/entity/).
 
 Returns structure with multiple snaks.
 
@@ -94,6 +99,7 @@ Returns reference to array with snaks objects.
 =head1 ERRORS
 
  obj_array_ref2struct():
+         Base URI is required.
          Object isn't 'Wikibase::Datatype::Snak'.
 
  struct2snaks_array_ref():

@@ -19,6 +19,9 @@ sub obj2struct {
 	if (! $obj->isa('Wikibase::Datatype::Value::Quantity')) {
 		err "Object isn't 'Wikibase::Datatype::Value::Quantity'.";
 	}
+	if (! defined $base_uri) {
+		err 'Base URI is required.';
+	}
 
 	my $amount = $obj->value;
 	$amount = _add_plus($amount);
@@ -114,7 +117,7 @@ Wikibase::Datatype::Struct::Value::Quantity - Wikibase quantity structure serial
 
  use Wikibase::Datatype::Struct::Value::Quantity qw(obj2struct struct2obj);
 
- my $struct_hr = obj2struct($obj);
+ my $struct_hr = obj2struct($obj, $base_uri);
  my $obj = struct2obj($struct_hr);
 
 =head1 DESCRIPTION
@@ -126,9 +129,10 @@ serialized via JSON to MediaWiki.
 
 =head2 C<obj2struct>
 
- my $struct_hr = obj2struct($obj);
+ my $struct_hr = obj2struct($obj, $base_uri);
 
 Convert Wikibase::Datatype::Value::Quantity instance to structure.
+C<$base_uri> is base URI of Wikibase system (e.g. http://test.wikidata.org/entity/).
 
 Returns reference to hash with structure.
 
@@ -143,6 +147,7 @@ Returns Wikibase::Datatype::Value::Quantity instance.
 =head1 ERRORS
 
  obj2struct():
+         Base URI is required.
          Object isn't 'Wikibase::Datatype::Value::Quantity'.
 
  struct2obj():

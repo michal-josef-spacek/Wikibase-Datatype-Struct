@@ -19,6 +19,9 @@ sub obj2struct {
 	if (! $obj->isa('Wikibase::Datatype::Snak')) {
 		err "Object isn't 'Wikibase::Datatype::Snak'.";
 	}
+	if (! defined $base_uri) {
+		err 'Base URI is required.';
+	}
 
 	my $struct_hr = {
 		'datavalue' => Wikibase::Datatype::Struct::Value::obj2struct($obj->datavalue, $base_uri),
@@ -59,7 +62,7 @@ Wikibase::Datatype::Struct::Snak - Wikibase snak structure serialization.
 
  use Wikibase::Datatype::Struct::Snak qw(obj2struct struct2obj);
 
- my $struct_hr = obj2struct($obj);
+ my $struct_hr = obj2struct($obj, $base_uri);
  my $obj = struct2obj($struct_hr);
 
 =head1 DESCRIPTION
@@ -71,9 +74,10 @@ serialized via JSON to MediaWiki.
 
 =head2 C<obj2struct>
 
- my $struct_hr = obj2struct($obj);
+ my $struct_hr = obj2struct($obj, $base_uri);
 
 Convert Wikibase::Datatype::Snak instance to structure.
+C<$base_uri> is base URI of Wikibase system (e.g. http://test.wikidata.org/entity/).
 
 Returns reference to hash with structure.
 
@@ -88,6 +92,7 @@ Returns Wikibase::Datatype::Snak instance.
 =head1 ERRORS
 
  obj2struct():
+         Base URI is required.
          Object isn't 'Wikibase::Datatype::Snak'.
 
 =head1 EXAMPLE1

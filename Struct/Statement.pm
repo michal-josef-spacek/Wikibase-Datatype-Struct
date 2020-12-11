@@ -21,11 +21,14 @@ sub obj2struct {
 	if (! $obj->isa('Wikibase::Datatype::Statement')) {
 		err "Object isn't 'Wikibase::Datatype::Statement'.";
 	}
+	if (! defined $base_uri) {
+		err 'Base URI is required.';
+	}
 
 	my $struct_hr = {
 		'mainsnak' => Wikibase::Datatype::Struct::Snak::obj2struct($obj->snak, $base_uri),
 		@{$obj->property_snaks} ? (
-			%{obj_array_ref2struct($obj->property_snaks, 'qualifiers')},
+			%{obj_array_ref2struct($obj->property_snaks, 'qualifiers', $base_uri)},
 		) : (),
 		'rank' => $obj->rank,
 		@{$obj->references} ? (
@@ -72,7 +75,7 @@ Wikibase::Datatype::Struct::Statement - Wikibase statement structure serializati
 
  use Wikibase::Datatype::Struct::Statement qw(obj2struct struct2obj);
 
- my $struct_hr = obj2struct($obj);
+ my $struct_hr = obj2struct($obj, $base_uri);
  my $obj = struct2obj($struct_hr);
 
 =head1 DESCRIPTION
@@ -84,9 +87,10 @@ serialized via JSON to MediaWiki.
 
 =head2 C<obj2struct>
 
- my $struct_hr = obj2struct($obj);
+ my $struct_hr = obj2struct($obj, $base_uri);
 
 Convert Wikibase::Datatype::Statement instance to structure.
+C<$base_uri> is base URI of Wikibase system (e.g. http://test.wikidata.org/entity/).
 
 Returns reference to hash with structure.
 
@@ -101,6 +105,7 @@ Returns Wikibase::Datatype::Statement instance.
 =head1 ERRORS
 
  obj2struct():
+         Base URI is required.
          Object isn't 'Wikibase::Datatype::Statement'.
 
 =head1 EXAMPLE1

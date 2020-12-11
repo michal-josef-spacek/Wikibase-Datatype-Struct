@@ -19,6 +19,9 @@ sub obj2struct {
 	if (! $obj->isa('Wikibase::Datatype::Value::Time')) {
 		err "Object isn't 'Wikibase::Datatype::Value::Time'.";
 	}
+	if (! defined $base_uri) {
+		err 'Base URI is required.';
+	}
 
 	my $struct_hr = {
 		'value' => {
@@ -75,7 +78,7 @@ Wikibase::Datatype::Struct::Value::Time - Wikibase time structure serialization.
 
  use Wikibase::Datatype::Struct::Value::Time qw(obj2struct struct2obj);
 
- my $struct_hr = obj2struct($obj);
+ my $struct_hr = obj2struct($obj, $base_uri);
  my $obj = struct2obj($struct_hr);
 
 =head1 DESCRIPTION
@@ -87,9 +90,10 @@ serialized via JSON to MediaWiki.
 
 =head2 C<obj2struct>
 
- my $struct_hr = obj2struct($obj);
+ my $struct_hr = obj2struct($obj, $base_uri);
 
 Convert Wikibase::Datatype::Value::Time instance to structure.
+C<$base_uri> is base URI of Wikibase system (e.g. http://test.wikidata.org/entity/).
 
 Returns reference to hash with structure.
 
@@ -104,6 +108,7 @@ Returns Wikibase::Datatype::Value::Time instance.
 =head1 ERRORS
 
  obj2struct():
+         Base URI is required.
          Object isn't 'Wikibase::Datatype::Value::Time'.
 
  struct2obj():

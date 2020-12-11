@@ -3,7 +3,7 @@ use warnings;
 
 use English;
 use Error::Pure::Utils qw(clean);
-use Test::More 'tests' => 4;
+use Test::More 'tests' => 5;
 use Test::NoWarnings;
 use Unicode::UTF8 qw(decode_utf8);
 use Wikibase::Datatype::Reference;
@@ -23,7 +23,8 @@ my $obj = Wikibase::Datatype::Reference->new(
 		),
 	],
 );
-my $ret_hr = Wikibase::Datatype::Struct::Reference::obj2struct($obj);
+my $ret_hr = Wikibase::Datatype::Struct::Reference::obj2struct($obj,
+	'https://test.wikidata.org/entity');
 is_deeply(
 	$ret_hr,
 	{
@@ -73,7 +74,8 @@ $obj = Wikibase::Datatype::Reference->new(
 		),
 	],
 );
-$ret_hr = Wikibase::Datatype::Struct::Reference::obj2struct($obj);
+$ret_hr = Wikibase::Datatype::Struct::Reference::obj2struct($obj,
+	'https://test.wikidata.org/entity');
 is_deeply(
 	$ret_hr,
 	{
@@ -123,4 +125,22 @@ eval {
 };
 is($EVAL_ERROR, "Object isn't 'Wikibase::Datatype::Reference'.\n",
 	"Object isn't 'Wikibase::Datatype::Reference'.");
+clean();
+
+# Test.
+$obj = Wikibase::Datatype::Reference->new(
+	'snaks' => [
+		Wikibase::Datatype::Snak->new(
+			'datatype' => 'url',
+			'datavalue' => Wikibase::Datatype::Value::String->new(
+				'value' => 'https://skim.cz',
+			),
+			'property' => 'P93',
+		),
+	],
+);
+eval {
+	Wikibase::Datatype::Struct::Reference::obj2struct($obj);
+};
+is($EVAL_ERROR, "Base URI is required.\n", 'Base URI is required.');
 clean();

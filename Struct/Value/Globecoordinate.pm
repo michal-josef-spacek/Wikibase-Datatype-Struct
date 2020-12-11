@@ -19,6 +19,9 @@ sub obj2struct {
 	if (! $obj->isa('Wikibase::Datatype::Value::Globecoordinate')) {
 		err "Object isn't 'Wikibase::Datatype::Value::Globecoordinate'.";
 	}
+	if (! defined $base_uri) {
+		err 'Base URI is required.';
+	}
 
 	my $struct_hr = {
 		'value' => {
@@ -92,8 +95,7 @@ serialized via JSON to MediaWiki.
  my $struct_hr = obj2struct($obj, $base_uri);
 
 Convert Wikibase::Datatype::Value::Globecoordinate instance to structure.
-
-C<$base_uri> is base URL of Wikibase/Wikibase system (e.g. http://test.wikidata.org/entity/).
+C<$base_uri> is base URI of Wikibase system (e.g. http://test.wikidata.org/entity/).
 
 Returns reference to hash with structure.
 
@@ -108,6 +110,7 @@ Returns Wikibase::Datatype::Value::Globecoordinate instance.
 =head1 ERRORS
 
  obj2struct():
+         Base URI is required.
          Object isn't 'Wikibase::Datatype::Value::Globecoordinate'.
 
  struct2obj():

@@ -98,7 +98,7 @@ Wikibase::Datatype::Struct::Value - Wikibase value structure serialization.
 
  use Wikibase::Datatype::Struct::Value qw(obj2struct struct2obj);
 
- my $struct_hr = obj2struct($obj);
+ my $struct_hr = obj2struct($obj, $base_uri);
  my $obj = struct2obj($struct_hr);
 
 =head1 DESCRIPTION
@@ -110,9 +110,10 @@ serialized via JSON to MediaWiki.
 
 =head2 C<obj2struct>
 
- my $struct_hr = obj2struct($obj);
+ my $struct_hr = obj2struct($obj, $base_uri);
 
 Convert Wikibase::Datatype::Value instance to structure.
+C<$base_uri> is base URI of Wikibase system (e.g. http://test.wikidata.org/entity/).
 
 Returns reference to hash with structure.
 
