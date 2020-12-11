@@ -3,7 +3,9 @@ TODO
 19. Pridat dalsi checky na struct2obj().
 20. Pridat Lexeme
 31. Pridat Form
-32.
+32. Dodelat Item::struct2obj().
+33. Pridat Sense.
+34.
 
 Applied
 =======
