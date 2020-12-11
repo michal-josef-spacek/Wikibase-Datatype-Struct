@@ -2,6 +2,7 @@
  - Add check for defined object in obj2struct() methods.
  - Add missing dependency.
  - Add test for Item::obj2struct().
+ - Add test for Item::struct2obj().
  - Fix issue with novalue Snak.
  - Improve creating of Wikibase::Datatype::Item in struct2obj() to explicit
    readable code.
