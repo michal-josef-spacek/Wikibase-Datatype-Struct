@@ -3,7 +3,7 @@ use warnings;
 
 use English;
 use Error::Pure::Utils qw(clean);
-use Test::More 'tests' => 4;
+use Test::More 'tests' => 5;
 use Test::NoWarnings;
 use Wikibase::Datatype::Value::Time;
 use Wikibase::Datatype::Struct::Value::Time;
@@ -43,4 +43,14 @@ eval {
 	Wikibase::Datatype::Struct::Value::Time::obj2struct();
 };
 is($EVAL_ERROR, "Object doesn't exist.\n", "Object doesn't exist.");
+clean();
+
+# Test.
+$obj = Wikibase::Datatype::Value::Time->new(
+	'value' => '+2020-09-01T00:00:00Z',
+);
+eval {
+	Wikibase::Datatype::Struct::Value::Time::obj2struct($obj);
+};
+is($EVAL_ERROR, "Base URI is required.\n", 'Base URI is required.');
 clean();

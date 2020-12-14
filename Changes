@@ -1,4 +1,5 @@
 0.03
+ - Add tests.
  - Change minimal version of Perl to 5.10 because some weird bug with pod.
 
 0.02 2020-12-12T00:29:46+01:00

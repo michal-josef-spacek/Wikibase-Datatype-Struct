@@ -1,7 +1,9 @@
 use strict;
 use warnings;
 
-use Test::More 'tests' => 9;
+use English;
+use Error::Pure::Utils qw(clean);
+use Test::More 'tests' => 11;
 use Test::NoWarnings;
 use Wikibase::Datatype::Struct::Value::Time;
 
@@ -26,3 +28,23 @@ is($ret->precision, 11, 'Method precision().');
 is($ret->timezone, 0, 'Method timezone().');
 is($ret->type, 'time', 'Method type().');
 is($ret->value, '+2020-09-01T00:00:00Z', 'Method value().');
+
+# Test.
+$struct_hr = {};
+eval {
+	Wikibase::Datatype::Struct::Value::Time::struct2obj($struct_hr);
+};
+is($EVAL_ERROR, "Structure isn't for 'time' datatype.\n",
+	"Structure isn't for 'time' datatype.");
+clean();
+
+# Test.
+$struct_hr = {
+	'type' => 'bad',
+};
+eval {
+	Wikibase::Datatype::Struct::Value::Time::struct2obj($struct_hr);
+};
+is($EVAL_ERROR, "Structure isn't for 'time' datatype.\n",
+	"Structure isn't for 'time' datatype.");
+clean();
