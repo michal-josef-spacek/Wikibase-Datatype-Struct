@@ -15,7 +15,7 @@ author_requires 'Test::Pod' => 0;
 author_requires 'Test::Pod::Coverage' => 0;
 license 'bsd';
 name 'Wikibase-Datatype-Struct';
-perl_version 5.006002;
+perl_version 5.010;
 readme_from 'Struct.pm';
 recursive_author_tests('xt');
 requires 'Class::Utils' => 0.03;
