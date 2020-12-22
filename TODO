@@ -2,7 +2,6 @@ TODO
 ====
 19. Pridat dalsi checky na struct2obj().
 20. Pridat Lexeme
-31. Pridat Form
 35. Helper pro serializaci Language v realnem pripade.
 37. Cover tests.
 38.
@@ -74,3 +73,6 @@ OK [20201211] skim
 
 34. Testy pro Item.
 OK [20201212] skim
+
+31. Pridat Form
+OK [20201223] skim
