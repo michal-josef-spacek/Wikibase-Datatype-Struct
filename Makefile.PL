@@ -35,7 +35,7 @@ test_requires 'Test::NoWarnings' => 0;
 test_requires 'Unicode::UTF8' => 0;
 test_requires 'Wikibase::Datatype' => 0.03;
 tests_recursive;
-version '0.05';
+version '0.06';
 
 # Run.
 WriteAll();
