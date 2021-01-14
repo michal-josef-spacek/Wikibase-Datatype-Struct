@@ -1,4 +1,5 @@
 0.06
+ - Add test for globe coordinate with negative value.
 
 0.05 2020-12-23T00:38:25+01:00
  - Add Form.
