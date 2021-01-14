@@ -53,7 +53,7 @@ sub struct2obj {
 	my @path_segments = $u->path_segments;
 	my $globe = $path_segments[-1];
 	my $obj = Wikibase::Datatype::Value::Globecoordinate->new(
-		$struct_hr->{'value'}->{'altitude'} ne 'null' ? (
+		defined $struct_hr->{'value'}->{'altitude'} ? (
 			'altitude' => $struct_hr->{'value'}->{'altitude'},
 		) : (),
 		'globe' => $globe,

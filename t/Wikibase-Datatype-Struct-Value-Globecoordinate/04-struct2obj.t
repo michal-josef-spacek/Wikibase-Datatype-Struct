@@ -10,7 +10,7 @@ use Wikibase::Datatype::Struct::Value::Globecoordinate;
 # Test.
 my $struct_hr = {
 	'value' => {
-		'altitude' => 'null',
+		'altitude' => undef,
 		'globe' => 'http://test.wikidata.org/entity/Q111',
 		'latitude' => 10.1,
 		'longitude' => 20.1,
