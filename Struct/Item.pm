@@ -218,6 +218,9 @@ Returns Wikibase::Datatype::Item instance.
          Object doesn't exist.
          Object isn't 'Wikibase::Datatype::Item'.
 
+ struct2obj():
+         Structure isn't for 'item' type.
+
 =head1 EXAMPLE1
 
  use strict;
