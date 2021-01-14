@@ -51,4 +51,22 @@ my $obj = struct2obj($struct_hr);
 p $obj;
 
 # Output:
-# TODO
+# Wikibase::Datatype::Lexeme  {
+#     Parents       Mo::Object
+#     public methods (8) : BUILD, can (UNIVERSAL), DOES (UNIVERSAL), err (Error::Pure), check_array_object (Mo::utils), check_entity (Wikibase::Datatype::Utils), isa (UNIVERSAL), VERSION (UNIVERSAL)
+#     private methods (1) : __ANON__ (Mo::is)
+#     internals: {
+#         grammatical_features   [
+#             [0] Wikibase::Datatype::Value::Item,
+#             [1] Wikibase::Datatype::Value::Item
+#         ],
+#         id                     undef,
+#         representations        [
+#             [0] Wikibase::Datatype::Value::Monolingual,
+#             [1] Wikibase::Datatype::Value::Monolingual
+#         ],
+#         statements             [
+#             [0] Wikibase::Datatype::Statement
+#         ]
+#     }
+# }
