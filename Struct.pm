@@ -26,6 +26,10 @@ serialized via JSON to MediaWiki.
 
 =over
 
+=item L<Wikibase::Datatype::Struct::MediainfoSnak>
+
+Wikibase mediainfo snak structure serialization.
+
 =item L<Wikibase::Datatype::Struct::Reference>
 
 Wikibase reference structure serialization.

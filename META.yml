@@ -33,7 +33,7 @@ requires:
   List::MoreUtils: 0
   Readonly: 0
   URI: 0
-  Wikibase::Datatype: 0.06
+  Wikibase::Datatype: 0.07
   perl: 5.01
 resources:
   bugtracker: https://github.com/michal-josef-spacek/Wikibase-Datatype-Struct/issues
