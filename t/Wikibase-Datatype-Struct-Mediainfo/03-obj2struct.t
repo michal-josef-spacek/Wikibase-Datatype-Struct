@@ -19,6 +19,7 @@ my $ret_hr = Wikibase::Datatype::Struct::Mediainfo::obj2struct($obj,
 is_deeply(
 	$ret_hr,
 	{
+		'descriptions' => {},
 		'ns' => 6,
 		'type' => 'mediainfo',
 	},
@@ -79,6 +80,7 @@ $ret_hr = Wikibase::Datatype::Struct::Mediainfo::obj2struct($obj,
 is_deeply(
 	$ret_hr,
 	{
+		'descriptions' => {},
 		'id' => 'Q42',
 		'labels' => {
 			'cs' => {
@@ -200,6 +202,7 @@ $ret_hr = Wikibase::Datatype::Struct::Mediainfo::obj2struct($obj,
 is_deeply(
 	$ret_hr,
 	{
+		'descriptions' => {},
 		'ns' => 6,
 		'statements' => {
 			'P11' => [{
@@ -236,6 +239,7 @@ $ret_hr = Wikibase::Datatype::Struct::Mediainfo::obj2struct($obj,
 is_deeply(
 	$ret_hr,
 	{
+		'descriptions' => {},
 		'type' => 'mediainfo',
 	},
 	'Output of obj2struct() subroutine. Undefined name space.',

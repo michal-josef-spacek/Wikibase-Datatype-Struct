@@ -39,6 +39,7 @@ sub obj2struct {
 	}
 
 	# Descriptions.
+	$struct_hr->{'descriptions'} = {};
 	foreach my $desc (@{$obj->descriptions}) {
 		$struct_hr->{'descriptions'}->{$desc->language}
 			= Wikibase::Datatype::Struct::Language::obj2struct($desc);
