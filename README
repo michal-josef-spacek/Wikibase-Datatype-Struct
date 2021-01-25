@@ -6,6 +6,9 @@ DESCRIPTION
     structures serialized via JSON to MediaWiki.
 
 SEE ALSO
+    Wikibase::Datatype::Struct::Mediainfo
+        Wikibase mediainfo structure serialization.
+
     Wikibase::Datatype::Struct::MediainfoSnak
         Wikibase mediainfo snak structure serialization.
 
