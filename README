@@ -9,6 +9,9 @@ SEE ALSO
     Wikibase::Datatype::Struct::MediainfoSnak
         Wikibase mediainfo snak structure serialization.
 
+    Wikibase::Datatype::Struct::MediainfoStatement
+        Wikibase mediainfo statement structure serialization.
+
     Wikibase::Datatype::Struct::Reference
         Wikibase reference structure serialization.
 

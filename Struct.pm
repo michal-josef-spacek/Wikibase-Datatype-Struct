@@ -30,6 +30,10 @@ serialized via JSON to MediaWiki.
 
 Wikibase mediainfo snak structure serialization.
 
+=item L<Wikibase::Datatype::Struct::MediainfoStatement>
+
+Wikibase mediainfo statement structure serialization.
+
 =item L<Wikibase::Datatype::Struct::Reference>
 
 Wikibase reference structure serialization.

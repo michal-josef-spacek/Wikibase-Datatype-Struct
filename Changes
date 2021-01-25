@@ -1,5 +1,6 @@
 0.07
  - Add support for MediainfoSnak.
+ - Add support for MediainfoStatement.
  - Rewrite Utils to abstract Snak way.
  - Update examples/ dir.
 
