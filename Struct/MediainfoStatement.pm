@@ -115,7 +115,7 @@ Returns Wikibase::Datatype::MediainfoStatement instance.
  use Wikibase::Datatype::Value::Item;
 
  # Object.
- my $obj = Wikibase::Datatype::Statement->new(
+ my $obj = Wikibase::Datatype::MediainfoStatement->new(
          # instance of (P31) human (Q5)
          'snak' => Wikibase::Datatype::MediainfoSnak->new(
                   'datavalue' => Wikibase::Datatype::Value::Item->new(
