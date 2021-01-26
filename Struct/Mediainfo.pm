@@ -201,7 +201,7 @@ Returns Wikibase::Datatype::Mediainfo instance.
  # Object.
  my $statement1 = Wikibase::Datatype::MediainfoStatement->new(
          # instance of (P31) human (Q5)
-         'snak' => Wikibase::Datatype::Snak->new(
+         'snak' => Wikibase::Datatype::MediainfoSnak->new(
                  'datavalue' => Wikibase::Datatype::Value::Item->new(
                          'value' => 'Q5',
                  ),
@@ -209,7 +209,7 @@ Returns Wikibase::Datatype::Mediainfo instance.
          ),
          'property_snaks' => [
                  # of (P642) alien (Q474741)
-                 Wikibase::Datatype::Snak->new(
+                 Wikibase::Datatype::MediainfoSnak->new(
                          'datavalue' => Wikibase::Datatype::Value::Item->new(
                                  'value' => 'Q474741',
                          ),
