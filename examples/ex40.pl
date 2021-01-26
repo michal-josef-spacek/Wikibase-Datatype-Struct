@@ -3,15 +3,15 @@
 use strict;
 use warnings;
 
-use Wikibase::Datatype::Struct::Value::Property qw(struct2obj);
+use Wikibase::Datatype::Struct::Value::Item qw(struct2obj);
 
-# Property structure.
+# Item structure.
 my $struct_hr = {
         'type' => 'wikibase-entityid',
         'value' => {
-                'entity-type' => 'property',
-                'id' => 'P123',
-                'numeric-id' => 123,
+                'entity-type' => 'item',
+                'id' => 'Q123',
+                'numberic-id' => 123,
         },
 };
 
@@ -29,5 +29,5 @@ print "Type: $type\n";
 print "Value: $value\n";
 
 # Output:
-# Type: property
-# Value: P123
+# Type: item
+# Value: Q123
