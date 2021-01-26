@@ -39,7 +39,7 @@ p $struct_hr;
 
 # Output:
 # \ {
-#     id "M123$00C04D2A-49AF-40C2-9930-C551916887E8",
+#     id                 "M123$00C04D2A-49AF-40C2-9930-C551916887E8",
 #     mainsnak           {
 #         datavalue   {
 #             type    "wikibase-entityid",
