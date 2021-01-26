@@ -2,6 +2,7 @@
  - Add support for Mediainfo.
  - Add support for MediainfoSnak.
  - Add support for MediainfoStatement.
+ - Add support for id parameter and method in Statement.
  - Rewrite Utils to abstract Snak way.
  - Update examples/ dir.
 

@@ -14,6 +14,8 @@ use Wikibase::Datatype::Value::Time;
 
 # Object.
 my $obj = Wikibase::Datatype::Statement->new(
+        'id' => 'Q123$00C04D2A-49AF-40C2-9930-C551916887E8',
+
         # instance of (P31) human (Q5)
         'snak' => Wikibase::Datatype::Snak->new(
                  'datatype' => 'wikibase-item',
@@ -74,6 +76,7 @@ p $struct_hr;
 
 # Output:
 # \ {
+#     id                 "Q123$00C04D2A-49AF-40C2-9930-C551916887E8",
 #     mainsnak           {
 #         datatype    "wikibase-item",
 #         datavalue   {

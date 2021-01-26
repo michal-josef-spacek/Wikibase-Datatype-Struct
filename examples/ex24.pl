@@ -7,6 +7,7 @@ use Wikibase::Datatype::Struct::Statement qw(struct2obj);
 
 # Item structure.
 my $struct_hr = {
+        'id' => 'Q123$00C04D2A-49AF-40C2-9930-C551916887E8',
         'mainsnak' => {
                 'datatype' => 'wikibase-item',
                 'datavalue' => {
@@ -92,6 +93,8 @@ my $struct_hr = {
 # Get object.
 my $obj = struct2obj($struct_hr);
 
+# Print out.
+print 'Id: '.$obj->id."\n";
 print 'Claim: '.$obj->snak->property.' -> '.$obj->snak->datavalue->value."\n";
 print "Qualifiers:\n";
 foreach my $property_snak (@{$obj->property_snaks}) {
@@ -109,6 +112,7 @@ foreach my $reference (@{$obj->references}) {
 print 'Rank: '.$obj->rank."\n";
 
 # Output:
+# Id: Q123$00C04D2A-49AF-40C2-9930-C551916887E8
 # Claim: P31 -> Q5
 # Qualifiers:
 #         P642 -> Q474741
