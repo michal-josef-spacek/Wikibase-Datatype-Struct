@@ -1,4 +1,5 @@
 0.08
+ - Add tests for Value::Item.
  - Improve check in Value::Item::struct2obj().
  - Improve check in Value::Property::struct2obj().
  - Update copyright years.
