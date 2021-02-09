@@ -1,5 +1,6 @@
 0.08
  - Improve check in Value::Item::struct2obj().
+ - Improve check in Value::Property::struct2obj().
  - Update copyright years.
  - Use type() method in Value::Property instead of hardcoded string.
 
