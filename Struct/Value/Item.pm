@@ -40,8 +40,11 @@ sub struct2obj {
 	my $struct_hr = shift;
 
 	if (! exists $struct_hr->{'type'}
+		|| ! defined $struct_hr->{'type'}
 		|| $struct_hr->{'type'} ne 'wikibase-entityid'
+		|| ! exists $struct_hr->{'value'}
 		|| ! exists $struct_hr->{'value'}->{'entity-type'}
+		|| ! defined $struct_hr->{'value'}->{'entity-type'}
 		|| $struct_hr->{'value'}->{'entity-type'} ne 'item') {
 
 		err "Structure isn't for 'item' datatype.";
