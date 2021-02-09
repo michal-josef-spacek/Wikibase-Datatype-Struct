@@ -26,7 +26,7 @@ sub obj2struct {
 	$numeric_id =~ s/^P//ms;
 	my $struct_hr = {
 		'value' => {
-			'entity-type' => 'property',
+			'entity-type' => $obj->type,
 			'id' => $obj->value,
 			'numeric-id' => $numeric_id,
 		},
