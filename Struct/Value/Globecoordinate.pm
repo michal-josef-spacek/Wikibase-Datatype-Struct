@@ -106,7 +106,7 @@ Returns reference to hash with structure.
 
  my $obj = struct2obj($struct_hr);
 
-Convert structure of item to object.
+Convert structure of globe coordinate to object.
 
 Returns Wikibase::Datatype::Value::Globecoordinate instance.
 
