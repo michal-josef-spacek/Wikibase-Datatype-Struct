@@ -6,7 +6,6 @@ use warnings;
 
 use Error::Pure qw(err);
 use Readonly;
-use Wikibase::Datatype::Value;
 use Wikibase::Datatype::Struct::Value::Globecoordinate;
 use Wikibase::Datatype::Struct::Value::Item;
 use Wikibase::Datatype::Struct::Value::Monolingual;
@@ -14,6 +13,7 @@ use Wikibase::Datatype::Struct::Value::Property;
 use Wikibase::Datatype::Struct::Value::Quantity;
 use Wikibase::Datatype::Struct::Value::String;
 use Wikibase::Datatype::Struct::Value::Time;
+use Wikibase::Datatype::Value;
 
 Readonly::Array our @EXPORT_OK => qw(obj2struct struct2obj);
 
