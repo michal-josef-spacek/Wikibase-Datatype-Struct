@@ -32,7 +32,7 @@ sub obj2struct {
 	if (defined $obj->unit) {
 		$unit = $base_uri.$obj->unit;
 	} else {
-		$unit = 1;
+		$unit = '1';
 	}
 	my $struct_hr = {
 		'value' => {
