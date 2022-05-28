@@ -1,5 +1,6 @@
 0.09
  - Fix sentence in doc in Value::Globecoordinate.
+ - Update copyright years.
 
 0.08 2021-02-09T18:12:14+01:00
  - Add tests for Value::Item.
