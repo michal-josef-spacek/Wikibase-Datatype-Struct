@@ -265,7 +265,6 @@ isa_ok($ret, 'Wikibase::Datatype::Item');
 is($ret->id, undef, 'Method id().');
 is($ret->lastrevid, undef, 'Method lastrevid().');
 is($ret->modified, undef, 'Method modified().');
-# XXX Is it right?
-is($ret->ns, 0, 'Method ns() (undefined).');
+is($ret->ns, 0, 'Method ns() (0).');
 is($ret->page_id, undef, 'Method page_id().');
 is($ret->title, undef, 'Method title().');
