@@ -230,7 +230,7 @@ $struct_hr = {
 $ret = Wikibase::Datatype::Struct::Item::struct2obj($struct_hr);
 isa_ok($ret, 'Wikibase::Datatype::Item');
 is($ret->id, 'Q42', 'Method id().');
-is($ret->lastrevid, '534820', 'Method lastrevid().');
+is($ret->lastrevid, 534820, 'Method lastrevid().');
 is($ret->modified, '2020-12-02T13:39:18Z', 'Method modified().');
 is($ret->ns, 0, 'Method ns().');
 is($ret->page_id, 123, 'Method page_id().');
