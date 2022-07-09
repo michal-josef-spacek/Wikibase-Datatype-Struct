@@ -1,5 +1,6 @@
 0.09
  - Add Property object.
+ - Fix Lexeme default ns.
  - Fix sentence in doc in Value::Globecoordinate.
  - Unify LICENSE AND COPYRIGHT section in doc.
  - Update copyright years.

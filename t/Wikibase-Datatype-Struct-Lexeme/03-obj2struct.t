@@ -17,7 +17,7 @@ my $ret_hr = Wikibase::Datatype::Struct::Lexeme::obj2struct($obj,
 is_deeply(
 	$ret_hr,
 	{
-		'ns' => 0,
+		'ns' => 146,
 		'type' => 'lexeme',
 	},
 	'Output of obj2struct() subroutine. Empty structure.',
@@ -100,7 +100,7 @@ is_deeply(
 				'type' => 'statement',
 			}],
 		},
-		'ns' => 0,
+		'ns' => 146,
 		'type' => 'lexeme',
 	},
 	'Output of obj2struct() subroutine. Two claims for one property.',

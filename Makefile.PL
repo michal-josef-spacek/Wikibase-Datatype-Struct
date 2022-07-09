@@ -35,6 +35,7 @@ test_requires 'Test::NoWarnings' => 0;
 test_requires 'Test::Shared::Fixture::Wikibase::Datatype::Property::Wikidata::InstanceOf' => 0.17;
 test_requires 'Unicode::UTF8' => 0;
 test_requires 'Wikibase::Datatype' => 0.03;
+test_requires 'Wikibase::Datatype::Lexeme' => 0.14;
 test_requires 'Wikibase::Datatype::Property' => 0.12;
 tests_recursive;
 version '0.09';
