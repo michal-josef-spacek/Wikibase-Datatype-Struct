@@ -1,4 +1,4 @@
-0.09
+0.09 2022-07-09T16:51:15+02:00
  - Add complex test to Lexeme.
  - Add missing id and page_id Lexeme values to obj2struct().
  - Add Property object.
