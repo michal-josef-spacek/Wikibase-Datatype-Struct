@@ -4,7 +4,6 @@ TODO
 35. Helper pro serializaci Language v realnem pripade.
 37. Cover tests.
 38. Vylepsit EXAMPLES v Lexeme doc.
-39. Testy pro Lexeme.
 40. Testy pro MediainfoStatement
 41. Opravit priklad v MediainfoSnak na neco realneho.
 42. Opravit priklad v MediainfoStatement na neco realneho.
@@ -84,3 +83,6 @@ OK [20201223] skim
 
 20. Pridat Lexeme
 OK [20210114] skim
+
+39. Testy pro Lexeme.
+OK [20220709] skim

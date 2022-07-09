@@ -32,6 +32,7 @@ test_requires 'English' => 0;
 test_requires 'Error::Pure::Utils' => 0;
 test_requires 'Test::More' => 0;
 test_requires 'Test::NoWarnings' => 0;
+test_requires 'Test::Shared::Fixture::Wikibase::Datatype::Lexeme::Wikidata::DogCzechNoun' => 0.19;
 test_requires 'Test::Shared::Fixture::Wikibase::Datatype::Property::Wikidata::InstanceOf' => 0.17;
 test_requires 'Unicode::UTF8' => 0;
 test_requires 'Wikibase::Datatype' => 0.03;
