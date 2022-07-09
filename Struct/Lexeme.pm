@@ -49,7 +49,7 @@ sub obj2struct {
 
 	# Language.
 	if (defined $obj->language) {
-		$struct_hr->{'language'} = $obj->language->value;
+		$struct_hr->{'language'} = $obj->language;
 	}
 
 	# Lemmas.
