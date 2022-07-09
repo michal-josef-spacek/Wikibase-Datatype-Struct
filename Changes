@@ -1,4 +1,5 @@
 0.09
+ - Add missing id and page_id Lexeme values to obj2struct().
  - Add Property object.
  - Fix Lexeme default ns.
  - Fix Lexeme language conversion.

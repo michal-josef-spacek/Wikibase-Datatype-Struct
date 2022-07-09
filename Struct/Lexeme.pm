@@ -42,6 +42,11 @@ sub obj2struct {
 			Wikibase::Datatype::Struct::Form::obj2struct($form, $base_uri);
 	}
 
+	# Id.
+	if (defined $obj->id) {
+		$struct_hr->{'id'} = $obj->id;
+	}
+
 	# Last revision id.
 	if (defined $obj->lastrevid) {
 		$struct_hr->{'lastrevid'} = $obj->lastrevid;
@@ -71,6 +76,11 @@ sub obj2struct {
 	# Namespace.
 	if (defined $obj->ns) {
 		$struct_hr->{'ns'} = $obj->ns;
+	}
+
+	# Page id.
+	if (defined $obj->page_id) {
+		$struct_hr->{'pageid'} = $obj->page_id;
 	}
 
 	# Senses.
