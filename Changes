@@ -4,6 +4,7 @@
  - Fix Lexeme default ns.
  - Fix Lexeme language conversion.
  - Fix Lexeme lexical category conversion.
+ - Fix Lexeme struct2obj(), was very bad.
  - Fix sentence in doc in Value::Globecoordinate.
  - Unify LICENSE AND COPYRIGHT section in doc.
  - Update copyright years.
