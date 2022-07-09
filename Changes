@@ -2,6 +2,7 @@
  - Add Property object.
  - Fix Lexeme default ns.
  - Fix Lexeme language conversion.
+ - Fix Lexeme lexical category conversion.
  - Fix sentence in doc in Value::Globecoordinate.
  - Unify LICENSE AND COPYRIGHT section in doc.
  - Update copyright years.

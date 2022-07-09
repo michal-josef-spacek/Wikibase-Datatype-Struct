@@ -60,7 +60,7 @@ sub obj2struct {
 
 	# Lexical category.
 	if (defined $obj->lexical_category) {
-		$struct_hr->{'lexicalCategory'} = $obj->lexical_category->value;
+		$struct_hr->{'lexicalCategory'} = $obj->lexical_category;
 	}
 
 	# Modified date.
