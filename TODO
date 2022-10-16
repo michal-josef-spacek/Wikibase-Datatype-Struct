@@ -8,7 +8,8 @@ TODO
 41. Opravit priklad v MediainfoSnak na neco realneho.
 42. Opravit priklad v MediainfoStatement na neco realneho.
 43. Opravit priklad v Mediainfo na neco realneho.
-44.
+44. Could struct detect type of object? (item, mediainfo, lexeme)
+45.
 
 Applied
 =======
