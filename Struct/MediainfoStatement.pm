@@ -8,6 +8,7 @@ use Error::Pure qw(err);
 use Readonly;
 use Wikibase::Datatype::MediainfoStatement;
 use Wikibase::Datatype::Struct::MediainfoSnak;
+use Wikibase::Datatype::Struct::Reference;
 use Wikibase::Datatype::Struct::Utils qw(obj_array_ref2struct struct2snaks_array_ref);
 
 Readonly::Array our @EXPORT_OK => qw(obj2struct struct2obj);
@@ -35,6 +36,12 @@ sub obj2struct {
 			'Wikibase::Datatype::MediainfoSnak', 'Wikibase::Datatype::Struct::MediainfoSnak')},
 		) : (),
 		'rank' => $obj->rank,
+		@{$obj->references} ? (
+			'references' => [
+				map { Wikibase::Datatype::Struct::Reference::obj2struct($_, $base_uri); }
+				@{$obj->references},
+			],
+		) : (),
 		'type' => 'statement',
 	};
 
@@ -49,6 +56,10 @@ sub struct2obj {
 		'property_snaks' => struct2snaks_array_ref($struct_hr, 'qualifiers',
 			'Wikibase::Datatype::Struct::MediainfoSnak'),
 		'snak' => Wikibase::Datatype::Struct::MediainfoSnak::struct2obj($struct_hr->{'mainsnak'}),
+		'references' => [
+			map { Wikibase::Datatype::Struct::Reference::struct2obj($_) }
+			@{$struct_hr->{'references'}}
+		],
 		'rank' => $struct_hr->{'rank'},
 	);
 
@@ -251,6 +262,7 @@ L<Error::Pure>,
 L<Exporter>,
 L<Readonly>,
 L<Wikibase::Datatype::MediainfoStatement>,
+L<Wikibase::Datatype::Struct::Reference>,
 L<Wikibase::Datatype::Struct::Snak>,
 L<Wikibase::Datatype::Struct::Utils>.
 
