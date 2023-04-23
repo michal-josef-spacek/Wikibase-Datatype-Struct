@@ -8,7 +8,7 @@ use Wikibase::Datatype::Struct::Language qw(struct2obj);
 # Monolingualtext structure.
 my $struct_hr = {
         'language' => 'en',
-        'text' => 'English text',
+        'value' => 'English text',
 };
 
 # Get object.

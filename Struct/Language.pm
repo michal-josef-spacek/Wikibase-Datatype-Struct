@@ -130,7 +130,7 @@ Returns Wikibase::Datatype::Value::Monolingual instance.
  # Monolingualtext structure.
  my $struct_hr = {
          'language' => 'en',
-         'text' => 'English text',
+         'value' => 'English text',
  };
 
  # Get object.
