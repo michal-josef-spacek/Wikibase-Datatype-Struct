@@ -6,6 +6,15 @@ DESCRIPTION
     structures serialized via JSON to MediaWiki.
 
 SEE ALSO
+    Wikibase::Datatype::Struct::Form
+        Wikibase form structure serialization.
+
+    Wikibase::Datatype::Struct::Item
+        Wikibase item structure serialization.
+
+    Wikibase::Datatype::Struct::Lexeme
+        Wikibase lexeme structure serialization.
+
     Wikibase::Datatype::Struct::Mediainfo
         Wikibase mediainfo structure serialization.
 
@@ -14,6 +23,9 @@ SEE ALSO
 
     Wikibase::Datatype::Struct::MediainfoStatement
         Wikibase mediainfo statement structure serialization.
+
+    Wikibase::Datatype::Struct::Property
+        Wikibase property structure serialization.
 
     Wikibase::Datatype::Struct::Reference
         Wikibase reference structure serialization.

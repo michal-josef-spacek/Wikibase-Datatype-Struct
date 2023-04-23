@@ -26,6 +26,18 @@ serialized via JSON to MediaWiki.
 
 =over
 
+=item L<Wikibase::Datatype::Struct::Form>
+
+Wikibase form structure serialization.
+
+=item L<Wikibase::Datatype::Struct::Item>
+
+Wikibase item structure serialization.
+
+=item L<Wikibase::Datatype::Struct::Lexeme>
+
+Wikibase lexeme structure serialization.
+
 =item L<Wikibase::Datatype::Struct::Mediainfo>
 
 Wikibase mediainfo structure serialization.
@@ -37,6 +49,10 @@ Wikibase mediainfo snak structure serialization.
 =item L<Wikibase::Datatype::Struct::MediainfoStatement>
 
 Wikibase mediainfo statement structure serialization.
+
+=item L<Wikibase::Datatype::Struct::Property>
+
+Wikibase property structure serialization.
 
 =item L<Wikibase::Datatype::Struct::Reference>
 
