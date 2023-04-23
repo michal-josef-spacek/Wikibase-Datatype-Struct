@@ -42,6 +42,10 @@ Wikibase mediainfo statement structure serialization.
 
 Wikibase reference structure serialization.
 
+=item L<Wikibase::Datatype::Struct::Sense>
+
+Wikibase sense structure serialization.
+
 =item L<Wikibase::Datatype::Struct::Sitelink>
 
 Wikibase sitelink structure serialization.
@@ -64,31 +68,35 @@ Wikibase value structure serialization.
 
 =item L<Wikibase::Datatype::Struct::Value::Globecoordinate>
 
-Wikibase globe coordinate structure serialization.
+Wikibase globe coordinate value structure serialization.
 
 =item L<Wikibase::Datatype::Struct::Value::Item>
 
-Wikibase item structure serialization.
+Wikibase item value structure serialization.
 
 =item L<Wikibase::Datatype::Struct::Value::Monolingual>
 
-Wikibase monolingual structure serialization.
+Wikibase monolingual value structure serialization.
 
 =item L<Wikibase::Datatype::Struct::Value::Property>
 
-Wikibase property structure serialization.
+Wikibase property value structure serialization.
 
 =item L<Wikibase::Datatype::Struct::Value::Quantity>
 
-Wikibase quantity structure serialization.
+Wikibase quantity value structure serialization.
+
+=item L<Wikibase::Datatype::Struct::Value::Sense>
+
+Wikibase sense value structure serialization.
 
 =item L<Wikibase::Datatype::Struct::Value::String>
 
-Wikibase string structure serialization.
+Wikibase string value structure serialization.
 
 =item L<Wikibase::Datatype::Struct::Value::Time>
 
-Wikibase time structure serialization.
+Wikibase time value structure serialization.
 
 =back
 

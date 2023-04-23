@@ -77,7 +77,7 @@ __END__
 
 =head1 NAME
 
-Wikibase::Datatype::Struct::Value::Globecoordinate - Wikibase globe coordinate structure serialization.
+Wikibase::Datatype::Struct::Value::Globecoordinate - Wikibase globe coordinate value structure serialization.
 
 =head1 SYNOPSIS
 

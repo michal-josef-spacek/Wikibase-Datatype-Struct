@@ -67,7 +67,7 @@ __END__
 
 =head1 NAME
 
-Wikibase::Datatype::Struct::Value::Property - Wikibase property structure serialization.
+Wikibase::Datatype::Struct::Value::Property - Wikibase property value structure serialization.
 
 =head1 SYNOPSIS
 

@@ -64,7 +64,7 @@ __END__
 
 =head1 NAME
 
-Wikibase::Datatype::Struct::Value::Sense - Wikibase sense structure serialization.
+Wikibase::Datatype::Struct::Value::Sense - Wikibase sense value structure serialization.
 
 =head1 SYNOPSIS
 

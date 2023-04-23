@@ -75,7 +75,7 @@ __END__
 
 =head1 NAME
 
-Wikibase::Datatype::Struct::Value::Time - Wikibase time structure serialization.
+Wikibase::Datatype::Struct::Value::Time - Wikibase time value structure serialization.
 
 =head1 SYNOPSIS
 

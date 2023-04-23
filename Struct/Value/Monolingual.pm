@@ -60,7 +60,7 @@ __END__
 
 =head1 NAME
 
-Wikibase::Datatype::Struct::Value::Monolingual - Wikibase monolingual structure serialization.
+Wikibase::Datatype::Struct::Value::Monolingual - Wikibase monolingual value structure serialization.
 
 =head1 SYNOPSIS
 

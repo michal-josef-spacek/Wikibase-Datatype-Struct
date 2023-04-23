@@ -67,7 +67,7 @@ __END__
 
 =head1 NAME
 
-Wikibase::Datatype::Struct::Value::Item - Wikibase item structure serialization.
+Wikibase::Datatype::Struct::Value::Item - Wikibase item value structure serialization.
 
 =head1 SYNOPSIS
 

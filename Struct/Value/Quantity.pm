@@ -114,7 +114,7 @@ __END__
 
 =head1 NAME
 
-Wikibase::Datatype::Struct::Value::Quantity - Wikibase quantity structure serialization.
+Wikibase::Datatype::Struct::Value::Quantity - Wikibase quantity value structure serialization.
 
 =head1 SYNOPSIS
 

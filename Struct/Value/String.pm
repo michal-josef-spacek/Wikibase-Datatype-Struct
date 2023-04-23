@@ -56,7 +56,7 @@ __END__
 
 =head1 NAME
 
-Wikibase::Datatype::Struct::Value::String - Wikibase string structure serialization.
+Wikibase::Datatype::Struct::Value::String - Wikibase string value structure serialization.
 
 =head1 SYNOPSIS
 
