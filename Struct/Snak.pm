@@ -109,6 +109,8 @@ Returns Wikibase::Datatype::Snak instance.
 
 =head1 EXAMPLE1
 
+=for comment filename=obj2struct_snak.pl
+
  use strict;
  use warnings;
 
@@ -149,6 +151,8 @@ Returns Wikibase::Datatype::Snak instance.
  # }
 
 =head1 EXAMPLE2
+
+=for comment filename=struct2obj_snak.pl
 
  use strict;
  use warnings;

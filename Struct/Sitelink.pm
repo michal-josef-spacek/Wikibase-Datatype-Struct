@@ -99,6 +99,8 @@ Returns Wikibase::Datatype::Sitelink instance.
 
 =head1 EXAMPLE1
 
+=for comment filename=obj2struct_sitelink.pl
+
  use strict;
  use warnings;
 
@@ -126,6 +128,8 @@ Returns Wikibase::Datatype::Sitelink instance.
  # }
 
 =head1 EXAMPLE2
+
+=for comment filename=struct2obj_sitelink.pl
 
  use strict;
  use warnings;

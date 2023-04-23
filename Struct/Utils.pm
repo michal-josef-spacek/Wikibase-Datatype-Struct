@@ -146,6 +146,8 @@ Returns reference to array with snaks objects.
 
 =head1 EXAMPLE1
 
+=for comment filename=utils_obj_array_ref2struct.pl
+
  use strict;
  use warnings;
 
@@ -214,6 +216,8 @@ Returns reference to array with snaks objects.
  # }
 
 =head1 EXAMPLE2
+
+=for comment filename=utils_struct2snaks_array_ref.pl
 
  use strict;
  use warnings;

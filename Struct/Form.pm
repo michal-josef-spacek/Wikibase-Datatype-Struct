@@ -143,6 +143,8 @@ Returns Wikibase::Datatype::Form instance.
 
 =head1 EXAMPLE1
 
+=for comment filename=obj2struct_form.pl
+
  use strict;
  use warnings;
 
@@ -237,6 +239,8 @@ Returns Wikibase::Datatype::Form instance.
  # }
 
 =head1 EXAMPLE2
+
+=for comment filename=struct2obj_form.pl
 
  use strict;
  use warnings;

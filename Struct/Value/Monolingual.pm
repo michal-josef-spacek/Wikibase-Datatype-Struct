@@ -103,6 +103,8 @@ Returns Wikibase::Datatype::Value::Monolingual instance.
 
 =head1 EXAMPLE1
 
+=for comment filename=obj2struct_value_monolingual.pl
+
  use strict;
  use warnings;
 
@@ -132,6 +134,8 @@ Returns Wikibase::Datatype::Value::Monolingual instance.
  # }
 
 =head1 EXAMPLE2
+
+=for comment filename=struct2obj_value_monolingual.pl
 
  use strict;
  use warnings;

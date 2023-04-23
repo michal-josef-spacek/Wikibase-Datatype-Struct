@@ -211,6 +211,8 @@ Returns Wikibase::Datatype::Property instance.
 
 =head1 EXAMPLE1
 
+=for comment filename=obj2struct_property.pl
+
  use strict;
  use warnings;
 
@@ -361,6 +363,8 @@ Returns Wikibase::Datatype::Property instance.
  # }
 
 =head1 EXAMPLE2
+
+=for comment filename=struct2obj_property.pl
 
  use strict;
  use warnings;
