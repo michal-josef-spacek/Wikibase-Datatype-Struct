@@ -3,6 +3,7 @@
  - Add Sense object.
  - Add support for sense to Value.
  - Fix doc descriptions.
+ - Fix test dependencies.
  - Update copyright years.
 
 0.09 2022-07-09T16:51:15+02:00
