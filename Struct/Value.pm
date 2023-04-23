@@ -11,6 +11,7 @@ use Wikibase::Datatype::Struct::Value::Item;
 use Wikibase::Datatype::Struct::Value::Monolingual;
 use Wikibase::Datatype::Struct::Value::Property;
 use Wikibase::Datatype::Struct::Value::Quantity;
+use Wikibase::Datatype::Struct::Value::Sense;
 use Wikibase::Datatype::Struct::Value::String;
 use Wikibase::Datatype::Struct::Value::Time;
 use Wikibase::Datatype::Value;
@@ -41,6 +42,8 @@ sub obj2struct {
 		$struct_hr = Wikibase::Datatype::Struct::Value::Property::obj2struct($obj);
 	} elsif ($type eq 'quantity') {
 		$struct_hr = Wikibase::Datatype::Struct::Value::Quantity::obj2struct($obj, $base_uri);
+	} elsif ($type eq 'sense') {
+		$struct_hr = Wikibase::Datatype::Struct::Value::Sense::obj2struct($obj, $base_uri);
 	} elsif ($type eq 'string') {
 		$struct_hr = Wikibase::Datatype::Struct::Value::String::obj2struct($obj);
 	} elsif ($type eq 'time') {
@@ -75,6 +78,8 @@ sub struct2obj {
 			$obj = Wikibase::Datatype::Struct::Value::Item::struct2obj($struct_hr);
 		} elsif ($struct_hr->{'value'}->{'entity-type'} eq 'property') {
 			$obj = Wikibase::Datatype::Struct::Value::Property::struct2obj($struct_hr);
+		} elsif ($struct_hr->{'value'}->{'entity-type'} eq 'sense') {
+			$obj = Wikibase::Datatype::Struct::Value::Sense::struct2obj($struct_hr);
 		} else {
 			err "Entity type '$struct_hr->{'value'}->{'entity-type'}' is unsupported.";
 		}
