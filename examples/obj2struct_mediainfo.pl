@@ -68,4 +68,78 @@ my $struct_hr = obj2struct($obj, 'http://test.wikidata.org/entity/');
 p $struct_hr;
 
 # Output:
-# TODO
+# {
+#     descriptions   {},
+#     id             "Q42",
+#     labels         {
+#         cs   {
+#             language   "cs",
+#             value      "Douglas Adams"
+#         },
+#         en   {
+#             language   "en",
+#             value      "Douglas Adams"
+#         }
+#     },
+#     ns             6,
+#     pageid         123,
+#     statements     {
+#         P21   [
+#             [0] {
+#                     mainsnak   {
+#                         datavalue   {
+#                             type    "wikibase-entityid",
+#                             value   {
+#                                 entity-type   "item",
+#                                 id            "Q6581097",
+#                                 numeric-id    6581097
+#                             }
+#                         },
+#                         property    "P21",
+#                         snaktype    "value"
+#                     },
+#                     rank       "normal",
+#                     type       "statement"
+#                 }
+#         ],
+#         P31   [
+#             [0] {
+#                     mainsnak           {
+#                         datavalue   {
+#                             type    "wikibase-entityid",
+#                             value   {
+#                                 entity-type   "item",
+#                                 id            "Q5",
+#                                 numeric-id    5
+#                             }
+#                         },
+#                         property    "P31",
+#                         snaktype    "value"
+#                     },
+#                     qualifiers         {
+#                         P642   [
+#                             [0] {
+#                                     datavalue   {
+#                                         type    "wikibase-entityid",
+#                                         value   {
+#                                             entity-type   "item",
+#                                             id            "Q474741",
+#                                             numeric-id    474741
+#                                         }
+#                                     },
+#                                     property    "P642",
+#                                     snaktype    "value"
+#                                 }
+#                         ]
+#                     },
+#                     qualifiers-order   [
+#                         [0] "P642"
+#                     ],
+#                     rank               "normal",
+#                     type               "statement"
+#                 }
+#         ]
+#     },
+#     title          "Q42",
+#     type           "mediainfo"
+# }
