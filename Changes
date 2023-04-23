@@ -1,5 +1,6 @@
 0.10
  - Add references to MediainfoStatement.
+ - Add Sense object.
 
 0.09 2022-07-09T16:51:15+02:00
  - Add complex test to Lexeme.

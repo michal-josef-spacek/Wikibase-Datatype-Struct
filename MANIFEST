@@ -38,6 +38,8 @@ examples/ex41.pl
 examples/ex42.pl
 examples/ex43.pl
 examples/ex44.pl
+examples/ex45.pl
+examples/ex46.pl
 examples/ex5.pl
 examples/ex6.pl
 examples/ex7.pl
@@ -81,6 +83,7 @@ Struct/Value/Item.pm
 Struct/Value/Monolingual.pm
 Struct/Value/Property.pm
 Struct/Value/Quantity.pm
+Struct/Value/Sense.pm
 Struct/Value/String.pm
 Struct/Value/Time.pm
 t/Wikibase-Datatype-Struct-Form/01-use.t
@@ -157,6 +160,10 @@ t/Wikibase-Datatype-Struct-Value-Quantity/01-use.t
 t/Wikibase-Datatype-Struct-Value-Quantity/02-version.t
 t/Wikibase-Datatype-Struct-Value-Quantity/03-obj2struct.t
 t/Wikibase-Datatype-Struct-Value-Quantity/04-struct2obj.t
+t/Wikibase-Datatype-Struct-Value-Sense/01-use.t
+t/Wikibase-Datatype-Struct-Value-Sense/02-version.t
+t/Wikibase-Datatype-Struct-Value-Sense/03-obj2struct.t
+t/Wikibase-Datatype-Struct-Value-Sense/04-struct2obj.t
 t/Wikibase-Datatype-Struct-Value-String/01-use.t
 t/Wikibase-Datatype-Struct-Value-String/02-version.t
 t/Wikibase-Datatype-Struct-Value-String/03-obj2struct.t
@@ -209,6 +216,8 @@ xt/Wikibase-Datatype-Struct-Value-Property/01-pod_coverage.t
 xt/Wikibase-Datatype-Struct-Value-Property/02-pod.t
 xt/Wikibase-Datatype-Struct-Value-Quantity/01-pod_coverage.t
 xt/Wikibase-Datatype-Struct-Value-Quantity/02-pod.t
+xt/Wikibase-Datatype-Struct-Value-Sense/01-pod_coverage.t
+xt/Wikibase-Datatype-Struct-Value-Sense/02-pod.t
 xt/Wikibase-Datatype-Struct-Value-String/01-pod_coverage.t
 xt/Wikibase-Datatype-Struct-Value-String/02-pod.t
 xt/Wikibase-Datatype-Struct-Value-Time/01-pod_coverage.t
