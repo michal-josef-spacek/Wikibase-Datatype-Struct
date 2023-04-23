@@ -2,6 +2,7 @@
  - Add references to MediainfoStatement.
  - Add Sense object.
  - Add support for sense to Value.
+ - Fix dependencies.
  - Fix doc descriptions.
  - Fix test dependencies.
  - Update copyright years.

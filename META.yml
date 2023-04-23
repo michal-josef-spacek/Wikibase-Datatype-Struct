@@ -46,13 +46,33 @@ no_index:
     - t
     - xt
 requires:
-  Class::Utils: 0.03
+  English: 0
   Error::Pure: 0.15
   Exporter: 0
   List::MoreUtils: 0
   Readonly: 0
   URI: 0
-  Wikibase::Datatype: 0.25
+  Wikibase::Datatype::Form: 0
+  Wikibase::Datatype::Item: 0
+  Wikibase::Datatype::Lexeme: 0
+  Wikibase::Datatype::Mediainfo: 0
+  Wikibase::Datatype::MediainfoSnak: 0
+  Wikibase::Datatype::MediainfoStatement: 0
+  Wikibase::Datatype::Property: 0
+  Wikibase::Datatype::Reference: 0
+  Wikibase::Datatype::Sense: 0
+  Wikibase::Datatype::Sitelink: 0
+  Wikibase::Datatype::Snak: 0
+  Wikibase::Datatype::Statement: 0
+  Wikibase::Datatype::Value: 0.28
+  Wikibase::Datatype::Value::Globecoordinate: 0
+  Wikibase::Datatype::Value::Item: 0
+  Wikibase::Datatype::Value::Monolingual: 0
+  Wikibase::Datatype::Value::Property: 0
+  Wikibase::Datatype::Value::Quantity: 0
+  Wikibase::Datatype::Value::Sense: 0.28
+  Wikibase::Datatype::Value::String: 0
+  Wikibase::Datatype::Value::Time: 0
   perl: 5.01
 resources:
   bugtracker: https://github.com/michal-josef-spacek/Wikibase-Datatype-Struct/issues
