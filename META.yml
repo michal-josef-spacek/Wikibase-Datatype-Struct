@@ -26,7 +26,7 @@ build_requires:
   Wikibase::Datatype::Value::Monolingual: 0
   Wikibase::Datatype::Value::Property: 0
   Wikibase::Datatype::Value::Quantity: 0
-  Wikibase::Datatype::Value::Sense: 0.28
+  Wikibase::Datatype::Value::Sense: 0.29
   Wikibase::Datatype::Value::String: 0
   Wikibase::Datatype::Value::Time: 0
 configure_requires:
@@ -64,13 +64,13 @@ requires:
   Wikibase::Datatype::Sitelink: 0
   Wikibase::Datatype::Snak: 0
   Wikibase::Datatype::Statement: 0
-  Wikibase::Datatype::Value: 0.28
+  Wikibase::Datatype::Value: 0.29
   Wikibase::Datatype::Value::Globecoordinate: 0
   Wikibase::Datatype::Value::Item: 0
   Wikibase::Datatype::Value::Monolingual: 0
   Wikibase::Datatype::Value::Property: 0
   Wikibase::Datatype::Value::Quantity: 0
-  Wikibase::Datatype::Value::Sense: 0.28
+  Wikibase::Datatype::Value::Sense: 0.29
   Wikibase::Datatype::Value::String: 0
   Wikibase::Datatype::Value::Time: 0
   perl: 5.01
