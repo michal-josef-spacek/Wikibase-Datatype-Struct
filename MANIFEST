@@ -15,6 +15,7 @@ examples/obj2struct_statement.pl
 examples/obj2struct_value.pl
 examples/obj2struct_value_globe_coordinate.pl
 examples/obj2struct_value_item.pl
+examples/obj2struct_value_lexeme.pl
 examples/obj2struct_value_monolingual.pl
 examples/obj2struct_value_property.pl
 examples/obj2struct_value_quantity.pl
@@ -37,6 +38,7 @@ examples/struct2obj_statement.pl
 examples/struct2obj_value.pl
 examples/struct2obj_value_globe_coordinate.pl
 examples/struct2obj_value_item.pl
+examples/struct2obj_value_lexeme.pl
 examples/struct2obj_value_monolingual.pl
 examples/struct2obj_value_property.pl
 examples/struct2obj_value_quantity.pl

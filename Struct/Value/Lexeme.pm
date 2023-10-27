@@ -142,7 +142,7 @@ Returns Wikibase::Datatype::Value::Lexeme instance.
 
 =head1 EXAMPLE2
 
-=for comment filename=struct2obj_value_item.pl
+=for comment filename=struct2obj_value_lexeme.pl
 
  use strict;
  use warnings;
