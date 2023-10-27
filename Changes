@@ -1,5 +1,6 @@
 0.12
  - Add Value::Lexeme.
+ - Update Module::Install to 1.21 version.
 
 0.11 2023-04-24T18:45:00+02:00
  - Fix dependency to Wikibase::Datatype::Value::Sense.
