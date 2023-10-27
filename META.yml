@@ -19,10 +19,11 @@ build_requires:
   Wikibase::Datatype::Property: 0.25
   Wikibase::Datatype::Reference: 0
   Wikibase::Datatype::Sitelink: 0
-  Wikibase::Datatype::Snak: 0
+  Wikibase::Datatype::Snak: 0.32
   Wikibase::Datatype::Statement: 0
   Wikibase::Datatype::Value::Globecoordinate: 0
   Wikibase::Datatype::Value::Item: 0
+  Wikibase::Datatype::Value::Lexeme: 0
   Wikibase::Datatype::Value::Monolingual: 0
   Wikibase::Datatype::Value::Property: 0
   Wikibase::Datatype::Value::Quantity: 0
@@ -62,11 +63,12 @@ requires:
   Wikibase::Datatype::Reference: 0
   Wikibase::Datatype::Sense: 0
   Wikibase::Datatype::Sitelink: 0
-  Wikibase::Datatype::Snak: 0
+  Wikibase::Datatype::Snak: 0.32
   Wikibase::Datatype::Statement: 0
   Wikibase::Datatype::Value: 0.29
   Wikibase::Datatype::Value::Globecoordinate: 0
   Wikibase::Datatype::Value::Item: 0
+  Wikibase::Datatype::Value::Lexeme: 0
   Wikibase::Datatype::Value::Monolingual: 0
   Wikibase::Datatype::Value::Property: 0
   Wikibase::Datatype::Value::Quantity: 0

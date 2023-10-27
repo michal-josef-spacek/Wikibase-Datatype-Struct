@@ -8,6 +8,7 @@ use Error::Pure qw(err);
 use Readonly;
 use Wikibase::Datatype::Struct::Value::Globecoordinate;
 use Wikibase::Datatype::Struct::Value::Item;
+use Wikibase::Datatype::Struct::Value::Lexeme;
 use Wikibase::Datatype::Struct::Value::Monolingual;
 use Wikibase::Datatype::Struct::Value::Property;
 use Wikibase::Datatype::Struct::Value::Quantity;
@@ -36,6 +37,8 @@ sub obj2struct {
 		$struct_hr = Wikibase::Datatype::Struct::Value::Globecoordinate::obj2struct($obj, $base_uri);
 	} elsif ($type eq 'item') {
 		$struct_hr = Wikibase::Datatype::Struct::Value::Item::obj2struct($obj);
+	} elsif ($type eq 'lexeme') {
+		$struct_hr = Wikibase::Datatype::Struct::Value::Lexeme::obj2struct($obj);
 	} elsif ($type eq 'monolingualtext') {
 		$struct_hr = Wikibase::Datatype::Struct::Value::Monolingual::obj2struct($obj);
 	} elsif ($type eq 'property') {
@@ -76,6 +79,8 @@ sub struct2obj {
 	} elsif ($struct_hr->{'type'} eq 'wikibase-entityid') {
 		if ($struct_hr->{'value'}->{'entity-type'} eq 'item') {
 			$obj = Wikibase::Datatype::Struct::Value::Item::struct2obj($struct_hr);
+		} elsif ($struct_hr->{'value'}->{'entity-type'} eq 'lexeme') {
+			$obj = Wikibase::Datatype::Struct::Value::Lexeme::struct2obj($struct_hr);
 		} elsif ($struct_hr->{'value'}->{'entity-type'} eq 'property') {
 			$obj = Wikibase::Datatype::Struct::Value::Property::struct2obj($struct_hr);
 		} elsif ($struct_hr->{'value'}->{'entity-type'} eq 'sense') {
@@ -238,6 +243,7 @@ L<Readonly>,
 L<Wikibase::Datatype::Value>,
 L<Wikibase::Datatype::Struct::Value::Globecoordinate>,
 L<Wikibase::Datatype::Struct::Value::Item>,
+L<Wikibase::Datatype::Struct::Value::Lexeme>,
 L<Wikibase::Datatype::Struct::Value::Monolingual>,
 L<Wikibase::Datatype::Struct::Value::Property>,
 L<Wikibase::Datatype::Struct::Value::Quantity>,
@@ -259,6 +265,10 @@ Wikibase globe coordinate value datatype.
 =item L<Wikibase::Datatype::Value::Item>
 
 Wikibase item value datatype.
+
+=item L<Wikibase::Datatype::Value::Lexeme>
+
+Wikibase lexeme value datatype.
 
 =item L<Wikibase::Datatype::Value::Monolingual>
 
