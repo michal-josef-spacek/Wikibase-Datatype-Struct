@@ -90,6 +90,10 @@ Wikibase globe coordinate value structure serialization.
 
 Wikibase item value structure serialization.
 
+=item L<Wikibase::Datatype::Struct::Value::Lexeme>
+
+Wikibase lexeme value structure serialization.
+
 =item L<Wikibase::Datatype::Struct::Value::Monolingual>
 
 Wikibase monolingual value structure serialization.

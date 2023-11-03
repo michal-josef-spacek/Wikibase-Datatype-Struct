@@ -1,4 +1,5 @@
 0.13
+ - Add Value::Lexeme to Wikibase::Datatype::Struct doc.
  - Regen examples.
 
 0.12 2023-10-27T23:15:03+02:00

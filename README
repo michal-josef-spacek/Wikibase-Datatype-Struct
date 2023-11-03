@@ -54,6 +54,9 @@ SEE ALSO
     Wikibase::Datatype::Struct::Value::Item
         Wikibase item value structure serialization.
 
+    Wikibase::Datatype::Struct::Value::Lexeme
+        Wikibase lexeme value structure serialization.
+
     Wikibase::Datatype::Struct::Value::Monolingual
         Wikibase monolingual value structure serialization.
 
