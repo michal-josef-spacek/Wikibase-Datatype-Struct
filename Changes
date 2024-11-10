@@ -7,6 +7,7 @@
  - Fix id in Form::obj2struct().
  - Fix id in Sense::obj2struct().
  - Regen examples.
+ - Update copyright years.
 
 0.12 2023-10-27T23:15:03+02:00
  - Add Value::Lexeme.
