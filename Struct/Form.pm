@@ -28,9 +28,11 @@ sub obj2struct {
 		err 'Base URI is required.';
 	}
 
-	my $struct_hr = {
-		'id' => $obj->id,
-	};
+	my $struct_hr = {};
+
+	if (defined $obj->id) {
+		$struct_hr->{'id'} = $obj->id;
+	}
 
 	# Grammatical features.
 	foreach my $gf (@{$obj->grammatical_features}) {
