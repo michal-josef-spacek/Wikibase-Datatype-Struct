@@ -27,9 +27,11 @@ sub obj2struct {
 		err 'Base URI is required.';
 	}
 
-	my $struct_hr = {
-		'id' => $obj->id,
-	};
+	my $struct_hr = {};
+
+	if (defined $obj->id) {
+		$struct_hr->{'id'} = $obj->id;
+	}
 
 	# Glosses.
 	foreach my $glosse (@{$obj->glosses}) {

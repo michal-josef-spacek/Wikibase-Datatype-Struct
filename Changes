@@ -3,6 +3,7 @@
  - Add obj2struct() and struct2obj() for main objects to
    Wikibase::Datatype::Struct.
  - Fix id in Form::obj2struct().
+ - Fix id in Sense::obj2struct().
  - Regen examples.
 
 0.12 2023-10-27T23:15:03+02:00
