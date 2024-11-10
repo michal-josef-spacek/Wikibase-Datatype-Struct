@@ -19,7 +19,7 @@ use Wikibase::Datatype::Value;
 
 Readonly::Array our @EXPORT_OK => qw(obj2struct struct2obj);
 
-our $VERSION = 0.13;
+our $VERSION = 0.14;
 
 sub obj2struct {
 	my ($obj, $base_uri) = @_;
@@ -310,6 +310,6 @@ BSD 2-Clause License
 
 =head1 VERSION
 
-0.13
+0.14
 
 =cut
