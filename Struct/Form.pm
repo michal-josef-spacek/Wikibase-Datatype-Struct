@@ -32,6 +32,9 @@ sub obj2struct {
 
 	if (defined $obj->id) {
 		$struct_hr->{'id'} = $obj->id;
+	} else {
+		# Key for information, that I am creating structure.
+		$struct_hr->{'add'} = '';
 	}
 
 	# Grammatical features.
