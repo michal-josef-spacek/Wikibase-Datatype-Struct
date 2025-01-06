@@ -1,4 +1,5 @@
 0.14
+ - Fix test for Mediainfo.
  - Rewrite List::MoreUtils::none to List::Util.
  - Update copyright years.
 
