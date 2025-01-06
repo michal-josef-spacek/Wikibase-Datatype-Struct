@@ -1,4 +1,4 @@
-0.14
+0.14 2025-01-06T11:31:46+01:00
  - Add tests for Monolingual::struct2obj().
  - Add tests for Property::struct2obj().
  - Fix test for Mediainfo.
