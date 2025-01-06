@@ -1,5 +1,6 @@
 0.14
  - Add tests for Monolingual::struct2obj().
+ - Add tests for Property::struct2obj().
  - Fix test for Mediainfo.
  - Rewrite List::MoreUtils::none to List::Util.
  - Update copyright years.
