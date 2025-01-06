@@ -6,7 +6,7 @@ use warnings;
 
 use English;
 use Error::Pure qw(err);
-use List::MoreUtils qw(none);
+use List::Util 1.33 qw(none);
 
 Readonly::Array our @EXPORT_OK => qw(obj_array_ref2struct struct2snaks_array_ref);
 
@@ -281,7 +281,7 @@ Returns reference to array with snaks objects.
 
 L<Error::Pure>,
 L<Exporter>,
-L<List::MoreUtils>.
+L<List::Util>.
 
 =head1 SEE ALSO
 

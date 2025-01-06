@@ -21,7 +21,7 @@ recursive_author_tests('xt');
 requires 'English' => 0;
 requires 'Error::Pure' => 0.15;
 requires 'Exporter' => 0;
-requires 'List::MoreUtils' => 0;
+requires 'List::Util' => 1.33;
 requires 'Readonly' => 0;
 requires 'URI' => 0;
 requires 'Wikibase::Datatype::Form' => 0;
