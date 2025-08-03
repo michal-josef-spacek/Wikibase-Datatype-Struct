@@ -1,4 +1,4 @@
-0.15
+0.15 2025-08-03T13:08:07+02:00
  - Add Term object.
  - Rewrite Item to use of Term objects.
 
